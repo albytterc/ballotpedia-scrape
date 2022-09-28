@@ -4,13 +4,17 @@ The official NativeBase TypeScript template for [Expo](https://docs.expo.io/)
 
 ## Dependencies
 
-Download dependencies using yarn:  
+Download dependencies:  
 
-``` npm install yarn```  
+``` npm install yarn```   
 
-``` yarn add expo-cli``` 
+``` npm install --global expo-cli```  
 
-```yarn add native-base react-native-svg@12.1.1 react-native-safe-area-context@3.3.2```
+``` yarn add native-base ```
+
+``` expo install react-native-svg@12.1.1 ```   
+
+``` expo install react-native-safe-area-context@3.3.2 ```
 ## Usage
 
 ```sh
