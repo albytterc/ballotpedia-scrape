@@ -23,13 +23,13 @@ expo init my-app --template @native-base/expo-template-typescript
 ## Updating Code Using Git
 
 1. Before writing your code:
-  - Pull from remote staging to local staging
+    - Pull from remote staging to local staging
 
     ``` git checkout staging ```
     
     ``` git pull ```
     
-  - Make a new branch for the feature you’re going to add
+      - Make a new branch for the feature you’re going to add
 
     ``` git checkout -b <feature_name>-<your_name> ```
 2. Write your code:
