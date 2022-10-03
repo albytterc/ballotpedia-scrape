@@ -40,7 +40,7 @@ expo init my-app --template @native-base/expo-template-typescript
     
     ``` git commit -m "your message. What you added, description, comments" ```
     
-    ``` git push origin <remote_branch_name>:<local_branch_name> ```
+    ``` git push origin <local_branch_name>:<remote_branch_name> ```
     
     - Make a pull request to the staging branch over at github. Assign reviewers
 4. After pull request is reviewed:
