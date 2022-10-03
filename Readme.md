@@ -34,7 +34,7 @@ expo init my-app --template @native-base/expo-template-typescript
     ``` git checkout -b <feature_name>-<your_name> ```
 2. Write your code:
 3. After writing your code:
-  - Add, commit, push
+    - Add, commit, push
   
     ``` git add . ```
     
@@ -42,6 +42,6 @@ expo init my-app --template @native-base/expo-template-typescript
     
     ``` git push origin <remote_branch_name>:<local_branch_name> ```
     
-  - Make a pull request to the staging branch over at github. Assign reviewers
+    - Make a pull request to the staging branch over at github. Assign reviewers
 4. After pull request is reviewed:
-  - Merge with staging over at github and delete branch
+    - Merge with staging over at github and delete branch
