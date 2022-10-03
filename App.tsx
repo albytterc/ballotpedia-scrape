@@ -2,6 +2,7 @@ import React from "react";
 import {
   Text,
   Link,
+  Button,
   HStack,
   Center,
   Heading,
@@ -41,6 +42,7 @@ export default function App() {
           <Heading size="lg">Vote Vault.. Coming Soon</Heading>
           <HStack space={2} alignItems="center">            
           </HStack>
+          <Button isDisabled> Unlock the Vault</Button>
           <ToggleDarkMode />
         </VStack>
       </Center>
