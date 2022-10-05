@@ -17,7 +17,7 @@ import {
   Box,
 } from "native-base";
 import NativeBaseIcon from "../../components/NativeBaseIcon";
-import QueryPage from "../QueryPage/QueryPage"; 
+import QueryPage from "../pages/QueryPage/QueryPage"; 
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 

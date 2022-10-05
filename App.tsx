@@ -19,8 +19,9 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import NativeBaseIcon from "./components/NativeBaseIcon";
-// import InitPage from "./src/InitPage/InitPage";
-// import QueryPage from "./src/QueryPage/QueryPage";
+import Home from "./src/pages/Home/Home";
+import ZipCode from "./src/pages/ZipCode/ZipCode";
+
 
 // Define the config
 const config = {
@@ -41,9 +42,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <NativeBaseProvider>
-          <Stack.Navigator initialRouteName="InitPage">
-            <Stack.Screen name="InitPage" component={InitPage} />
-            <Stack.Screen name="QueryPage" component={QueryPage} />
+          <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="ZipCode" component={ZipCode} />
+            {/* <Stack.Screen name="QueryPage" component={QueryPage} /> */}
           </Stack.Navigator>
           {/* <InitPage /> */}
           {/* <QueryPage/> */}
@@ -53,49 +55,49 @@ export default function App() {
   );
 }
 
-function InitPage ({navigation}) {
-   return (
-    <Center
-          _dark={{ bg: "blueGray.900" }}
-          _light={{ bg: "blueGray.50" }}
-          px={4}
-          flex={1}
-        >
-    <VStack space={5} alignItems="center">
-  <Image source={require("./assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image>
-  <Heading size="lg">Vote Vault.. Coming Soon</Heading>
-  <HStack space={2} alignItems="center">            
-  </HStack>
-  <Button onPress={() => navigation.navigate('QueryPage')}> Unlock the Vault</Button>
-  <ToggleDarkMode />
-</VStack>
-</Center>
-);
-}
+// function InitPage ({navigation}) {
+//    return (
+//     <Center
+//           _dark={{ bg: "blueGray.900" }}
+//           _light={{ bg: "blueGray.50" }}
+//           px={4}
+//           flex={1}
+//         >
+//     <VStack space={5} alignItems="center">
+//   <Image source={require("./assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image>
+//   <Heading size="lg">Vote Vault.. Coming Soon</Heading>
+//   <HStack space={2} alignItems="center">            
+//   </HStack>
+//   <Button onPress={() => navigation.navigate('QueryPage')}> Unlock the Vault</Button>
+//   <ToggleDarkMode />
+// </VStack>
+// </Center>
+// );
+// }
 
-function QueryPage ({navigation}) {
-  return (
-    <Center
-          _dark={{ bg: "blueGray.900" }}
-          _light={{ bg: "blueGray.50" }}
-          px={4}
-          flex={1}
-        >
-    <VStack space={5} maxW="200px" alignItems="center">
-  <Input size="sm"  variant="underlined" placeholder="Enter Zipcode"/>
-  <Button> Search by Zipcode</Button>
+// function QueryPage ({navigation}) {
+//   return (
+//     <Center
+//           _dark={{ bg: "blueGray.900" }}
+//           _light={{ bg: "blueGray.50" }}
+//           px={4}
+//           flex={1}
+//         >
+//     <VStack space={5} maxW="200px" alignItems="center">
+//   <Input size="sm"  variant="underlined" placeholder="Enter Zipcode"/>
+//   <Button> Search by Zipcode</Button>
 
-  <HStack space={5} alignItems="center" >  
-    <Divider maxW="110px" bg="#000"/>
-    <Heading size="md">or</Heading>  
-    <Divider maxW="110px" bg="#000"/>       
-  </HStack>
+//   <HStack space={5} alignItems="center" >  
+//     <Divider maxW="110px" bg="#000"/>
+//     <Heading size="md">or</Heading>  
+//     <Divider maxW="110px" bg="#000"/>       
+//   </HStack>
 
-  <Button onPress={() => navigation.navigate('InitPage')}> Use my current location </Button>
-</VStack>
-</Center>
-);
-}
+//   <Button onPress={() => navigation.navigate('InitPage')}> Use my current location </Button>
+// </VStack>
+// </Center>
+// );
+// }
 
 // Color Switch Component
 function ToggleDarkMode() {
