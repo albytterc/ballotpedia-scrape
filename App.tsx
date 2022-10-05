@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Text,
   Link,
+  Divider,
   Button,
   HStack,
   Center,
@@ -12,9 +13,13 @@ import {
   extendTheme,
   VStack,
   Image,
+  Input,
   Box,
 } from "native-base";
+import { NavigationContainer } from '@react-navigation/native';
 import NativeBaseIcon from "./components/NativeBaseIcon";
+import InitPage from "./src/InitPage";
+import QueryPage from "./src/QueryPage";
 
 // Define the config
 const config = {
@@ -30,6 +35,7 @@ declare module "native-base" {
 }
 export default function App() {
   return (
+    <NavigationContainer>
     <NativeBaseProvider>
       <Center
         _dark={{ bg: "blueGray.900" }}
@@ -37,33 +43,11 @@ export default function App() {
         px={4}
         flex={1}
       >
-        <VStack space={5} alignItems="center">
-          <Image source={require("./assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image>
-          <Heading size="lg">Vote Vault.. Coming Soon</Heading>
-          <HStack space={2} alignItems="center">            
-          </HStack>
-          <Button isDisabled> Unlock the Vault</Button>
-          <ToggleDarkMode />
-        </VStack>
+        {/* <InitPage /> */}
+        <QueryPage/>
+
       </Center>
     </NativeBaseProvider>
-  );
-}
-
-// Color Switch Component
-function ToggleDarkMode() {
-  const { colorMode, toggleColorMode } = useColorMode();
-  return (
-    <HStack space={2} alignItems="center">
-      <Text>Dark</Text>
-      <Switch
-        isChecked={colorMode === "light"}
-        onToggle={toggleColorMode}
-        aria-label={
-          colorMode === "light" ? "switch to dark mode" : "switch to light mode"
-        }
-      />
-      <Text>Light</Text>
-    </HStack>
+    </NavigationContainer>
   );
 }
