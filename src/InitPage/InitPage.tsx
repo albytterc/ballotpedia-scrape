@@ -16,18 +16,22 @@ import {
   Input,
   Box,
 } from "native-base";
-import NativeBaseIcon from "../components/NativeBaseIcon";
-import QueryPage from "./QueryPage"; 
+import NativeBaseIcon from "../../components/NativeBaseIcon";
+import QueryPage from "../QueryPage/QueryPage"; 
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const navigation = useNavigation()
 
 export default class InitPage extends React.Component {
     render () {
         return (
             <VStack space={5} alignItems="center">
-          <Image source={require("../assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image>
+          <Image source={require("../../assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image>
           <Heading size="lg">Vote Vault.. Coming Soon</Heading>
           <HStack space={2} alignItems="center">            
           </HStack>
-          <Button onPress={dummyFunc}> Unlock the Vault</Button>
+          <Button onPress={() => null}> Unlock the Vault</Button>
           <ToggleDarkMode />
         </VStack>
         );

@@ -16,7 +16,7 @@ import {
   Input,
   Box,
 } from "native-base";
-import NativeBaseIcon from "../components/NativeBaseIcon";
+import NativeBaseIcon from "../../components/NativeBaseIcon";
 
 export default class QueryPage extends Component {
     render () {
