@@ -28,13 +28,13 @@ const ZipCode = ({navigation}) => {
         >
     <VStack space={5} maxW="200px" alignItems="center">
   <Input size="sm"  variant="underlined" placeholder="Enter Zipcode"/>
-  <Button> Search by Zipcode</Button>
+  <Button onPress={() => navigation.navigate('Events')}> Search by Zipcode</Button>
   <HStack space={5} alignItems="center" >
     <Divider maxW="110px" bg="#000"/>
     <Heading size="md">or</Heading>
     <Divider maxW="110px" bg="#000"/>
   </HStack>
-  <Button onPress={() => navigation.navigate('Home')}> Use my current location </Button>
+  <Button onPress={() => navigation.navigate('Events')}> Use my current location </Button>
 </VStack>
 </Center>
 </>

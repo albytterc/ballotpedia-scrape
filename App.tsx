@@ -21,6 +21,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import NativeBaseIcon from "./components/NativeBaseIcon";
 import Home from "./src/pages/Home/Home";
 import ZipCode from "./src/pages/ZipCode/ZipCode";
+import Events from "./src/pages/Events/Events";
 
 
 // Define the config
@@ -45,6 +46,7 @@ export default function App() {
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="ZipCode" component={ZipCode} />
+            <Stack.Screen name="Events" component={Events} />
             {/* <Stack.Screen name="QueryPage" component={QueryPage} /> */}
           </Stack.Navigator>
           {/* <InitPage /> */}
