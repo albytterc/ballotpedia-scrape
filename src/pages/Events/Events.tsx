@@ -1,46 +1,86 @@
-import {View, Text} from 'react-native'
-import React from 'react'
-import {
-    
-    Link,
-    Divider,
-    Button,
-    HStack,
-    Center,
-    Heading,
-    Switch,
-    useColorMode,
-    NativeBaseProvider,
-    extendTheme,
-    VStack,
-    Image,
-    Input,
-    Box,
-  } from "native-base";
+import { StyleSheet } from "react-native";
+import React, { Component } from "react";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-const Events = ({navigation}) => {
+import {
+  View,
+  Link,
+  Button,
+  HStack,
+  VStack,
+  Center,
+  Heading,
+  Switch,
+  useColorMode,
+  NativeBaseProvider,
+  extendTheme,
+  Image,
+  Input,
+  Box,
+  Divider,
+  Flex,
+  Text,
+} from "native-base";
+
+const Events = ({ navigation }) => {
   return (
     <>
-    <Center
-          _dark={{ bg: "blueGray.900" }}
-          _light={{ bg: "blueGray.50" }}
-          px={4}
-          flex={1}
+      <VStack
+        width={"100%"}
+        height={"100%"}
+        space={5}
+        alignItems="center"
+        background={"#007C77"}
+      >
+        <Heading size="lg" marginTop="1rem">
+          Events
+        </Heading>
+        <Box
+          width={"95%"}
+          height={"150px"}
+          bg="#2708A0"
+          p="4"
+          shadow={2}
+          borderRadius={20}
+          borderWidth="2px"
+          alignItems={"center"}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent="space-around"
         >
-    <VStack space={5} alignItems="center">
-  {/* <Image source={require("./assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image> */}
-  <Heading size="lg">In progress</Heading>
-  <Text>Upcoming elections, townhalls, etc.</Text>
-  <HStack space={2} alignItems="center">            
-  </HStack>
-  <Button onPress={() => navigation.navigate('Home')}> Unlock the Vault</Button>
-  {/* <ToggleDarkMode /> */}
-</VStack>
-</Center>
-</>
+          <Icon name="vote-outline" size={70} color="teal"></Icon>
 
-    
-  )
-}
+          <Box width={"auto"} alignItems={"center"}>
+            <Heading size="xl" color="#FFFFFF">
+              General Election
+            </Heading>
 
-export default Events
+            <Heading
+              size="sm"
+              alignSelf={"flex-end"}
+              marginTop="1rem"
+              color="#FFFFFF"
+            >
+              Nov 8, 2022
+            </Heading>
+          </Box>
+        </Box>
+        <Button onPress={() => navigation.navigate("Home")}>
+          {" "}
+          Unlock the Vault
+        </Button>
+      </VStack>
+    </>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#374151",
+  },
+});
+
+export default Events;
