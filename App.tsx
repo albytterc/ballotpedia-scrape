@@ -47,10 +47,7 @@ export default function App() {
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="ZipCode" component={ZipCode} />
             <Stack.Screen name="Events" component={Events} />
-            {/* <Stack.Screen name="QueryPage" component={QueryPage} /> */}
           </Stack.Navigator>
-          {/* <InitPage /> */}
-          {/* <QueryPage/> */}
         
        </NativeBaseProvider>
     </NavigationContainer>
