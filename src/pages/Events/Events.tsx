@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Alert } from "react-native";
 import React, { Component } from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -22,7 +22,9 @@ import {
   Text,
 } from "native-base";
 
-const Events = ({ navigation }) => {
+const Events = ({ route, navigation }) => {
+  const {itemId, userZip} = route.params
+  // Alert.alert(zipCode)
   return (
     <>
       <VStack
@@ -34,6 +36,9 @@ const Events = ({ navigation }) => {
       >
         <Heading size="lg" marginTop="1rem">
           Events
+        </Heading>
+        <Heading size="md" marginTop="1rem">
+          For zipcode: {userZip}
         </Heading>
         <Box
           width={"95%"}

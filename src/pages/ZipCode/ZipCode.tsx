@@ -22,7 +22,7 @@ const ZipCode = ({navigation}) => {
   const validate =  () => {
     var re = new RegExp('\\d{5}')
 
-    console.log()
+    
     if (formData.zip === undefined) {
       setErrors({ ...errors,
         name: 'Please enter a zipcode'
@@ -42,7 +42,10 @@ const ZipCode = ({navigation}) => {
 
       if (validate()) {
         console.log('Validation Worked');
-        navigation.navigate('Events')
+        navigation.navigate('Events', {
+          itemId: 1,
+          userZip: formData.zip
+        })
       } else {
         console.log('Validation Failed')
       }
@@ -70,7 +73,11 @@ const ZipCode = ({navigation}) => {
     <Heading size="md">or</Heading>
     <Divider maxW="110px" bg="#000"/>
   </HStack>
-  <Button onPress={() => navigation.navigate('Events')}> Use my current location </Button>
+  <Button onPress={() => navigation.navigate('Events', {
+          itemId: 1,    
+          userZip: 'XXXXX'
+        })}> Use my current location 
+  </Button>
 </VStack>
 </Center>
 </>
