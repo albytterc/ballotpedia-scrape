@@ -1,6 +1,8 @@
-import { StyleSheet, Alert } from "react-native";
-import React, { Component } from "react";
+
+import { StyleSheet, FlatList, Alert } from "react-native";
+import React, {Component,  useState } from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import EventBox from "../../../components/EventBox";
 
 import {
   View,
@@ -20,71 +22,86 @@ import {
   Divider,
   Flex,
   Text,
+  // FlatList,
+  ScrollView,
+  SectionList,
 } from "native-base";
 
 const Events = ({ route, navigation }) => {
   const {itemId, userZip} = route.params
-  // Alert.alert(zipCode)
+  const [events, setEvents] = useState([
+    {
+      type: "Elections",
+      data: [
+        {
+          id: 1,
+          type: "Elections",
+          title: "General Election",
+          date: "November 8th, 2022",
+        },
+        {
+          id: 2,
+          type: "Elections",
+          title: "General Election",
+          date: "November 8th, 2022",
+        },
+      ],
+    },
+    {
+      type: "Rallies",
+      data: [
+        {
+          id: 3,
+          type: "Rallies",
+          title: "Candidate #1 Rally",
+          date: "November 8th, 2022",
+        },
+        {
+          id: 4,
+          type: "Elections",
+          title: "Candidate #2 Rally",
+          date: "November 8th, 2022",
+        },
+      ],
+    },
+  ]);
+
   return (
-    <>
-      <VStack
-        width={"100%"}
-        height={"100%"}
-        space={5}
-        alignItems="center"
-        background={"#007C77"}
-      >
-        <Heading size="lg" marginTop="1rem">
-          Events
-        </Heading>
-        <Heading size="md" marginTop="1rem">
-          For zipcode: {userZip}
-        </Heading>
-        <Box
-          width={"95%"}
-          height={"150px"}
-          bg="#2708A0"
-          p="4"
-          shadow={2}
-          borderRadius={20}
-          borderWidth="2px"
-          alignItems={"center"}
-          display={"flex"}
-          flexDirection={"row"}
-          justifyContent="space-around"
-        >
-          <Icon name="vote-outline" size={70} color="teal"></Icon>
-
-          <Box width={"auto"} alignItems={"center"}>
-            <Heading size="xl" color="#FFFFFF">
-              General Election
-            </Heading>
-
-            <Heading
-              size="sm"
-              alignSelf={"flex-end"}
-              marginTop="1rem"
-              color="#FFFFFF"
-            >
-              Nov 8, 2022
-            </Heading>
-          </Box>
-        </Box>
-        <Button onPress={() => navigation.navigate("Home")}>
-          {" "}
-          Unlock the Vault
-        </Button>
-      </VStack>
-    </>
+    <Box
+      flexGrow={1}
+      flexDirection="column"
+      justifyContent="space-between"
+      height={"100%"}
+      marginY="2"
+      padding={2}
+    >
+      <SectionList
+        marginY={2}
+        sections={events}
+        renderItem={({ item }) => <EventBox event={item} />}
+        renderSectionHeader={({ section: { type } }) => (
+          <Heading>{type}</Heading>
+        )}
+        ListFooterComponent={
+          <Button
+            alignSelf={"center"}
+            size="lg"
+            onPress={() => navigation.navigate("Home")}
+          >
+            Unlock the Vault
+          </Button>
+        }
+      />
+    </Box>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#374151",
+    backgroundColor: "#eeeeee",
   },
 });
 
