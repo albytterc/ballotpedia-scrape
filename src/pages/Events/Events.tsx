@@ -1,5 +1,6 @@
-import { StyleSheet, FlatList } from "react-native";
-import React, { useState } from "react";
+
+import { StyleSheet, FlatList, Alert } from "react-native";
+import React, {Component,  useState } from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import EventBox from "../../../components/EventBox";
 
@@ -26,7 +27,8 @@ import {
   SectionList,
 } from "native-base";
 
-const Events = ({ navigation }) => {
+const Events = ({ route, navigation }) => {
+  const {itemId, userZip} = route.params
   const [events, setEvents] = useState([
     {
       type: "Elections",
