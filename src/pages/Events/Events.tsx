@@ -1,6 +1,5 @@
-
 import { StyleSheet, FlatList, Alert } from "react-native";
-import React, {Component,  useState } from "react";
+import React, { Component, useState } from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import EventBox from "../../../components/EventBox";
 
@@ -28,7 +27,7 @@ import {
 } from "native-base";
 
 const Events = ({ route, navigation }) => {
-  const {itemId, userZip} = route.params
+  const { itemId, userZip } = route.params;
   const [events, setEvents] = useState([
     {
       type: "Elections",
@@ -86,7 +85,7 @@ const Events = ({ route, navigation }) => {
           <Button
             alignSelf={"center"}
             size="lg"
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Races")}
           >
             Unlock the Vault
           </Button>
