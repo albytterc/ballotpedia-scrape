@@ -7,12 +7,9 @@ import {
     HStack,
     Center,
     Heading,
-    Switch,
     FormControl,
     VStack,
-    Image,
     Input,
-    Box,
   } from "native-base";
 
   import * as Location from 'expo-location';
@@ -22,6 +19,7 @@ const ZipCode = ({navigation}) => {
   const [formData, setData] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [location, setLocation] = React.useState({});
+
 
   const validate =  () => {
     var re = new RegExp('.*,.*,.?[A-Za-z]{2} \\d{5}')
@@ -52,8 +50,8 @@ const ZipCode = ({navigation}) => {
         return;
       }
 
-      // let apiKey = 'XXXXXXXXXXX'
-      // Location.setGoogleApiKey(apiKey) <== THIS IS DEFINITELY NEEDED FOR WEB
+      let apiKey = 'AIzaSyD8yO4iSqHH7ZhrYlmugsA7nNrGGvIMVCc'
+      Location.setGoogleApiKey(apiKey) //<== THIS IS DEFINITELY NEEDED FOR WEB
 
       let curr_location = await Location.getCurrentPositionAsync({});
       const { latitude, longitude } = curr_location['coords'];
@@ -61,16 +59,17 @@ const ZipCode = ({navigation}) => {
         latitude,
         longitude}, {useGoogleMaps: false}); //DOESN'T WORK WITH WEB COZ WEB USES GOOGLE MAPS AND NEEDS API KEY
 
+      console.log(address_loc)
       //THIS FUNCTION DOESN'T WORK -- FIGURE OUT WHY!!!!!
-      setLocation({ ...location, location: address_loc[0]});
-      console.log(location.location)
+      // setLocation({ ...location, location: address_loc[0]});
+      // console.log(location.location)
 
-      let address_string = `${address_loc[0].name}, ${address_loc[0]["city"]}, ${address_loc[0]["region"]} ${address_loc[0]["postalCode"]}`
+      let address_string = `${address_loc[0].streetNumber} ${address_loc[0].street}, ${address_loc[0]["city"]}, ${address_loc[0]["region"]} ${address_loc[0]["postalCode"]}`
       console.log(address_string)
 
       //THIS DOESN'T WORK EITHER -- FIGURE OUT WHY!!!!! 
-      setData({...formData, address: address_string})
-      console.log(formData.address)
+      // setData({...formData, address: address_string})
+      // console.log(formData.address)
 
       //I'M USING NO STATE VAR BUT THE STRING ITSELF FOR NOW
       navigation.navigate('Events', {
