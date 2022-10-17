@@ -2,29 +2,25 @@ import { View, Text } from "react-native";
 import { Box, FlatList, Heading, VStack, SectionList } from "native-base";
 import React, { useState, useEffect } from "react";
 import RacesBox from "../../../components/RacesBox";
+import config from "../../../config";
 
 const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
-const API_KEY = "AIzaSyDjmpk9KkK8jE1MUQLbxXRohVDnnlA2r8Y";
-const address = "5019 Lonnie D Aldridge Rd Monroe, NC 28112";
 const electionId = "8000";
 
 const Races = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  //   const data: string[] = ["hello ", "bitch"];
-  //   const [data, setData] = useState(["hello ", "bitch"]);
-
   useEffect(() => {
     fetch(
       BASE_URL +
         endpoint +
         "?address=" +
-        address +
+        config.address +
         "&electionId=" +
         electionId +
         "&key=" +
-        API_KEY
+        config.API_KEY
     )
       .then((response) => response.json())
       .then((json) => setData(json))

@@ -29,10 +29,8 @@ const Home = ({ navigation }) => {
         <VStack space={5} alignItems="center">
           {/* <Image source={require("./assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image> */}
           <Heading size="lg">Vote Vault.. Coming Soon</Heading>
-          <Text>Vote Vault.. Coming Soon</Text>
           <HStack space={2} alignItems="center"></HStack>
           <Button onPress={() => navigation.navigate("ZipCode")}>
-            {" "}
             Unlock the Vault
           </Button>
           {/* <ToggleDarkMode /> */}
