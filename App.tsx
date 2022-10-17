@@ -16,13 +16,13 @@ import {
   Input,
   Box,
 } from "native-base";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import NativeBaseIcon from "./components/NativeBaseIcon";
 import Home from "./src/pages/Home/Home";
 import ZipCode from "./src/pages/ZipCode/ZipCode";
 import Events from "./src/pages/Events/Events";
-
+import Races from "./src/pages/Races/Races";
 
 // Define the config
 const config = {
@@ -43,13 +43,13 @@ export default function App() {
   return (
     <NavigationContainer>
       <NativeBaseProvider>
-          <Stack.Navigator initialRouteName="Home">
-            <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen name="ZipCode" component={ZipCode} />
-            <Stack.Screen name="Events" component={Events} />
-          </Stack.Navigator>
-        
-       </NativeBaseProvider>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="ZipCode" component={ZipCode} />
+          <Stack.Screen name="Events" component={Events} />
+          <Stack.Screen name="Races" component={Races} />
+        </Stack.Navigator>
+      </NativeBaseProvider>
     </NavigationContainer>
   );
 }
@@ -65,7 +65,7 @@ export default function App() {
 //     <VStack space={5} alignItems="center">
 //   <Image source={require("./assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image>
 //   <Heading size="lg">Vote Vault.. Coming Soon</Heading>
-//   <HStack space={2} alignItems="center">            
+//   <HStack space={2} alignItems="center">
 //   </HStack>
 //   <Button onPress={() => navigation.navigate('QueryPage')}> Unlock the Vault</Button>
 //   <ToggleDarkMode />
@@ -86,10 +86,10 @@ export default function App() {
 //   <Input size="sm"  variant="underlined" placeholder="Enter Zipcode"/>
 //   <Button> Search by Zipcode</Button>
 
-//   <HStack space={5} alignItems="center" >  
+//   <HStack space={5} alignItems="center" >
 //     <Divider maxW="110px" bg="#000"/>
-//     <Heading size="md">or</Heading>  
-//     <Divider maxW="110px" bg="#000"/>       
+//     <Heading size="md">or</Heading>
+//     <Divider maxW="110px" bg="#000"/>
 //   </HStack>
 
 //   <Button onPress={() => navigation.navigate('InitPage')}> Use my current location </Button>
