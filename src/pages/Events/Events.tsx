@@ -27,47 +27,89 @@ import {
   SectionList,
 } from "native-base";
 
+import fetch from "node-fetch";
+import { useEffect } from "react";
+var APIKey = "AIzaSyCVdgz-mQ4wpNn3-4CNrQ9MQqaKpNEp1rs";
+
+// // Google Civic Info API
+// function FindAllElection() {
+//     var queryURL = "https://www.googleapis.com/civicinfo/v2/elections?key=" + APIKey;
+//     fetch(queryURL)
+//     .then(
+//     (response) => response.json()
+//     )
+//     .then(
+//     (data) => console.log(data)
+//     );
+// }
+
+// function FindLocalElection(location:string) {
+//     var queryURL = "https://www.googleapis.com/civicinfo/v2/voterinfo?key=" + APIKey + "&address=" + location + "&electionId=8000";
+//     fetch(queryURL)
+//     .then(
+//     (response) => response.json()
+//     )
+//     .then(
+//     (data) => console.log(data)
+//     );
+// }
+
+// FindAllElection();
+// var location = "2532 North Decatur Road, Decatur, GA, 30033";
+// FindLocalElection(location);
+
 const Events = ({ route, navigation }) => {
   const {itemId, userZip} = route.params
-  const [events, setEvents] = useState([
-    {
-      type: "Elections",
-      data: [
-        {
-          id: 1,
-          type: "Elections",
-          title: "General Election",
-          date: "November 8th, 2022",
-        },
-        {
-          id: 2,
-          type: "Elections",
-          title: "General Election",
-          date: "November 8th, 2022",
-        },
-      ],
-    },
-    {
-      type: "Rallies",
-      data: [
-        {
-          id: 3,
-          type: "Rallies",
-          title: "Candidate #1 Rally",
-          date: "November 8th, 2022",
-        },
-        {
-          id: 4,
-          type: "Elections",
-          title: "Candidate #2 Rally",
-          date: "November 8th, 2022",
-        },
-      ],
-    },
-  ]);
+  const [elections, setElections] = useState([]);
+
+  useEffect(()=>{
+    var queryURL = "https://www.googleapis.com/civicinfo/v2/elections?key=" + APIKey;
+    fetch(queryURL)
+    .then(
+    (response) => response.json()
+    )
+    .then(
+    (data) => setElections(data)
+    )
+    .catch((error) => alert(error));
+  },[]);
+
+  console.log(elections)
+  
+  const listItems = [];
+  if (elections.contests != undefined) {
+    console.log(data.contests);
+    console.log(data.contests.length);
+    for (var i = 0; i < data.contests.length; i++) {
+      listItems.push(<RacesBox text={data.contests[i].ballotTitle} />);
+    }
+
+//    if (data != undefined) {
+//             console.log(data.elections)
+//             for ( const election of data.elections) {
+//                         if (election != undefined) {
+//                             setElections([
+//                                 {
+//                                     electionDay: election.electionDay,
+//                                     id: election.id,
+//                                     name: election.name,
+//                                     ocdDivisionID: election.ocdDivisionID
+//                                 }
+//                             ])
+//                         }   
+//             }
+//         }
+//     }
+
+
 
   return (
-    <Box
+    <Box>
+    <Text>electionDay: {elections.electionDay}</Text>
+    <Text>id: {elections.id}</Text>
+    <Text>name: {elections.name}</Text>
+    <Text>ocdDivisionID: {elections.ocdDivisionID}</Text>
+    {/* <Box
       flexGrow={1}
       flexDirection="column"
       justifyContent="space-between"
@@ -77,8 +119,8 @@ const Events = ({ route, navigation }) => {
     >
       <SectionList
         marginY={2}
-        sections={events}
-        renderItem={({ item }) => <EventBox event={item} />}
+        sections={elections}
+        renderItem={renderItem}
         renderSectionHeader={({ section: { type } }) => (
           <Heading>{type}</Heading>
         )}
@@ -92,6 +134,7 @@ const Events = ({ route, navigation }) => {
           </Button>
         }
       />
+    </Box> */}
     </Box>
   );
 };
