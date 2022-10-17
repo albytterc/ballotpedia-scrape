@@ -60,6 +60,7 @@ const ZipCode = ({navigation}) => {
         longitude}, {useGoogleMaps: false}); //DOESN'T WORK WITH WEB COZ WEB USES GOOGLE MAPS AND NEEDS API KEY
 
       console.log(address_loc)
+
       //THIS FUNCTION DOESN'T WORK -- FIGURE OUT WHY!!!!!
       // setLocation({ ...location, location: address_loc[0]});
       // console.log(location.location)
@@ -73,7 +74,7 @@ const ZipCode = ({navigation}) => {
 
       //I'M USING NO STATE VAR BUT THE STRING ITSELF FOR NOW
       navigation.navigate('Events', {
-        itemId: 1,
+        // itemId: 1,
         userAddress: address_string
       })
 
