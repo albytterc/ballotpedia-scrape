@@ -28,7 +28,8 @@ import {
 } from "native-base";
 
 const Events = ({ route, navigation }) => {
-  const {itemId, userZip} = route.params
+  // const {itemId, userZip} = route.params
+  console.log(route.params)
   const [events, setEvents] = useState([
     {
       type: "Elections",
