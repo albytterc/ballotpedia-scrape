@@ -31,36 +31,9 @@ import fetch from "node-fetch";
 import { useEffect } from "react";
 var APIKey = "AIzaSyCVdgz-mQ4wpNn3-4CNrQ9MQqaKpNEp1rs";
 
-// // Google Civic Info API
-// function FindAllElection() {
-//     var queryURL = "https://www.googleapis.com/civicinfo/v2/elections?key=" + APIKey;
-//     fetch(queryURL)
-//     .then(
-//     (response) => response.json()
-//     )
-//     .then(
-//     (data) => console.log(data)
-//     );
-// }
-
-// function FindLocalElection(location:string) {
-//     var queryURL = "https://www.googleapis.com/civicinfo/v2/voterinfo?key=" + APIKey + "&address=" + location + "&electionId=8000";
-//     fetch(queryURL)
-//     .then(
-//     (response) => response.json()
-//     )
-//     .then(
-//     (data) => console.log(data)
-//     );
-// }
-
-// FindAllElection();
-// var location = "2532 North Decatur Road, Decatur, GA, 30033";
-// FindLocalElection(location);
-
 const Events = ({ route, navigation }) => {
   const {itemId, userZip} = route.params
-  const [elections, setElections] = useState([]);
+  const [events, setEvents] = useState([]);
 
   useEffect(()=>{
     var queryURL = "https://www.googleapis.com/civicinfo/v2/elections?key=" + APIKey;
@@ -69,73 +42,53 @@ const Events = ({ route, navigation }) => {
     (response) => response.json()
     )
     .then(
-    (data) => setElections(data)
+    (data) => setEvents(data)
     )
     .catch((error) => alert(error));
   },[]);
 
-  console.log(elections)
+  console.log(events)
   
   const listItems = [];
-  if (elections.contests != undefined) {
-    console.log(data.contests);
-    console.log(data.contests.length);
-    for (var i = 0; i < data.contests.length; i++) {
-      listItems.push(<RacesBox text={data.contests[i].ballotTitle} />);
+  if (events.elections != undefined) {
+    console.log(events.elections);
+    console.log(events.elections.length);
+    for (var i = 0; i < events.elections.length; i++) {
+      listItems.push(<EventBox event={events.elections[i]} />);
+      console.log(events.elections[i])
     }
+  }
 
-//    if (data != undefined) {
-//             console.log(data.elections)
-//             for ( const election of data.elections) {
-//                         if (election != undefined) {
-//                             setElections([
-//                                 {
-//                                     electionDay: election.electionDay,
-//                                     id: election.id,
-//                                     name: election.name,
-//                                     ocdDivisionID: election.ocdDivisionID
-//                                 }
-//                             ])
-//                         }   
-//             }
-//         }
-//     }
-
-
+  console.log(listItems);
 
   return (
-    <Box>
-    <Text>electionDay: {elections.electionDay}</Text>
-    <Text>id: {elections.id}</Text>
-    <Text>name: {elections.name}</Text>
-    <Text>ocdDivisionID: {elections.ocdDivisionID}</Text>
-    {/* <Box
-      flexGrow={1}
-      flexDirection="column"
-      justifyContent="space-between"
-      height={"100%"}
-      marginY="2"
-      padding={2}
-    >
+    <>
       <SectionList
+        background={"#e4e3f1"}
         marginY={2}
-        sections={elections}
-        renderItem={renderItem}
-        renderSectionHeader={({ section: { type } }) => (
-          <Heading>{type}</Heading>
-        )}
         ListFooterComponent={
-          <Button
-            alignSelf={"center"}
-            size="lg"
-            onPress={() => navigation.navigate("Home")}
-          >
-            Unlock the Vault
-          </Button>
+          <>
+            <Heading
+              marginBottom={"5%"}
+              marginTop={"5%"}
+              marginLeft={"30%"}
+              color={"black"}
+            >
+              Upcoming Events
+            </Heading>
+            <Box
+              display={"flex"}
+              flexDirection={"row"}
+              justifyContent={"center"}
+              flexWrap={"wrap"}
+            >
+            {listItems}
+            </Box>
+          </>
         }
+        sections={[]}
       />
-    </Box> */}
-    </Box>
+    </>
   );
 };
 
