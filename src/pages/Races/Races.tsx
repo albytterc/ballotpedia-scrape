@@ -8,7 +8,7 @@ const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
 const electionId = "8000";
 
-const Races = () => {
+const Races = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -34,7 +34,9 @@ const Races = () => {
     console.log(data.contests);
     console.log(data.contests.length);
     for (var i = 0; i < data.contests.length; i++) {
-      listItems.push(<RacesBox text={data.contests[i].ballotTitle} />);
+      listItems.push(
+        <RacesBox text={data.contests[i].ballotTitle} navigation={navigation} />
+      );
     }
     console.log("Loading is " + isLoading);
   } else {
