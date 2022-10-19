@@ -3,6 +3,7 @@ import { StyleSheet, FlatList, Alert } from "react-native";
 import React, {Component,  useState } from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import EventBox from "../../../components/EventBox";
+import config from "../../../config";
 
 import {
   View,
@@ -29,14 +30,13 @@ import {
 
 import fetch from "node-fetch";
 import { useEffect } from "react";
-var APIKey = "AIzaSyCVdgz-mQ4wpNn3-4CNrQ9MQqaKpNEp1rs";
 
 const Events = ({ route, navigation }) => {
   const {itemId, userZip} = route.params
   const [events, setEvents] = useState([]);
 
   useEffect(()=>{
-    var queryURL = "https://www.googleapis.com/civicinfo/v2/elections?key=" + APIKey;
+    var queryURL = "https://www.googleapis.com/civicinfo/v2/elections?key=" + config.API_KEY;
     fetch(queryURL)
     .then(
     (response) => response.json()
@@ -47,19 +47,17 @@ const Events = ({ route, navigation }) => {
     .catch((error) => alert(error));
   },[]);
 
-  console.log(events)
+//   console.log(events)
   
-  const listItems = [];
-  if (events.elections != undefined) {
-    console.log(events.elections);
-    console.log(events.elections.length);
-    for (var i = 0; i < events.elections.length; i++) {
-      listItems.push(<EventBox event={events.elections[i]} />);
-      console.log(events.elections[i])
-    }
+  // map all available elections into listItems.
+  var listItems;
+  if (events.elections == undefined) {
+    console.log("no election found");
   }
-
-  console.log(listItems);
+  else {
+    listItems = events.elections.map((election) => <EventBox key={election.id} event={election} />);
+    console.log(listItems);
+  }
 
   return (
     <>
@@ -71,7 +69,7 @@ const Events = ({ route, navigation }) => {
             <Heading
               marginBottom={"5%"}
               marginTop={"5%"}
-              marginLeft={"30%"}
+              marginLeft={"90px"}
               color={"black"}
             >
               Upcoming Events

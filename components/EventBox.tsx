@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 interface EventBoxProps {
   event: {
-    id: number;
+    id: string;
     ocdDivisionID: string;
     name: string;
     electionDate: string;
@@ -16,7 +16,7 @@ export default function EventBox({ event }: EventBoxProps) {
     <Box
       width={"95%"}
       height={"150px"}
-      bg="#2708A0"
+      bg="#A29CF4"
       p="4"
       shadow={2}
       borderRadius={20}
@@ -32,7 +32,7 @@ export default function EventBox({ event }: EventBoxProps) {
 
       <Box width={"auto"} alignItems={"center"}>
         <VStack>
-          <Heading size="xl" color="#FFFFFF">
+          <Heading size="sm" color="#FFFFFF">
             {event.name}
           </Heading>
           <Heading
