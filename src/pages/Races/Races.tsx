@@ -35,7 +35,11 @@ const Races = ({ navigation }) => {
     console.log(data.contests.length);
     for (var i = 0; i < data.contests.length; i++) {
       listItems.push(
-        <RacesBox text={data.contests[i].ballotTitle} navigation={navigation} />
+        <RacesBox
+          text={data.contests[i].ballotTitle}
+          navigation={navigation}
+          data={data.contests[i]}
+        />
       );
     }
     console.log("Loading is " + isLoading);

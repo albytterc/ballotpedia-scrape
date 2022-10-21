@@ -1,10 +1,8 @@
 import { View } from "react-native";
-import { Box, Heading, VStack, Text, Pressable, Link } from "native-base";
 import React from "react";
+import { Box, Link, Text } from "native-base";
 
-const RacesBox = ({ text, navigation, data }) => {
-  console.log("in Races Box");
-  console.log(data);
+const CandidateBox = ({ text, navigation, data }) => {
   return (
     <Link
       style={{ width: "45%", aspectRatio: 1 }}
@@ -20,11 +18,7 @@ const RacesBox = ({ text, navigation, data }) => {
       display={"flex"}
       flexDirection={"row"}
       marginBottom={"10px"}
-      onPress={() =>
-        navigation.navigate("Candidates", {
-          data: data,
-        })
-      }
+      // onPress={() => navigation.navigate("Candidates")}
       mt="8"
     >
       <Box>
@@ -36,7 +30,7 @@ const RacesBox = ({ text, navigation, data }) => {
             display={"flex"}
             justifyContent={"center"}
           >
-            {text}
+            {/* {text} */}
           </Text>
         </Box>
       </Box>
@@ -44,4 +38,4 @@ const RacesBox = ({ text, navigation, data }) => {
   );
 };
 
-export default RacesBox;
+export default CandidateBox;
