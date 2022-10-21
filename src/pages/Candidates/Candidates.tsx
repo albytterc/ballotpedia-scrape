@@ -1,5 +1,6 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React from "react";
+import { Box, Heading, VStack, Text, Pressable, Link } from "native-base";
 import CandidateBox from "../../../components/CandidateBox";
 
 const Candidates = ({ route, navigation }) => {
@@ -7,10 +8,17 @@ const Candidates = ({ route, navigation }) => {
   console.log("in Candidates");
   console.log(data);
   return (
-    <View>
+    <Box>
       <Text>These are the candidates running for office:</Text>
-      {/* <CandidateBox /> */}
-    </View>
+      {data.ballotTitle}
+      <Text></Text>
+
+      {data.candidates.map((map) => (
+        <Text>
+          {map.name} is running as a {map.party}
+        </Text>
+      ))}
+    </Box>
   );
 };
 
