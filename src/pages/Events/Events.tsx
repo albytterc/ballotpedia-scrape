@@ -51,12 +51,22 @@ const Events = ({ route, navigation }) => {
   
   // map all available elections into listItems.
   var listItems;
+  var sorted_listItems;
   if (events.elections == undefined) {
     console.log("no election found");
   }
   else {
     listItems = events.elections.map((election) => <EventBox key={election.id} event={election} />);
+    sorted_listItems = listItems.sort((e1,e2)=>{
+        if (e1.props.event.electionDay > e2.props.event.electionDay) {
+            return 1;
+        }
+        return -1;
+    });
+    console.log("original: \n")
     console.log(listItems);
+    console.log("ordered: \n")
+    console.log(sorted_listItems);
   }
 
   return (
@@ -80,7 +90,7 @@ const Events = ({ route, navigation }) => {
               justifyContent={"center"}
               flexWrap={"wrap"}
             >
-            {listItems}
+            {sorted_listItems}
             </Box>
           </>
         }
