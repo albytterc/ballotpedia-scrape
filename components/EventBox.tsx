@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, VStack } from "native-base";
+import { Box, Heading, VStack, Link } from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 interface EventBoxProps {
@@ -11,9 +11,9 @@ interface EventBoxProps {
   };
 }
 
-export default function EventBox({ event }: EventBoxProps) {
+export default function EventBox({ event, navigation }) {
   return (
-    <Box
+    <Link
       width={"95%"}
       height={"150px"}
       bg="#A29CF4"
@@ -27,6 +27,8 @@ export default function EventBox({ event }: EventBoxProps) {
       justifyContent="space-around"
       margin={"auto"}
       marginBottom={"3"}
+      onPress={() => navigation.navigate("Races")}
+      mt="8"
     >
       <Icon name="vote-outline" size={70} color="teal"></Icon>
 
@@ -45,6 +47,6 @@ export default function EventBox({ event }: EventBoxProps) {
           </Heading>
         </VStack>
       </Box>
-    </Box>
+    </Link>
   );
 }
