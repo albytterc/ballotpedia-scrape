@@ -3,8 +3,6 @@ import { Box, Heading, VStack, Text, Pressable, Link } from "native-base";
 import React from "react";
 
 const RacesBox = ({ text, navigation, data }) => {
-  console.log("in Races Box");
-  console.log(data);
   return (
     <Link
       style={{ width: "45%", aspectRatio: 1 }}

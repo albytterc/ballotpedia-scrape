@@ -13,8 +13,6 @@ import CandidateBox from "../../../components/CandidateBox";
 
 const Candidates = ({ route, navigation }) => {
   const { data } = route.params;
-  console.log("in Candidates");
-  console.log(data);
   return data.candidates ? (
     <>
       <SectionList

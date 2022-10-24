@@ -26,26 +26,19 @@ const Races = ({ navigation }) => {
       .then((json) => setData(json))
       .catch((error) => alert(error))
       .finally(() => setLoading(false));
-    console.log(typeof data);
-    console.log(data);
   }, []);
   const listItems = [];
   if (data.contests != undefined) {
-    console.log(data.contests);
-    console.log(data.contests.length);
     for (var i = 0; i < data.contests.length; i++) {
       listItems.push(
         <RacesBox
+          key="uniqueId1"
           text={data.contests[i].ballotTitle}
           navigation={navigation}
           data={data.contests[i]}
         />
       );
     }
-    console.log("Loading is " + isLoading);
-  } else {
-    console.log("Undefined data");
-    console.log("Loading is " + isLoading);
   }
 
   return (
