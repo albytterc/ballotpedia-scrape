@@ -8,7 +8,7 @@ const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
 const electionId = "8000";
 
-const Races = () => {
+const Races = ({ navigation }) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -26,20 +26,19 @@ const Races = () => {
       .then((json) => setData(json))
       .catch((error) => alert(error))
       .finally(() => setLoading(false));
-    console.log(typeof data);
-    console.log(data);
   }, []);
   const listItems = [];
   if (data.contests != undefined) {
-    console.log(data.contests);
-    console.log(data.contests.length);
     for (var i = 0; i < data.contests.length; i++) {
-      listItems.push(<RacesBox text={data.contests[i].ballotTitle} />);
+      listItems.push(
+        <RacesBox
+          key="uniqueId1"
+          text={data.contests[i].ballotTitle}
+          navigation={navigation}
+          data={data.contests[i]}
+        />
+      );
     }
-    console.log("Loading is " + isLoading);
-  } else {
-    console.log("Undefined data");
-    console.log("Loading is " + isLoading);
   }
 
   return (
