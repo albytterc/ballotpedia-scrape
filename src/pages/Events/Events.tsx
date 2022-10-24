@@ -2,6 +2,7 @@ import { StyleSheet, FlatList, Alert } from "react-native";
 import React, { Component, useState } from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import EventBox from "../../../components/EventBox";
+import config from "../../../config";
 
 import {
   View,
@@ -26,72 +27,77 @@ import {
   SectionList,
 } from "native-base";
 
+import fetch from "node-fetch";
+import { useEffect } from "react";
+
 const Events = ({ route, navigation }) => {
-  console.log(route.params) 
-  const [events, setEvents] = useState([
-    {
-      type: "Elections",
-      data: [
-        {
-          id: 1,
-          type: "Elections",
-          title: "General Election",
-          date: "November 8th, 2022",
-        },
-        {
-          id: 2,
-          type: "Elections",
-          title: "General Election",
-          date: "November 8th, 2022",
-        },
-      ],
-    },
-    {
-      type: "Rallies",
-      data: [
-        {
-          id: 3,
-          type: "Rallies",
-          title: "Candidate #1 Rally",
-          date: "November 8th, 2022",
-        },
-        {
-          id: 4,
-          type: "Elections",
-          title: "Candidate #2 Rally",
-          date: "November 8th, 2022",
-        },
-      ],
-    },
-  ]);
+  const {itemId, userZip} = route.params
+  const [events, setEvents] = useState([]);
+
+  useEffect(()=>{
+    var queryURL = "https://www.googleapis.com/civicinfo/v2/elections?key=" + config.API_KEY;
+    fetch(queryURL)
+    .then(
+    (response) => response.json()
+    )
+    .then(
+    (data) => setEvents(data)
+    )
+    .catch((error) => alert(error));
+  },[]);
+
+//   console.log(events)
+  
+  // map all available elections into listItems.
+  var listItems;
+  var sorted_listItems;
+  if (events.elections == undefined) {
+    console.log("no election found");
+  }
+  else {
+    listItems = events.elections.map((election) => <EventBox key={election.id} event={election} />);
+    sorted_listItems = listItems.sort((e1,e2)=>{
+        if (e1.props.event.electionDay > e2.props.event.electionDay) {
+            return 1;
+        }
+        return -1;
+    });
+    console.log("original: \n")
+    console.log(listItems);
+    console.log("ordered: \n")
+    console.log(sorted_listItems);
+  }
+
 
   return (
-    <Box
-      flexGrow={1}
-      flexDirection="column"
-      justifyContent="space-between"
-      height={"100%"}
-      marginY="2"
-      padding={2}
-    >
+    <>
       <SectionList
+        background={"#e4e3f1"}
         marginY={2}
-        sections={events}
-        renderItem={({ item }) => <EventBox event={item} />}
-        renderSectionHeader={({ section: { type } }) => (
-          <Heading>{type}</Heading>
-        )}
         ListFooterComponent={
-          <Button
-            alignSelf={"center"}
-            size="lg"
-            onPress={() => navigation.navigate("Races")}
-          >
-            Unlock the Vault
-          </Button>
+          <>
+            <Heading
+              marginBottom={"5%"}
+              marginTop={"5%"}
+              marginLeft={"90px"}
+              color={"black"}
+            >
+              Upcoming Events
+            </Heading>
+            <Box
+              display={"flex"}
+              flexDirection={"row"}
+              justifyContent={"center"}
+              flexWrap={"wrap"}
+            >
+            {sorted_listItems}
+            </Box>
+          </>
+
         }
+        sections={[]}
       />
-    </Box>
+    </>
   );
 };
 
