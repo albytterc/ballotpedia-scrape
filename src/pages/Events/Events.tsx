@@ -1,6 +1,5 @@
-
 import { StyleSheet, FlatList, Alert } from "react-native";
-import React, {Component,  useState } from "react";
+import React, { Component, useState } from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import EventBox from "../../../components/EventBox";
 import config from "../../../config";
@@ -69,6 +68,7 @@ const Events = ({ route, navigation }) => {
     console.log(sorted_listItems);
   }
 
+
   return (
     <>
       <SectionList
@@ -93,6 +93,7 @@ const Events = ({ route, navigation }) => {
             {sorted_listItems}
             </Box>
           </>
+
         }
         sections={[]}
       />
