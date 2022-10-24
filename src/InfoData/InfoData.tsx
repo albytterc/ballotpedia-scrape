@@ -7,11 +7,13 @@ export const InfoData = {
 
   Race: "like the competition of speed between runners, a race is a political competition between candidates hoping to fill a position in government.",
 
-  "District Attorney":
+  "DISTRICT ATTORNEY":
     " a public official who acts as prosecutor for the state or the federal government in court in a particular district. More specifically, the District Attorney advises grand juries, prosecutes all indictable offenses, prosecutes or defends any civil action in which the state is interested, argues criminal cases on appeal, and assists the attorney general when certain prosecutions are moved to a U.S. District Court.",
 
-  "US Senate":
+  "US SENATE":
     "The U.S. Senate constitutes one of the two chambers of the U.S. Congress (the other being the U.S. House of representatives). The Senate has 100 members, 2 from each state, who are elected to serve for a term of 6 years. The Senate takes action on bills, resolutions, amendments, motions, nominations, and treaties by voting.",
+
+  "STATE SENATE": "The State Senate: PLEASE UPDATE THIS DEFINITION",
 
   "US House of Representatives":
     "The House of Representatives constitutes one of Congress's two chambers (the other being the U.S. Senate) and is a part of the federal government's legislative branch. Each representative is elected to a two-year term to represent the people of a specific congressional district. The house of representatives is responsible for creating and passing federal laws.",

@@ -1,6 +1,7 @@
 import { View } from "react-native";
 import { Box, Heading, VStack, Text, Pressable, Link } from "native-base";
 import React from "react";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const RacesBox = ({ text, navigation, data }) => {
   return (
@@ -25,6 +26,16 @@ const RacesBox = ({ text, navigation, data }) => {
       }
       mt="8"
     >
+      <Icon
+        name={"information"}
+        size={25}
+        style={{
+          position: "absolute",
+          right: "5%",
+          top: "5%",
+        }}
+        onPress={() => navigation.navigate("LearnMore", { title: text })}
+      ></Icon>
       <Box>
         <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
           <Text

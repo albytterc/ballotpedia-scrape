@@ -2,6 +2,7 @@ import { View } from "react-native";
 import React from "react";
 import { Box, Heading, Link, Text } from "native-base";
 import { border } from "native-base/lib/typescript/theme/styled-system";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const CandidateBox = ({ navigation, candidateData }) => {
   let partyColor = "black";
@@ -38,6 +39,7 @@ const CandidateBox = ({ navigation, candidateData }) => {
     >
       <Box>
         <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
+          {/* <Icon name="vote-outline" size={70} color="teal"></Icon> */}
           <Heading
             size={"md"}
             fontWeight={"600"}
