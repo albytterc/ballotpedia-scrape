@@ -43,8 +43,6 @@ const Events = ({ route, navigation }) => {
       .catch((error) => alert(error));
   }, []);
 
-  //   console.log(events)
-
   // map all available elections into listItems.
   var listItems;
   var sorted_listItems;
@@ -73,14 +71,14 @@ const Events = ({ route, navigation }) => {
         marginY={2}
         ListFooterComponent={
           <>
-            <Heading
+            {/* <Heading
               marginBottom={"5%"}
               marginTop={"5%"}
               marginLeft={"90px"}
               color={"black"}
             >
               Upcoming Events
-            </Heading>
+            </Heading> */}
             <Box
               display={"flex"}
               flexDirection={"row"}

@@ -48,14 +48,14 @@ const Races = ({ navigation }) => {
         marginY={2}
         ListFooterComponent={
           <>
-            <Heading
+            {/* <Heading
               marginBottom={"0.5rem"}
               marginTop={"0.5rem"}
               marginLeft={"0.5rem"}
               color={"black"}
             >
               Races
-            </Heading>
+            </Heading> */}
             <Box
               display={"flex"}
               flexDirection={"row"}

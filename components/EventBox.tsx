@@ -30,7 +30,7 @@ export default function EventBox({ event, navigation }) {
       onPress={() => navigation.navigate("Races")}
       mt="8"
     >
-      <Icon name="vote-outline" size={70} color="teal"></Icon>
+      <Icon name="vote-outline" size={70} color="black"></Icon>
 
       <Box width={"auto"} alignItems={"center"}>
         <VStack>
