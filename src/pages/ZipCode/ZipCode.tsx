@@ -13,6 +13,7 @@ import {
   } from "native-base";
 
   import * as Location from 'expo-location';
+  import config from '../../../config';
 
 
 const ZipCode = ({navigation}) => {
@@ -50,7 +51,7 @@ const ZipCode = ({navigation}) => {
         return;
       }
 
-      let apiKey = 'AIzaSyD8yO4iSqHH7ZhrYlmugsA7nNrGGvIMVCc'
+      let apiKey = config.MAPS_API_KEY
       Location.setGoogleApiKey(apiKey) //<== THIS IS DEFINITELY NEEDED FOR WEB
 
       let curr_location = await Location.getCurrentPositionAsync({});
@@ -59,14 +60,11 @@ const ZipCode = ({navigation}) => {
         latitude,
         longitude}, {useGoogleMaps: false}); //DOESN'T WORK WITH WEB COZ WEB USES GOOGLE MAPS AND NEEDS API KEY
 
-      console.log(address_loc)
-
       //THIS FUNCTION DOESN'T WORK -- FIGURE OUT WHY!!!!!
       // setLocation({ ...location, location: address_loc[0]});
       // console.log(location.location)
 
       let address_string = `${address_loc[0].streetNumber} ${address_loc[0].street}, ${address_loc[0]["city"]}, ${address_loc[0]["region"]} ${address_loc[0]["postalCode"]}`
-      console.log(address_string)
 
       //THIS DOESN'T WORK EITHER -- FIGURE OUT WHY!!!!! 
       // setData({...formData, address: address_string})
@@ -90,8 +88,6 @@ const ZipCode = ({navigation}) => {
           // itemId: 1,
           userAddress: formData.address
         })
-      } else {
-        console.log('Validation Failed')
       }
     }
 
