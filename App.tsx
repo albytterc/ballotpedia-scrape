@@ -24,6 +24,7 @@ import ZipCode from "./src/pages/ZipCode/ZipCode";
 import Events from "./src/pages/Events/Events";
 import Races from "./src/pages/Races/Races";
 import Candidates from "./src/pages/Candidates/Candidates";
+import LearnMore from "./src/pages/LearnMore/LearnMore";
 
 // Define the config
 const config = {
@@ -50,6 +51,7 @@ export default function App() {
           <Stack.Screen name="Events" component={Events} />
           <Stack.Screen name="Races" component={Races} />
           <Stack.Screen name="Candidates" component={Candidates} />
+          <Stack.Screen name="LearnMore" component={LearnMore} />
         </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>
