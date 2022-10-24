@@ -31,43 +31,40 @@ import fetch from "node-fetch";
 import { useEffect } from "react";
 
 const Events = ({ route, navigation }) => {
-  const {itemId, userZip} = route.params
+  const { itemId, userZip } = route.params;
   const [events, setEvents] = useState([]);
 
-  useEffect(()=>{
-    var queryURL = "https://www.googleapis.com/civicinfo/v2/elections?key=" + config.API_KEY;
+  useEffect(() => {
+    var queryURL =
+      "https://www.googleapis.com/civicinfo/v2/elections?key=" + config.API_KEY;
     fetch(queryURL)
-    .then(
-    (response) => response.json()
-    )
-    .then(
-    (data) => setEvents(data)
-    )
-    .catch((error) => alert(error));
-  },[]);
+      .then((response) => response.json())
+      .then((data) => setEvents(data))
+      .catch((error) => alert(error));
+  }, []);
 
-//   console.log(events)
-  
+  //   console.log(events)
+
   // map all available elections into listItems.
   var listItems;
   var sorted_listItems;
   if (events.elections == undefined) {
     console.log("no election found");
-  }
-  else {
-    listItems = events.elections.map((election) => <EventBox key={election.id} event={election} />);
-    sorted_listItems = listItems.sort((e1,e2)=>{
-        if (e1.props.event.electionDay > e2.props.event.electionDay) {
-            return 1;
-        }
-        return -1;
+  } else {
+    listItems = events.elections.map((election) => (
+      <EventBox key={election.id} event={election} navigation={navigation} />
+    ));
+    sorted_listItems = listItems.sort((e1, e2) => {
+      if (e1.props.event.electionDay > e2.props.event.electionDay) {
+        return 1;
+      }
+      return -1;
     });
-    console.log("original: \n")
+    console.log("original: \n");
     console.log(listItems);
-    console.log("ordered: \n")
+    console.log("ordered: \n");
     console.log(sorted_listItems);
   }
-
 
   return (
     <>
@@ -90,10 +87,9 @@ const Events = ({ route, navigation }) => {
               justifyContent={"center"}
               flexWrap={"wrap"}
             >
-            {sorted_listItems}
+              {sorted_listItems}
             </Box>
           </>
-
         }
         sections={[]}
       />
