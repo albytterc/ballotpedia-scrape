@@ -13,7 +13,7 @@ const CandidateBox = ({ navigation, candidateData }) => {
       partyColor = "#0000FF";
     } else if (candidateData.party.toUpperCase().match("LIBERTARIAN")) {
       partyColor = "#FFD700";
-    } else if (candidateData.party.toUpperCase().match("GREEN")) {
+    } else if (candidateData.party.toUpperCase().match("GREEN") ) {
       partyColor = "#007500";
     }
   }
