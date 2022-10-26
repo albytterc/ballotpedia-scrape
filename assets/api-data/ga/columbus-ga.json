@@ -1,0 +1,500 @@
+{
+  "election": {
+    "id": "8000",
+    "name": "US 2022 Midterm Election",
+    "electionDay": "2022-11-08",
+    "ocdDivisionId": "ocd-division/country:us"
+  },
+  "normalizedInput": {
+    "line1": "100 West 10th Street",
+    "city": "Columbus",
+    "state": "GA",
+    "zip": "31901"
+  },
+  "pollingLocations": [
+    {
+      "address": {
+        "locationName": "FIRST AFRICAN BAPTIST CHURCH",
+        "line1": "00",
+        "line2": "901 5th Avenue",
+        "city": "Columbus",
+        "state": "GA",
+        "zip": "31901"
+      },
+      "pollingHours": "7 am - 7 pm",
+      "latitude": 32.4630577,
+      "longitude": -84.9866847,
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        },
+        {
+          "name": "DemocracyWorks",
+          "official": false
+        }
+      ]
+    }
+  ],
+  "earlyVoteSites": [
+    {
+      "address": {
+        "locationName": "CITIZENS SERVICE CENTER",
+        "line1": "3111 Citizens Way",
+        "city": "Columbus",
+        "state": "GA",
+        "zip": "31906"
+      },
+      "pollingHours": "Tue, Oct 18: 7 am - 7 pm\nWed, Oct 19: 7 am - 7 pm\nThu, Oct 20: 7 am - 7 pm\nFri, Oct 21: 7 am - 7 pm\nSat, Oct 22: 7 am - 7 pm\nSun, Oct 23: 7 am - 7 pm\nMon, Oct 24: 7 am - 7 pm\nTue, Oct 25: 7 am - 7 pm\nWed, Oct 26: 7 am - 7 pm\nThu, Oct 27: 7 am - 7 pm\nFri, Oct 28: 7 am - 7 pm\nSat, Oct 29: 7 am - 7 pm\nSun, Oct 30: 7 am - 7 pm\nMon, Oct 31: 7 am - 7 pm\nTue, Nov 1: 7 am - 7 pm\nWed, Nov 2: 7 am - 7 pm\nThu, Nov 3: 7 am - 7 pm\nFri, Nov 4: 7 am - 7 pm",
+      "latitude": 32.4764568,
+      "longitude": -84.9455123,
+      "startDate": "2022-10-17",
+      "endDate": "2022-11-04",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "COL TECH EARLY VOTING",
+        "line1": "928 Manchester Expressway",
+        "city": "Columbus",
+        "state": "GA",
+        "zip": "31904"
+      },
+      "pollingHours": "Tue, Oct 18: 7:00 am - 5:07 pm\nWed, Oct 19: 7:00 am - 5:07 pm\nThu, Oct 20: 7:00 am - 5:07 pm\nFri, Oct 21: 7:00 am - 5:07 pm\nSat, Oct 22: 7:00 am - 5:07 pm\nSun, Oct 23: 7:00 am - 5:07 pm\nMon, Oct 24: 7:00 am - 5:07 pm\nTue, Oct 25: 7:00 am - 5:07 pm\nWed, Oct 26: 7:00 am - 5:07 pm\nThu, Oct 27: 7:00 am - 5:07 pm\nFri, Oct 28: 7:00 am - 5:07 pm\nSat, Oct 29: 7:00 am - 5:07 pm\nSun, Oct 30: 7:00 am - 5:07 pm\nMon, Oct 31: 7:00 am - 5:07 pm\nTue, Nov 1: 7:00 am - 5:07 pm\nWed, Nov 2: 7:00 am - 5:07 pm\nThu, Nov 3: 7:00 am - 5:07 pm\nFri, Nov 4: 7:00 am - 5:07 pm",
+      "latitude": 32.5076593,
+      "longitude": -84.9781783,
+      "startDate": "2022-10-17",
+      "endDate": "2022-11-04",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "SHIRLEY B WINSTON RECREATION CENTER",
+        "line1": "5025 Steam Mill Road",
+        "city": "Columbus",
+        "state": "GA",
+        "zip": "31907"
+      },
+      "pollingHours": "Tue, Oct 18: 7 am - 7 pm\nWed, Oct 19: 7 am - 7 pm\nThu, Oct 20: 7 am - 7 pm\nFri, Oct 21: 7 am - 7 pm\nSat, Oct 22: 7 am - 7 pm\nSun, Oct 23: 7 am - 7 pm\nMon, Oct 24: 7 am - 7 pm\nTue, Oct 25: 7 am - 7 pm\nWed, Oct 26: 7 am - 7 pm\nThu, Oct 27: 7 am - 7 pm\nFri, Oct 28: 7 am - 7 pm\nSat, Oct 29: 7 am - 7 pm\nSun, Oct 30: 7 am - 7 pm\nMon, Oct 31: 7 am - 7 pm\nTue, Nov 1: 7 am - 7 pm\nWed, Nov 2: 7 am - 7 pm\nThu, Nov 3: 7 am - 7 pm\nFri, Nov 4: 7 am - 7 pm",
+      "latitude": 32.457984,
+      "longitude": -84.9072769,
+      "startDate": "2022-10-17",
+      "endDate": "2022-11-04",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "contests": [
+    {
+      "type": "General",
+      "office": "UNITED STATES SENATOR, WARNOCK",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "1",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "HERSCHEL JUNIOR WALKER",
+          "party": "Republican"
+        },
+        {
+          "name": "RAPHAEL WARNOCK",
+          "party": "Democratic"
+        },
+        {
+          "name": "CHASE OLIVER",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "GOVERNOR",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "2",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "BRIAN KEMP",
+          "party": "Republican"
+        },
+        {
+          "name": "STACEY ABRAMS",
+          "party": "Democratic"
+        },
+        {
+          "name": "SHANE HAZEL",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "LIEUTENANT GOVERNOR",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "3",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "BURT JONES",
+          "party": "Republican"
+        },
+        {
+          "name": "CHARLIE BAILEY",
+          "party": "Democratic"
+        },
+        {
+          "name": "RYAN GRAHAM",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "SECRETARY OF STATE",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "4",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "BRAD RAFFENSPERGER",
+          "party": "Republican"
+        },
+        {
+          "name": "BEE NGUYEN",
+          "party": "Democratic"
+        },
+        {
+          "name": "TED METZ",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "ATTORNEY GENERAL",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "5",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "CHRIS CARR",
+          "party": "Republican"
+        },
+        {
+          "name": "JENNIFER \"JEN\" JORDAN",
+          "party": "Democratic"
+        },
+        {
+          "name": "MARTIN COWEN",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "COMMISSIONER OF AGRICULTURE",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "6",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "TYLER HARPER",
+          "party": "Republican"
+        },
+        {
+          "name": "NAKITA HEMINGWAY",
+          "party": "Democratic"
+        },
+        {
+          "name": "DAVID RAUDABAUGH",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "COMMISSIONER OF INSURANCE",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "7",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "JOHN KING",
+          "party": "Republican"
+        },
+        {
+          "name": "JANICE LAWS ROBINSON",
+          "party": "Democratic"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "STATE SCHOOL SUPERINTENDENT",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "8",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "RICHARD WOODS",
+          "party": "Republican"
+        },
+        {
+          "name": "ALISHA THOMAS SEARCY",
+          "party": "Democratic"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "COMMISSIONER OF LABOR",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "9",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "BRUCE THOMPSON",
+          "party": "Republican"
+        },
+        {
+          "name": "WILLIAM \"WILL\" BODDIE JR",
+          "party": "Democratic"
+        },
+        {
+          "name": "EMILY ANDERSON",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "PUBLIC SERVICE COMMISSION, DISTRICT 3 - METRO-ATLA, DISTRICT 3",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "10",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "FITZ JOHNSON",
+          "party": "Republican"
+        },
+        {
+          "name": "SHELIA EDWARDS",
+          "party": "Democratic"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "PUBLIC SERVICE COMMISSION, DISTRICT 2 - EASTERN, DISTRICT 2",
+      "district": {
+        "name": "STATE",
+        "scope": "statewide"
+      },
+      "ballotPlacement": "11",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "TIM ECHOLS",
+          "party": "Republican"
+        },
+        {
+          "name": "PATTY DURAND",
+          "party": "Democratic"
+        },
+        {
+          "name": "COLIN MCKINNEY",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "office": "UNITED STATES REPRESENTATIVE, DISTRICT 2",
+      "level": [
+        "country"
+      ],
+      "district": {
+        "name": "002",
+        "scope": "congressional",
+        "id": "2"
+      },
+      "ballotPlacement": "12",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "CHRIS WEST",
+          "party": "Republican"
+        },
+        {
+          "name": "SANFORD BISHOP",
+          "party": "Democratic"
+        }
+      ]
+    }
+  ],
+  "state": [
+    {
+      "name": "Georgia",
+      "electionAdministrationBody": {
+        "name": "STATE Board of Elections",
+        "electionInfoUrl": "http://sos.ga.gov/index.php/elections",
+        "electionRegistrationUrl": "https://registertovote.sos.ga.gov/GAOLVR/",
+        "electionRegistrationConfirmationUrl": "https://www.mvp.sos.ga.gov/MVP/",
+        "absenteeVotingInfoUrl": "http://sos.ga.gov/index.php/Elections/absentee_voting_in_georgia",
+        "votingLocationFinderUrl": "https://www.mvp.sos.ga.gov/MVP/",
+        "ballotInfoUrl": "https://www.mvp.sos.ga.gov/MVP/",
+        "electionRulesUrl": "http://sos.ga.gov/index.php/Elections/register_to_vote",
+        "physicalAddress": {
+          "locationName": "STATE Board of Elections",
+          "line1": "2 Martin Luther King Junior Drive Southwest",
+          "city": "Atlanta",
+          "state": "GA",
+          "zip": "30334"
+        }
+      },
+      "local_jurisdiction": {
+        "name": "MUSCOGEE",
+        "electionAdministrationBody": {
+          "name": "MUSCOGEE COUNTY VOTER REGISTRATION",
+          "electionInfoUrl": "http://elections.sos.ga.gov/Elections/countyelectionoffices.do",
+          "electionRegistrationUrl": "https://registertovote.sos.ga.gov/GAOLVR/",
+          "electionRegistrationConfirmationUrl": "https://www.mvp.sos.ga.gov/MVP/",
+          "absenteeVotingInfoUrl": "http://sos.ga.gov/index.php/Elections/absentee_voting_in_georgia",
+          "votingLocationFinderUrl": "https://www.mvp.sos.ga.gov/MVP/",
+          "ballotInfoUrl": "https://www.mvp.sos.ga.gov/MVP/",
+          "electionRulesUrl": "http://sos.ga.gov/index.php/Elections/register_to_vote",
+          "physicalAddress": {
+            "locationName": "MUSCOGEE COUNTY VOTER REGISTRATION",
+            "line1": "3111 Citizens Way",
+            "city": "Columbus",
+            "state": "GA",
+            "zip": "31906"
+          },
+          "electionOfficials": [
+            {
+              "officePhoneNumber": "706-653-4392",
+              "faxNumber": "7062254394"
+            }
+          ]
+        },
+        "sources": [
+          {
+            "name": "Voting Information Project",
+            "official": true
+          }
+        ]
+      },
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "kind": "civicinfo#voterInfoResponse"
+}
