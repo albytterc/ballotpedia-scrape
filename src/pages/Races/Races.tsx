@@ -11,8 +11,7 @@ const electionId = "8000";
 const Races = ({ route, navigation }) => {
 
   let userAddress = route.params.userAddress
-  console.log('USER ADDRESS: ', userAddress)
-  console.log('CONFIG ADDRESS: ', config.address)
+  
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -31,9 +30,8 @@ const Races = ({ route, navigation }) => {
       .catch((error) => alert(error))
       .finally(() => setLoading(false));
   }, []);
-  console.log()
   const listItems = [];
-  console.log('CONTESTS: ', data.contests)
+
   if (data.contests != undefined) {
     for (var i = 0; i < data.contests.length; i++) {
       
