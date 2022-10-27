@@ -10,6 +10,7 @@ import {
     FormControl,
     VStack,
     Input,
+    Spinner
   } from "native-base";
 
   import * as Location from 'expo-location';
@@ -20,7 +21,7 @@ const ZipCode = ({navigation}) => {
   const [formData, setData] = React.useState({});
   const [errors, setErrors] = React.useState({});
   const [location, setLocation] = React.useState({});
-
+  const [loading, setLoading] = React.useState(false);
 
   const validate =  () => {
     var re = new RegExp('.*,.*,.?[A-Za-z]{2} \\d{5}')
@@ -44,7 +45,9 @@ const ZipCode = ({navigation}) => {
     let text = '';
     (async () => {
       
+      
       let { status } = await Location.requestForegroundPermissionsAsync();
+      
       if (status !== 'granted') {
         setErrors({...errors,
           permission: 'Permission to access location was denied'});
@@ -54,12 +57,13 @@ const ZipCode = ({navigation}) => {
       let apiKey = config.MAPS_API_KEY
       Location.setGoogleApiKey(apiKey) //<== THIS IS DEFINITELY NEEDED FOR WEB
 
+      setLoading(true)
       let curr_location = await Location.getCurrentPositionAsync({});
       const { latitude, longitude } = curr_location['coords'];
       let address_loc = await Location.reverseGeocodeAsync({
         latitude,
-        longitude}, {useGoogleMaps: false}); //DOESN'T WORK WITH WEB COZ WEB USES GOOGLE MAPS AND NEEDS API KEY
-
+        longitude}, {useGoogleMaps: false}); 
+      setLoading(false)
       //THIS FUNCTION DOESN'T WORK -- FIGURE OUT WHY!!!!!
       // setLocation({ ...location, location: address_loc[0]});
       // console.log(location.location)
@@ -101,6 +105,7 @@ const ZipCode = ({navigation}) => {
         >
     <VStack space={5} w="55%" alignItems="center">
       <FormControl isRequired isInvalid={'name' in errors}>
+        {/* {loading ? <Spinner size="sm"/> : <></>} */}
         <Input size="sm"  variant="underlined" placeholder="55 Vote St, Votetown, NC 55555" 
           onChangeText={value => setData({ ...formData, address: value })}/>
           {'name' in errors ? 
@@ -113,6 +118,7 @@ const ZipCode = ({navigation}) => {
     <Heading size="md">or</Heading>
     <Divider  w="50%" bg="#000"/>
   </HStack>
+  {loading ? <Spinner size="sm"/> : <></>}
   <Button w="100%" onPress={useEffect}> Use my current location 
   </Button>
 </VStack>

@@ -8,7 +8,10 @@ const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
 const electionId = "8000";
 
-const Races = ({ navigation }) => {
+const Races = ({ route, navigation }) => {
+
+  let userAddress = route.params.userAddress
+  
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -16,7 +19,7 @@ const Races = ({ navigation }) => {
       BASE_URL +
         endpoint +
         "?address=" +
-        config.address +
+        userAddress +
         "&electionId=" +
         electionId +
         "&key=" +
@@ -28,12 +31,14 @@ const Races = ({ navigation }) => {
       .finally(() => setLoading(false));
   }, []);
   const listItems = [];
+
   if (data.contests != undefined) {
     for (var i = 0; i < data.contests.length; i++) {
+      
       listItems.push(
         <RacesBox
-          key="uniqueId1"
-          text={data.contests[i].ballotTitle}
+          key = {data.contests[i].ballotPlacement}
+          text={data.contests[i].office}
           navigation={navigation}
           data={data.contests[i]}
         />

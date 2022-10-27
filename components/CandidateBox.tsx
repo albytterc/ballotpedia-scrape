@@ -9,11 +9,11 @@ const CandidateBox = ({ navigation, candidateData }) => {
   if (candidateData.party) {
     if (candidateData.party.toUpperCase().match("REPUBLICAN")) {
       partyColor = "#FF0000";
-    } else if (candidateData.party == "DEMOCRATIC") {
+    } else if (candidateData.party.toUpperCase().match("DEMOCRATIC") ) {
       partyColor = "#0000FF";
-    } else if (candidateData.party == "LIBERTARIAN") {
+    } else if (candidateData.party.toUpperCase().match("LIBERTARIAN")) {
       partyColor = "#FFD700";
-    } else if (candidateData.party == "GREEN") {
+    } else if (candidateData.party.toUpperCase().match("GREEN") ) {
       partyColor = "#007500";
     }
   }

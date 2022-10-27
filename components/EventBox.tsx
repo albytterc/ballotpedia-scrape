@@ -11,7 +11,7 @@ interface EventBoxProps {
   };
 }
 
-export default function EventBox({ event, navigation }) {
+export default function EventBox({ event, navigation, vars}) {
   return (
     <Link
       width={"95%"}
@@ -27,7 +27,7 @@ export default function EventBox({ event, navigation }) {
       justifyContent="space-around"
       margin={"auto"}
       marginBottom={"3"}
-      onPress={() => navigation.navigate("Races")}
+      onPress={() => navigation.navigate("Races", vars)}
       mt="8"
     >
       <Icon name="vote-outline" size={70} color="teal"></Icon>
