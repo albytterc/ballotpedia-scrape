@@ -18,7 +18,6 @@ const Candidates = ({ route, navigation }) => {
     <>
       <SectionList
         background={"#e4e3f1"}
-        marginY={2}
         ListFooterComponent={
           <>
             {/* <Heading>Candidates</Heading> */}

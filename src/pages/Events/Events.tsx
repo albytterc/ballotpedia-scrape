@@ -68,17 +68,8 @@ const Events = ({ route, navigation }) => {
     <>
       <SectionList
         background={"#e4e3f1"}
-        marginY={2}
         ListFooterComponent={
           <>
-            {/* <Heading
-              marginBottom={"5%"}
-              marginTop={"5%"}
-              marginLeft={"90px"}
-              color={"black"}
-            >
-              Upcoming Events
-            </Heading> */}
             <Box
               display={"flex"}
               flexDirection={"row"}
@@ -97,7 +88,6 @@ const Events = ({ route, navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#eeeeee",

@@ -32,8 +32,12 @@ const Races = ({ navigation }) => {
     for (var i = 0; i < data.contests.length; i++) {
       listItems.push(
         <RacesBox
-          key="uniqueId1"
-          text={data.contests[i].ballotTitle}
+          key={"uniqueId1" + i}
+          text={
+            data.contests[i].ballotTitle
+              ? data.contests[i].ballotTitle
+              : data.contests[i].office
+          } // ballot title is office in georgia
           navigation={navigation}
           data={data.contests[i]}
         />
@@ -45,17 +49,8 @@ const Races = ({ navigation }) => {
     <>
       <SectionList
         background={"#e4e3f1"}
-        marginY={2}
         ListFooterComponent={
           <>
-            {/* <Heading
-              marginBottom={"0.5rem"}
-              marginTop={"0.5rem"}
-              marginLeft={"0.5rem"}
-              color={"black"}
-            >
-              Races
-            </Heading> */}
             <Box
               display={"flex"}
               flexDirection={"row"}
