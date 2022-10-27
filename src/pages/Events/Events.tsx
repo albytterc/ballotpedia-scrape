@@ -27,11 +27,13 @@ import {
   SectionList,
 } from "native-base";
 
-import fetch from "node-fetch";
+// import fetch from "node-fetch";
 import { useEffect } from "react";
 
 const Events = ({ route, navigation }) => {
-  const { itemId, userZip } = route.params;
+  
+  const routeVars = route.params;
+  
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -50,7 +52,7 @@ const Events = ({ route, navigation }) => {
     console.log("no election found");
   } else {
     listItems = events.elections.map((election) => (
-      <EventBox key={election.id} event={election} navigation={navigation} />
+      <EventBox key={election.id} event={election} navigation={navigation} vars={routeVars}/>
     ));
     sorted_listItems = listItems.sort((e1, e2) => {
       if (e1.props.event.electionDay > e2.props.event.electionDay) {
