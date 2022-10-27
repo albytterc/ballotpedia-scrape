@@ -1,5 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import {
   Link,
   Divider,
@@ -28,9 +29,11 @@ const Home = ({ navigation }) => {
       >
         <VStack space={5} alignItems="center">
           {/* <Image source={require("./assets/votevaultlogo.png")} alt = {"vote vault logo"}></Image> */}
-          <Heading size="lg">Vote Vault.. Coming Soon</Heading>
+
+          <Icon name={"safe-square-outline"} size={80}></Icon>
+          <Heading size="3xl">Vote Vault</Heading>
           <HStack space={2} alignItems="center"></HStack>
-          <Button onPress={() => navigation.navigate("ZipCode")}>
+          <Button bg={"black"} onPress={() => navigation.navigate("Address")}>
             Unlock the Vault
           </Button>
           {/* <ToggleDarkMode /> */}

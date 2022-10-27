@@ -47,11 +47,11 @@ export default function App() {
       <NativeBaseProvider>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="ZipCode" component={ZipCode} />
+          <Stack.Screen name="Address" component={ZipCode} />
           <Stack.Screen name="Events" component={Events} />
           <Stack.Screen name="Races" component={Races} />
           <Stack.Screen name="Candidates" component={Candidates} />
-          <Stack.Screen name="LearnMore" component={LearnMore} />
+          <Stack.Screen name="Learn More" component={LearnMore} />
         </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>

@@ -34,7 +34,7 @@ const RacesBox = ({ text, navigation, data }) => {
           right: "5%",
           top: "5%",
         }}
-        onPress={() => navigation.navigate("LearnMore", { title: text })}
+        onPress={() => navigation.navigate("Learn More", { title: text })}
       ></Icon>
       <Box>
         <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
