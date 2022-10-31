@@ -9,9 +9,8 @@ const endpoint = "/voterinfo";
 const electionId = "8000";
 
 const Races = ({ route, navigation }) => {
+  let userAddress = route.params.userAddress.userAddress;
 
-  let userAddress = route.params.userAddress
-  
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -34,7 +33,6 @@ const Races = ({ route, navigation }) => {
 
   if (data.contests != undefined) {
     for (var i = 0; i < data.contests.length; i++) {
-      
       listItems.push(
         <RacesBox
           key={"uniqueId1" + i}
