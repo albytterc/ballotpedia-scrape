@@ -34,7 +34,11 @@ const CandidateBox = ({ navigation, candidateData }) => {
       display={"flex"}
       flexDirection={"row"}
       marginBottom={"10px"}
-      onPress={() => navigation.navigate("Races")}
+      onPress={() =>
+        navigation.navigate("Candidate Profile", {
+          candidate_name: candidateData.name,
+        })
+      }
       mt="8"
     >
       <Box>
