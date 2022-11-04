@@ -27,7 +27,9 @@ export default function EventBox({ event, navigation, vars }) {
       justifyContent="space-around"
       margin={"auto"}
       marginBottom={"3"}
-      onPress={() => navigation.navigate("Races", { userAddress: vars })}
+      onPress={() =>
+        navigation.navigate("Races", { userAddress: vars.userAddress })
+      }
       mt="8"
     >
       <Icon name="vote-outline" size={70} color="black"></Icon>

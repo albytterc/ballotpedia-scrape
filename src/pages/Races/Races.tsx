@@ -9,7 +9,7 @@ const endpoint = "/voterinfo";
 const electionId = "8000";
 
 const Races = ({ route, navigation }) => {
-  let userAddress = route.params.userAddress.userAddress;
+  let userAddress = route.params.userAddress;
 
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
