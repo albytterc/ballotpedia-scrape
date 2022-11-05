@@ -35,7 +35,7 @@ const Races = ({ route, navigation }) => {
     for (var i = 0; i < data.contests.length; i++) {
       listItems.push(
         <RacesBox
-          key={"uniqueId1" + i}
+          key={String(i)}
           text={
             data.contests[i].ballotTitle
               ? data.contests[i].ballotTitle
@@ -66,6 +66,12 @@ const Races = ({ route, navigation }) => {
         }
         sections={[]}
       />
+      {/* <FlatList
+        data={listItems}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => item}
+        // renderItem={({item}) => {item} />}
+      /> */}
     </>
   );
 };

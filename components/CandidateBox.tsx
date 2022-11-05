@@ -19,6 +19,7 @@ const CandidateBox = ({ navigation, candidateData }) => {
   }
   return (
     <Link
+      key={candidateData.name}
       style={{ width: "45%", aspectRatio: 1 }}
       height="100px"
       bg="#E8E8E8"
@@ -36,36 +37,37 @@ const CandidateBox = ({ navigation, candidateData }) => {
       marginBottom={"10px"}
       onPress={() =>
         navigation.navigate("Candidate Profile", {
+          key: candidateData.name,
           candidate_name: candidateData.name,
         })
       }
       mt="8"
     >
-      <Box>
-        <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
-          {/* <Icon name="vote-outline" size={70} color="teal"></Icon> */}
-          <Heading
-            size={"md"}
-            fontWeight={"600"}
-            textAlign={"center"}
-            display={"flex"}
-            justifyContent={"center"}
-          >
-            {candidateData.name}
-          </Heading>
+      {/* <Box key={candidateData.name}> */}
+      <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
+        {/* <Icon name="vote-outline" size={70} color="teal"></Icon> */}
+        <Heading
+          size={"md"}
+          fontWeight={"600"}
+          textAlign={"center"}
+          display={"flex"}
+          justifyContent={"center"}
+        >
+          {candidateData.name}
+        </Heading>
 
-          <Text
-            // style={{ color: partyColor }}
-            color="#5c5a5b"
-            fontWeight={"400"}
-            textAlign={"center"}
-            display={"flex"}
-            justifyContent={"center"}
-          >
-            {candidateData.party}
-          </Text>
-        </Box>
+        <Text
+          // style={{ color: partyColor }}
+          color="#5c5a5b"
+          fontWeight={"400"}
+          textAlign={"center"}
+          display={"flex"}
+          justifyContent={"center"}
+        >
+          {candidateData.party}
+        </Text>
       </Box>
+      {/* </Box> */}
     </Link>
   );
 };

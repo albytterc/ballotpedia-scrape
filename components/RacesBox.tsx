@@ -6,6 +6,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 const RacesBox = ({ text, navigation, data }) => {
   return (
     <Link
+      key={text + "key"}
       style={{ width: "45%", aspectRatio: 1 }}
       height="100px"
       bg="#E8E8E8"
@@ -21,6 +22,7 @@ const RacesBox = ({ text, navigation, data }) => {
       marginBottom={"10px"}
       onPress={() =>
         navigation.navigate("Candidates", {
+          key: text,
           data: data,
         })
       }
