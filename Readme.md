@@ -45,3 +45,19 @@ expo init my-app --template @native-base/expo-template-typescript
     - Make a pull request to the staging branch over at github. Assign reviewers
 4. After pull request is reviewed:
     - Merge with staging over at github and delete branch
+    
+    
+    
+    
+A config file is required to run the app
+
+Step 1) make new file called config.ts
+
+step 2) add this to your file:
+
+export default {
+    API_KEY : "your Google Civic API key",
+    MAPS_API_KEY: 'your Google Maps API key'
+}
+
+ 
