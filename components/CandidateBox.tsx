@@ -26,9 +26,7 @@ const CandidateBox = ({ navigation, candidateData }) => {
       shadow={2}
       borderRadius={20}
       borderWidth="2px"
-      // borderColor={"rgba(162,156,244,255)"}
       borderColor={partyColor}
-      // borderColor={"#FFFFFF"}
       alignItems={"center"}
       justifyContent={"center"}
       display={"flex"}
@@ -41,30 +39,26 @@ const CandidateBox = ({ navigation, candidateData }) => {
       }
       mt="8"
     >
-      <Box>
-        <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
-          {/* <Icon name="vote-outline" size={70} color="teal"></Icon> */}
-          <Heading
-            size={"md"}
-            fontWeight={"600"}
-            textAlign={"center"}
-            display={"flex"}
-            justifyContent={"center"}
-          >
-            {candidateData.name}
-          </Heading>
+      <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
+        <Heading
+          size={"md"}
+          fontWeight={"600"}
+          textAlign={"center"}
+          display={"flex"}
+          justifyContent={"center"}
+        >
+          {candidateData.name}
+        </Heading>
 
-          <Text
-            // style={{ color: partyColor }}
-            color="#5c5a5b"
-            fontWeight={"400"}
-            textAlign={"center"}
-            display={"flex"}
-            justifyContent={"center"}
-          >
-            {candidateData.party}
-          </Text>
-        </Box>
+        <Text
+          color="#5c5a5b"
+          fontWeight={"400"}
+          textAlign={"center"}
+          display={"flex"}
+          justifyContent={"center"}
+        >
+          {candidateData.party}
+        </Text>
       </Box>
     </Link>
   );

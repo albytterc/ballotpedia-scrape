@@ -15,36 +15,32 @@ const Candidates = ({ route, navigation }) => {
   const { data } = route.params;
   console.log(data);
   return data.candidates ? (
-    <>
-      <SectionList
-        background={"#e4e3f1"}
-        ListFooterComponent={
-          <>
-            {/* <Heading>Candidates</Heading> */}
-            {/* <Text>These are the candidates running for:</Text> */}
-            <Heading size="sm" textAlign={"center"} marginTop={"1rem"}>
-              {data.ballotTitle}
-            </Heading>
-            <Box
-              display={"flex"}
-              flexDirection={"row"}
-              justifyContent={"space-evenly"}
-              flexWrap={"wrap"}
-            >
-              {data.candidates.map((map) => (
-                // <Text>
-                <CandidateBox navigation={navigation} candidateData={map} />
-              ))}
-            </Box>
-          </>
-        }
-        sections={[]}
-      />
-    </>
+    <SectionList
+      ListFooterComponent={
+        <Box>
+          <Heading size="sm" textAlign={"center"} marginTop={"1rem"}>
+            {data.ballotTitle}
+          </Heading>
+          <Box
+            display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"space-evenly"}
+            flexWrap={"wrap"}
+          >
+            {data.candidates.map((can: any, i: any) => (
+              <CandidateBox
+                key={i}
+                navigation={navigation}
+                candidateData={can}
+              />
+            ))}
+          </Box>
+        </Box>
+      }
+      sections={[]}
+    />
   ) : (
-    <>
-      <Text>No Candidates for this position Sowwy</Text>
-    </>
+    <Text>No Candidates for this position Sowwy</Text>
   );
 };
 

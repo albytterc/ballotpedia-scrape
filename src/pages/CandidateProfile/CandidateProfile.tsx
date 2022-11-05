@@ -39,7 +39,7 @@ const CandidateProfile = ({ route }) => {
   console.log(data);
   if (data.originalimage != undefined) {
     imgItem.push(
-      <Box display={"flex"} alignItems={"center"}>
+      <Box key={candidate_name} display={"flex"} alignItems={"center"}>
         <Image
           borderRadius={"100px"}
           borderColor={"black"}
