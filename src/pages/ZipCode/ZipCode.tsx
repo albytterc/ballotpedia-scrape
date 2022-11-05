@@ -11,7 +11,7 @@ import {
   VStack,
   Input,
   Text,
-  Spinner
+  Spinner,
 } from "native-base";
 
 import * as Location from "expo-location";
@@ -51,7 +51,7 @@ const ZipCode = ({ navigation }) => {
       let apiKey = config.MAPS_API_KEY;
       Location.setGoogleApiKey(apiKey); //<== THIS IS DEFINITELY NEEDED FOR WEB
 
-      setLoading(true)
+      setLoading(true);
       let curr_location = await Location.getCurrentPositionAsync({});
       const { latitude, longitude } = curr_location["coords"];
       let address_loc = await Location.reverseGeocodeAsync(
@@ -73,7 +73,6 @@ const ZipCode = ({ navigation }) => {
 
       //I'M USING NO STATE VAR BUT THE STRING ITSELF FOR NOW
       navigation.navigate("Events", {
-        // itemId: 1,
         userAddress: address_string,
       });
     })();
@@ -82,7 +81,6 @@ const ZipCode = ({ navigation }) => {
   const onSubmit = () => {
     if (validate()) {
       navigation.navigate("Events", {
-        // itemId: 1,
         userAddress: formData.address,
       });
     }
@@ -91,35 +89,43 @@ const ZipCode = ({ navigation }) => {
   return (
     <>
       <Center
-          _dark={{ bg: "blueGray.900" }}
-          _light={{ bg: "blueGray.50" }}
-          px={4}
-          flex={1}
-        >
-    <VStack space={5} w="55%" alignItems="center">
-      <FormControl isRequired isInvalid={'name' in errors}>
-        {/* {loading ? <Spinner size="sm"/> : <></>} */}
-        <Input size="sm"  variant="underlined" placeholder="55 Vote St, Votetown, NC 55555" 
-          onChangeText={value => setData({ ...formData, address: value })}/>
-          {'name' in errors ? 
-          <FormControl.ErrorMessage>{errors.name}</FormControl.ErrorMessage> 
-          : <></>}
-        <Button bg={"black"} onPress={onSubmit}> 
-        <Text color={"white"}>Search by address</Text>
-        </Button>
-      </FormControl>
-  <HStack space={5} alignItems="center" >
-    <Divider w="50%" bg="#000"/>
-    <Heading size="md">or</Heading>
-    <Divider  w="50%" bg="#000"/>
-  </HStack>
-  {loading ? <Spinner size="sm"/> : <></>}
-  <Button w="100%" bg={"black"} onPress={useEffect}> Use my current location 
-  </Button>
-</VStack>
-</Center>
-</>
-  )
-}
+        _dark={{ bg: "blueGray.900" }}
+        _light={{ bg: "blueGray.50" }}
+        px={4}
+        flex={1}
+      >
+        <VStack space={5} w="55%" alignItems="center">
+          <FormControl isRequired isInvalid={"name" in errors}>
+            {/* {loading ? <Spinner size="sm"/> : <></>} */}
+            <Input
+              size="sm"
+              variant="underlined"
+              placeholder="55 Vote St, Votetown, NC 55555"
+              onChangeText={(value) => setData({ ...formData, address: value })}
+            />
+            {"name" in errors ? (
+              <FormControl.ErrorMessage>{errors.name}</FormControl.ErrorMessage>
+            ) : (
+              <></>
+            )}
+            <Button bg={"black"} onPress={onSubmit}>
+              <Text color={"white"}>Search by address</Text>
+            </Button>
+          </FormControl>
+          <HStack space={5} alignItems="center">
+            <Divider w="50%" bg="#000" />
+            <Heading size="md">or</Heading>
+            <Divider w="50%" bg="#000" />
+          </HStack>
+          {loading ? <Spinner size="sm" /> : <></>}
+          <Button w="100%" bg={"black"} onPress={useEffect}>
+            {" "}
+            Use my current location
+          </Button>
+        </VStack>
+      </Center>
+    </>
+  );
+};
 
-export default ZipCode
+export default ZipCode;

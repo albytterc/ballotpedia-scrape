@@ -22,14 +22,12 @@ const Candidates = ({ route, navigation }) => {
             {data.ballotTitle}
           </Heading>
           <Box
-            key="hhh"
             display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-evenly"}
             flexWrap={"wrap"}
           >
             {data.candidates.map((can: any, i: any) => (
-              // <Text>
               <CandidateBox
                 key={i}
                 navigation={navigation}
@@ -42,12 +40,6 @@ const Candidates = ({ route, navigation }) => {
       sections={[]}
     />
   ) : (
-    //   sections={[]}
-    // />
-    //     </>
-    //   }
-    //   sections={[]}
-    // />
     <Text>No Candidates for this position Sowwy</Text>
   );
 };
