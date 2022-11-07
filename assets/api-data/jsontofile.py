@@ -1,5 +1,6 @@
 import requests
 import json
+import os
 
 baseUrl = "https://www.googleapis.com/civicinfo/v2/voterinfo"
 
@@ -36,8 +37,14 @@ def write_api_data(address, filename):
     response = requests.get(baseUrl, params)
     response = response.json()
     state = response['normalizedInput']['state'].lower()
-    with open(f"assets/api-data/{state}/{filename}", "w") as outfile:
-        json.dump(response, outfile, indent=2)
+    try:
+        f = open(f"assets/api-data/{state}/{filename}", "w")
+    except FileNotFoundError:
+        os.makedirs(f"assets/api-data/{state}")
+        f = open(f"assets/api-data/{state}/{filename}", "w")
+    finally:
+        with f as outfile:
+            json.dump(response, outfile, indent=2)
 
 # write_api_data("600 East 4th Street Charlotte, NC 28202", "charlotte-nc.json")
 # write_api_data("5019 Lonnie D Aldridge Rd, Monroe, NC 28112", "monroe-nc.json")
