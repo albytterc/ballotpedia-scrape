@@ -1,8 +1,8 @@
 import { View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
-import { Box, Heading, Image } from "native-base";
+import { Box, Heading, Image, Button } from "native-base";
 
-const CandidateProfile = ({ route }) => {
+const CandidateProfile = ({ route,navigation }) => {
   let candidate_name = route.params.candidate_name;
   let candidate_name_split = candidate_name.split(" ");
   let first = candidate_name_split[0].toLowerCase();
@@ -22,6 +22,14 @@ const CandidateProfile = ({ route }) => {
     last.substring(1);
   console.log(endpoint);
   //   string[0].toUpperCase() + string.substring(1)
+  // name passed to voting record page
+  let name_voting_record =
+    first[0].toUpperCase() +
+    first.substring(1) +
+    " " +
+    last[0].toUpperCase() +
+    last.substring(1);
+  console.log(name_voting_record);
 
   let redirect = false;
 
@@ -76,6 +84,10 @@ const CandidateProfile = ({ route }) => {
         {candidate_name}
       </Heading>
       {imgItem}
+      <Button bg={"black"} width={"50%"} marginLeft={"25%"}
+        onPress={() => navigation.navigate("Candidate Voting Record",{candidateName: name_voting_record})}>
+            Voting Record
+      </Button>
     </Box>
   );
 };

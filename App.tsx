@@ -26,6 +26,7 @@ import Races from "./src/pages/Races/Races";
 import Candidates from "./src/pages/Candidates/Candidates";
 import LearnMore from "./src/pages/LearnMore/LearnMore";
 import CandidateProfile from "./src/pages/CandidateProfile/CandidateProfile";
+import CandidateVotingRecord from "./src/pages/CandidateVotingRecord/CandidateVotingRecord";
 
 // Define the config
 const config = {
@@ -54,6 +55,7 @@ export default function App() {
           <Stack.Screen name="Candidates" component={Candidates} />
           <Stack.Screen name="Learn More" component={LearnMore} />
           <Stack.Screen name="Candidate Profile" component={CandidateProfile} />
+          <Stack.Screen name="Candidate Voting Record" component={CandidateVotingRecord} />
         </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>
