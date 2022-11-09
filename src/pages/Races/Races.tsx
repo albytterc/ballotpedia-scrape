@@ -1,8 +1,8 @@
-import { View, Text } from "react-native";
 import { Box, FlatList, Heading, VStack, SectionList } from "native-base";
 import React, { useState, useEffect } from "react";
 import RacesBox from "../../../components/RacesBox";
 import config from "../../../config";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
@@ -32,6 +32,25 @@ const Races = ({ route, navigation }) => {
   const listItems = [];
 
   if (data.contests != undefined) {
+    console.log(data);
+
+    // async () => {
+    try {
+      // await AsyncStorage.setItem("poll_location_", data.pollingLocations);
+      console.log(data.pollingLocations[0].address);
+      AsyncStorage.setItem(
+        "poll_location_",
+        // JSON.stringify(data.pollingLocations[0].address.locationName)
+        JSON.stringify(data.pollingLocations[0].address)
+        // JSON.stringify(data)
+        // data
+      );
+      // alert("Data successfully saved");
+    } catch (e) {
+      alert("Failed to save the data to the storage");
+    }
+    // };
+
     for (var i = 0; i < data.contests.length; i++) {
       listItems.push(
         <RacesBox
@@ -51,7 +70,7 @@ const Races = ({ route, navigation }) => {
   return (
     <>
       <SectionList
-        background={"#e4e3f1"}
+        background={"white"}
         ListFooterComponent={
           <>
             <Box

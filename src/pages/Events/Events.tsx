@@ -31,9 +31,8 @@ import {
 import { useEffect } from "react";
 
 const Events = ({ route, navigation }) => {
-  
   const routeVars = route.params;
-  
+
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
@@ -52,7 +51,12 @@ const Events = ({ route, navigation }) => {
     console.log("no election found");
   } else {
     listItems = events.elections.map((election) => (
-      <EventBox key={election.id} event={election} navigation={navigation} vars={routeVars}/>
+      <EventBox
+        key={election.id}
+        event={election}
+        navigation={navigation}
+        vars={routeVars}
+      />
     ));
     sorted_listItems = listItems.sort((e1, e2) => {
       if (e1.props.event.electionDay > e2.props.event.electionDay) {
@@ -60,16 +64,16 @@ const Events = ({ route, navigation }) => {
       }
       return -1;
     });
-    console.log("original: \n");
-    console.log(listItems);
-    console.log("ordered: \n");
-    console.log(sorted_listItems);
+    // console.log("original: \n");
+    // console.log(listItems);
+    // console.log("ordered: \n");
+    // console.log(sorted_listItems);
   }
 
   return (
     <>
       <SectionList
-        background={"#e4e3f1"}
+        background={"white"}
         ListFooterComponent={
           <>
             <Box

@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Heading, VStack, Link } from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { LinearGradient } from "expo-linear-gradient";
 
 interface EventBoxProps {
   event: {
@@ -16,7 +17,7 @@ export default function EventBox({ event, navigation, vars }) {
     <Link
       width={"95%"}
       height={"150px"}
-      bg="#A29CF4"
+      bg="#383E56"
       p="4"
       shadow={2}
       borderRadius={20}
@@ -32,15 +33,25 @@ export default function EventBox({ event, navigation, vars }) {
       }
       mt="8"
     >
-      <Icon name="vote-outline" size={70} color="black"></Icon>
+      <Icon name="vote-outline" size={70} color="white"></Icon>
 
-      <Box width={"auto"} alignItems={"center"}>
+      <Box
+        width={"auto"}
+        alignItems={"center"}
+        bg={{
+          linearGradient: {
+            colors: ["red", "blue"],
+            start: [0, 0],
+            end: [1, 0],
+          },
+        }}
+      >
         <VStack>
-          <Heading size="sm" color="#FFFFFF">
+          <Heading size="md" color="white">
             {event.name}
           </Heading>
           <Heading
-            size="sm"
+            size="xs"
             alignSelf={"flex-end"}
             marginTop="1rem"
             color="#FFFFFF"

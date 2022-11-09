@@ -16,9 +16,15 @@ const Candidates = ({ route, navigation }) => {
   console.log(data);
   return data.candidates ? (
     <SectionList
+      background={"#F1F1F1"}
       ListFooterComponent={
         <Box>
-          <Heading size="sm" textAlign={"center"} marginTop={"1rem"}>
+          <Heading
+            color={"#000000"}
+            size="sm"
+            textAlign={"center"}
+            marginTop={"1rem"}
+          >
             {data.ballotTitle}
           </Heading>
           <Box
