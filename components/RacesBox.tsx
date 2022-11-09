@@ -57,8 +57,8 @@ const RacesBox = ({ text, navigation, data }) => {
         size={30}
         style={{
           position: "absolute",
-          left: "10%",
-          top: "10%",
+          left: "8%",
+          top: "5%",
         }}
         color={"#FFFFFF"}
         icon={faBuildingColumns}

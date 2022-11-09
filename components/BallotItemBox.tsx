@@ -1,22 +1,20 @@
+import { View, Text } from "react-native";
 import React from "react";
-import { Box, Heading, VStack, Link } from "native-base";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { Link, Icon, VStack, Heading, Box } from "native-base";
 
-interface EventBoxProps {
-  event: {
-    id: string;
-    ocdDivisionID: string;
-    name: string;
-    electionDate: string;
-  };
-}
-
-export default function EventBox({ event, navigation, vars }) {
+const BallotItemBox = ({
+  title,
+  navigation,
+  data,
+  navigateTo,
+  colorHex,
+  listItems,
+}) => {
   return (
     <Link
       width={"95%"}
       height={"150px"}
-      bg="#383E56"
+      bg={colorHex}
       p="4"
       shadow={2}
       borderRadius={20}
@@ -28,10 +26,7 @@ export default function EventBox({ event, navigation, vars }) {
       margin={"auto"}
       marginBottom={"3"}
       onPress={() =>
-        navigation.navigate("Ballot Items", {
-          userAddress: vars.userAddress,
-          navigation: { navigation },
-        })
+        navigation.navigate(navigateTo, { data: data, listItems: listItems })
       }
       mt="8"
     >
@@ -50,7 +45,7 @@ export default function EventBox({ event, navigation, vars }) {
       >
         <VStack>
           <Heading size="md" color="white">
-            {event.name}
+            {title}
           </Heading>
           <Heading
             size="xs"
@@ -58,10 +53,12 @@ export default function EventBox({ event, navigation, vars }) {
             marginTop="1rem"
             color="#FFFFFF"
           >
-            {event.electionDay}
+            {title}
           </Heading>
         </VStack>
       </Box>
     </Link>
   );
-}
+};
+
+export default BallotItemBox;
