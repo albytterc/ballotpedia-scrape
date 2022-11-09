@@ -1,7 +1,8 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Link, Icon, VStack, Heading, Box } from "native-base";
-
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 const BallotItemBox = ({
   title,
   navigation,
@@ -30,8 +31,7 @@ const BallotItemBox = ({
       }
       mt="8"
     >
-      <Icon name="vote-outline" size={70} color="white"></Icon>
-
+      <FontAwesomeIcon color="white" size={30} icon={faCheck} />
       <Box
         width={"auto"}
         alignItems={"center"}
@@ -45,14 +45,6 @@ const BallotItemBox = ({
       >
         <VStack>
           <Heading size="md" color="white">
-            {title}
-          </Heading>
-          <Heading
-            size="xs"
-            alignSelf={"flex-end"}
-            marginTop="1rem"
-            color="#FFFFFF"
-          >
             {title}
           </Heading>
         </VStack>
