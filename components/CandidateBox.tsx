@@ -3,30 +3,42 @@ import React from "react";
 import { Box, Heading, Link, Text } from "native-base";
 import { border } from "native-base/lib/typescript/theme/styled-system";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faRepublican } from "@fortawesome/free-solid-svg-icons/faRepublican";
+import { faDemocrat } from "@fortawesome/free-solid-svg-icons/faDemocrat";
+import { faFireFlameSimple } from "@fortawesome/free-solid-svg-icons/faFireFlameSimple";
+import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons/faEarthAmericas";
 
 const CandidateBox = ({ navigation, candidateData }) => {
   let partyColor = "black";
+  let logo = <></>;
   if (candidateData.party) {
     if (candidateData.party.toUpperCase().match("REPUBLICAN")) {
-      partyColor = "#FF0000";
+      partyColor = "#580000";
+      logo = <FontAwesomeIcon color="white" size={50} icon={faRepublican} />;
     } else if (candidateData.party.toUpperCase().match("DEMOCRATIC")) {
-      partyColor = "#0000FF";
+      partyColor = "#000072";
+      logo = <FontAwesomeIcon color="white" size={50} icon={faDemocrat} />;
     } else if (candidateData.party.toUpperCase().match("LIBERTARIAN")) {
-      partyColor = "#FFD700";
+      partyColor = "#898900";
+      logo = (
+        <FontAwesomeIcon color="white" size={50} icon={faFireFlameSimple} />
+      );
     } else if (candidateData.party.toUpperCase().match("GREEN")) {
-      partyColor = "#007500";
+      partyColor = "#013220";
+      logo = <FontAwesomeIcon color="white" size={50} icon={faEarthAmericas} />;
     }
   }
   return (
     <Link
       style={{ width: "45%", aspectRatio: 1 }}
       height="100px"
-      bg="#E8E8E8"
+      bg={partyColor}
       p="4"
       shadow={2}
-      borderRadius={20}
-      borderWidth="2px"
-      borderColor={partyColor}
+      borderRadius={50}
+      // borderWidth="1px"
+      borderColor={"black"}
       alignItems={"center"}
       justifyContent={"center"}
       display={"flex"}
@@ -39,9 +51,15 @@ const CandidateBox = ({ navigation, candidateData }) => {
       }
       mt="8"
     >
-      <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
+      <Box
+        display={"flex"}
+        justifyContent={"center"}
+        alignItems={"center"}
+        textAlign={"center"}
+      >
         <Heading
           size={"md"}
+          color="#FFFFFF"
           fontWeight={"600"}
           textAlign={"center"}
           display={"flex"}
@@ -49,9 +67,10 @@ const CandidateBox = ({ navigation, candidateData }) => {
         >
           {candidateData.name}
         </Heading>
-
+        {logo}
+        {/* <FontAwesomeIcon icon={faMugSaucer} /> */}
         <Text
-          color="#5c5a5b"
+          color="#FFFFFF"
           fontWeight={"400"}
           textAlign={"center"}
           display={"flex"}

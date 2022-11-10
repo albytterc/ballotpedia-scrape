@@ -16,7 +16,7 @@ export default function EventBox({ event, navigation, vars }) {
     <Link
       width={"95%"}
       height={"150px"}
-      bg="#A29CF4"
+      bg="#383E56"
       p="4"
       shadow={2}
       borderRadius={20}
@@ -28,19 +28,32 @@ export default function EventBox({ event, navigation, vars }) {
       margin={"auto"}
       marginBottom={"3"}
       onPress={() =>
-        navigation.navigate("Races", { userAddress: vars.userAddress })
+        navigation.navigate("Ballot Items", {
+          userAddress: vars.userAddress,
+          navigation: { navigation },
+        })
       }
       mt="8"
     >
-      <Icon name="vote-outline" size={70} color="black"></Icon>
+      <Icon name="vote-outline" size={70} color="white"></Icon>
 
-      <Box width={"auto"} alignItems={"center"}>
+      <Box
+        width={"auto"}
+        alignItems={"center"}
+        bg={{
+          linearGradient: {
+            colors: ["red", "blue"],
+            start: [0, 0],
+            end: [1, 0],
+          },
+        }}
+      >
         <VStack>
-          <Heading size="sm" color="#FFFFFF">
+          <Heading size="md" color="white">
             {event.name}
           </Heading>
           <Heading
-            size="sm"
+            size="xs"
             alignSelf={"flex-end"}
             marginTop="1rem"
             color="#FFFFFF"

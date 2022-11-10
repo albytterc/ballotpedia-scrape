@@ -2,18 +2,20 @@ import { View } from "react-native";
 import { Box, Heading, VStack, Text, Pressable, Link } from "native-base";
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faBuildingColumns } from "@fortawesome/free-solid-svg-icons/faBuildingColumns";
 
 const RacesBox = ({ text, navigation, data }) => {
   return (
     <Link
       style={{ width: "45%", aspectRatio: 1 }}
-      height="100px"
-      bg="#E8E8E8"
+      height="100%"
       p="4"
+      bg={"#562349"}
       shadow={2}
-      borderRadius={20}
-      borderWidth="2px"
-      borderColor={"rgba(162,156,244,255)"}
+      borderRadius={30}
+      // borderWidth="1px"
+      borderColor={"white"}
       alignItems={"center"}
       justifyContent={"center"}
       display={"flex"}
@@ -29,6 +31,7 @@ const RacesBox = ({ text, navigation, data }) => {
       <Icon
         name={"information"}
         size={25}
+        color={"grey"}
         style={{
           position: "absolute",
           right: "5%",
@@ -39,8 +42,9 @@ const RacesBox = ({ text, navigation, data }) => {
       <Box>
         <Box display={"flex"} justifyContent={"center"} textAlign={"center"}>
           <Text
-            color="#5c5a5b"
+            color="#FFFFFF"
             fontWeight={"600"}
+            fontSize={"15px"}
             textAlign={"center"}
             display={"flex"}
             justifyContent={"center"}
@@ -49,6 +53,16 @@ const RacesBox = ({ text, navigation, data }) => {
           </Text>
         </Box>
       </Box>
+      <FontAwesomeIcon
+        size={30}
+        style={{
+          position: "absolute",
+          left: "8%",
+          top: "5%",
+        }}
+        color={"#FFFFFF"}
+        icon={faBuildingColumns}
+      />
     </Link>
   );
 };
