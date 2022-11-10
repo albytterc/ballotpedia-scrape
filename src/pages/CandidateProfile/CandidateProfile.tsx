@@ -1,15 +1,16 @@
 import { View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
-import { Box, Heading, Image } from "native-base";
+import { Box, Heading, Image, Button, SectionList } from "native-base";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-const CandidateProfile = ({ route }) => {
+const CandidateProfile = ({ route, navigation }) => {
   let candidate_name = route.params.candidate_name;
   let candidate_name_split = candidate_name.split(" ");
   let first = candidate_name_split[0].toLowerCase();
   let last =
     candidate_name_split[candidate_name_split.length - 1].toLowerCase();
-  console.log(first);
-  console.log(last);
+  // console.log(first);
+  // console.log(last);
 
   const BASE_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/";
   //   let endpoint = "Joe" + "_" + "Biden";
@@ -20,7 +21,7 @@ const CandidateProfile = ({ route }) => {
     "_" +
     last[0].toUpperCase() +
     last.substring(1);
-  console.log(endpoint);
+  // console.log(endpoint);
   //   string[0].toUpperCase() + string.substring(1)
 
   let redirect = false;
@@ -36,10 +37,14 @@ const CandidateProfile = ({ route }) => {
     // console.log(data);
   }, []);
   const imgItem = [];
-  console.log(data);
+  // console.log(data);
   if (data.originalimage != undefined) {
     imgItem.push(
-      <Box key={candidate_name} display={"flex"} alignItems={"center"}>
+      <Box
+        key={candidate_name + "candidate"}
+        display={"flex"}
+        alignItems={"center"}
+      >
         <Image
           borderRadius={"100px"}
           borderColor={"black"}
@@ -66,17 +71,38 @@ const CandidateProfile = ({ route }) => {
   }
 
   return (
-    <Box>
-      <Heading
-        size={"2xl"}
-        textAlign={"center"}
-        marginTop={"1rem"}
-        marginBottom={"1rem"}
-      >
-        {candidate_name}
-      </Heading>
-      {imgItem}
-    </Box>
+    <SectionList
+      background={"#F69E7B"}
+      ListFooterComponent={
+        <Box key={candidate_name}>
+          <Heading
+            size={"2xl"}
+            textAlign={"center"}
+            marginTop={"1rem"}
+            marginBottom={"1rem"}
+          >
+            {candidate_name}
+          </Heading>
+          {imgItem}
+          <Button
+            // display={"flex"}
+            width={"80%"}
+            alignSelf={"center"}
+            marginTop={"50px"}
+            borderRadius={"50px"}
+            borderWidth={".3px"}
+            bg={"black"}
+            onPress={() => navigation.navigate("Polling Location")}
+          >
+            <Heading size={"sm"} color={"white"}>
+              VOTE
+            </Heading>
+            <Icon color={"white"} name={"arrow-right-bold"} size={45}></Icon>
+          </Button>
+        </Box>
+      }
+      sections={[]}
+    />
   );
 };
 
