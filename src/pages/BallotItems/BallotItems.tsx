@@ -5,6 +5,7 @@ import BallotItemBox from "../../../components/BallotItemBox";
 import config from "../../../config";
 import RacesBox from "../../../components/RacesBox";
 import MeasuresBox from "../../../components/MeasuresBox";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
@@ -41,16 +42,13 @@ const BallotItems = ({ route, navigation }) => {
   // {type: 'Referendum
 
   if (data.contests != undefined) {
-    console.log("printing data");
-    // console.log(data);
     try {
-      console.log(data.pollingLocations[0].address);
       AsyncStorage.setItem(
         "poll_location_",
         JSON.stringify(data.pollingLocations[0].address)
       );
     } catch (e) {
-      // alert("Failed to save the data to the storage");
+      alert("Failed to save the data to the storage");
     }
 
     for (var i = 0; i < data.contests.length; i++) {

@@ -13,8 +13,8 @@ import CandidateBox from "../../../components/CandidateBox";
 
 const Candidates = ({ route, navigation }) => {
   const { data } = route.params;
-  console.log("GOOOOSE");
-  console.log(data);
+  
+  
   return data.candidates ? (
     <SectionList
       background={"#F1F1F1"}
