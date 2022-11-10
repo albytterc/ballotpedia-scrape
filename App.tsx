@@ -26,6 +26,7 @@ import Races from "./src/pages/Races/Races";
 import Candidates from "./src/pages/Candidates/Candidates";
 import LearnMore from "./src/pages/LearnMore/LearnMore";
 import CandidateProfile from "./src/pages/CandidateProfile/CandidateProfile";
+import CandidateVotingRecord from "./src/pages/CandidateVotingRecord/CandidateVotingRecord";
 import PollLocation from "./src/pages/PollLocation/PollLocation";
 import Measures from "./src/pages/Measures/Measures";
 import BallotItems from "./src/pages/BallotItems/BallotItems";
@@ -60,6 +61,7 @@ export default function App() {
           <Stack.Screen name="Measures" component={Measures} />
           <Stack.Screen name="Learn More" component={LearnMore} />
           <Stack.Screen name="Candidate Profile" component={CandidateProfile} />
+          <Stack.Screen name="Candidate Voting Record" component={CandidateVotingRecord} />
           <Stack.Screen name="Polling Location" component={PollLocation} />
           <Stack.Screen name="Measure Info" component={MeasureInfo} />
         </Stack.Navigator>

@@ -1,5 +1,6 @@
 import { View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
+
 import { Box, Heading, Image, Button, SectionList } from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -23,6 +24,14 @@ const CandidateProfile = ({ route, navigation }) => {
     last.substring(1);
   // console.log(endpoint);
   //   string[0].toUpperCase() + string.substring(1)
+  // name passed to voting record page
+  let name_voting_record =
+    first[0].toUpperCase() +
+    first.substring(1) +
+    " " +
+    last[0].toUpperCase() +
+    last.substring(1);
+  console.log(name_voting_record);
 
   let redirect = false;
 
@@ -84,6 +93,10 @@ const CandidateProfile = ({ route, navigation }) => {
             {candidate_name}
           </Heading>
           {imgItem}
+          <Button bg={"black"} width={"50%"} marginLeft={"25%"}
+            onPress={() => navigation.navigate("Candidate Voting Record",{candidateName: name_voting_record})}>
+            Voting Record
+          </Button>
           <Button
             // display={"flex"}
             width={"80%"}
