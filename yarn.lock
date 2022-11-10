@@ -1253,6 +1253,13 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "6.2.0"
 
+"@fortawesome/free-brands-svg-icons@^6.2.0":
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-6.2.0.tgz#ce072179677f9b5d6767f918cfbf296f357cc1d0"
+  integrity sha512-fm1y4NyZ2qKYNmYhdMz9VAWRw1Et7PMHNunSw3W0SVAwKwv6o0qiJworLH3Y9SnmhHzAymXJwCX1op22FFvGiA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.0"
+
 "@fortawesome/free-solid-svg-icons@^6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.2.0.tgz#8dcde48109354fd7a5ece8ea48d678bb91d4b5f0"
@@ -2646,6 +2653,11 @@ async-limiter@~1.0.0:
   version "1.0.1"
   resolved "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.1.tgz"
   integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
+
+async-storage@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/async-storage/-/async-storage-0.1.0.tgz#b551fcc048cd69166c8c6c4af0e136cf3d4b929f"
+  integrity sha512-29i3KfI7o9YNmqtR3ecY1KqOuM5/Goos3SHzIwvXNYgQMS4ggB+YQ38DC1FVY+Cc4SxiMLy9J4IRZHZ5q5gDpw==
 
 async@^2.4.0:
   version "2.6.4"
