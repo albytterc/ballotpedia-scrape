@@ -45,7 +45,7 @@ const CandidateBox = ({ navigation, candidateData }) => {
       flexDirection={"row"}
       marginBottom={"10px"}
       onPress={() =>
-        navigation.navigate("Candidate Profile", {
+        navigation.navigate("Candidate Info", {
           candidate_name: candidateData.name,
         })
       }

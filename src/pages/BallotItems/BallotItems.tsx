@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, DrawerLayoutAndroid } from "react-native";
 import { SectionList, Box } from "native-base";
 import React, { useState, useEffect } from "react";
 import BallotItemBox from "../../../components/BallotItemBox";
@@ -9,12 +9,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
-const electionId = "8000";
+
 
 const BallotItems = ({ route, navigation }) => {
   // const { data } = route.params;
   // api call
   let userAddress = route.params.userAddress;
+  const electionId = route.params.electionId;
 
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -72,8 +73,10 @@ const BallotItems = ({ route, navigation }) => {
             text={
               data.contests[i].ballotTitle
                 ? data.contests[i].ballotTitle
-                : data.contests[i].office
-            } // ballot title is office in georgia
+                // : data.contests[i].office
+                : data.contests[i].referendumTitle
+            } // ballot title is office in georgia -- I AM MODIFYING THIS TO WORK WITH THE TEST DATA ON THE API!!!!!!!!!!
+            
             navigation={navigation}
             measuresData={data.contests[i]}
           />

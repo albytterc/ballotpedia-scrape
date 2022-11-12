@@ -40,7 +40,9 @@ const MeasuresBox = ({ text, navigation, measuresData }) => {
           display={"flex"}
           justifyContent={"center"}
         >
-          {measuresData.ballotTitle}
+          {/* I AM MODIFYING THIS TO WORK WITH THE TEST DATA ON THE API!!!!!!!!!! */}
+          {/* {measuresData.ballotTitle} */}
+          {measuresData.referendumTitle}
         </Heading>
       </Box>
     </Link>

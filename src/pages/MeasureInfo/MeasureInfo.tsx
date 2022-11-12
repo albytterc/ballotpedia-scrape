@@ -19,10 +19,12 @@ const MeasureInfo = ({ route, navigation }) => {
             marginX={"1.5rem"}
             marginBottom={"1rem"}
           >
-            {data.ballotTitle}
+            {/* {data.ballotTitle} */}
+            {data.referendumTitle}
           </Heading>
           <Text marginX={"1.5rem"} textAlign={"left"}>
-            {data.referendumText}
+            {/* {data.referendumText} */}
+            {data.referendumSubtitle}
           </Text>
           <Link
             marginTop={"5"}

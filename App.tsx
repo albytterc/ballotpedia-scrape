@@ -31,6 +31,7 @@ import PollLocation from "./src/pages/PollLocation/PollLocation";
 import Measures from "./src/pages/Measures/Measures";
 import BallotItems from "./src/pages/BallotItems/BallotItems";
 import MeasureInfo from "./src/pages/MeasureInfo/MeasureInfo";
+import CandidateTabsNavigator from "./components/CandidateTabsNavigator";
 
 // Define the config
 const config = {
@@ -60,9 +61,10 @@ export default function App() {
           <Stack.Screen name="Candidates" component={Candidates} />
           <Stack.Screen name="Measures" component={Measures} />
           <Stack.Screen name="Learn More" component={LearnMore} />
-          <Stack.Screen name="Candidate Profile" component={CandidateProfile} />
+          <Stack.Screen name="Candidate Info" component ={CandidateTabsNavigator}/>
+          {/* <Stack.Screen name="Candidate Profile" component={CandidateProfile} />
           <Stack.Screen name="Candidate Voting Record" component={CandidateVotingRecord} />
-          <Stack.Screen name="Polling Location" component={PollLocation} />
+          <Stack.Screen name="Polling Location" component={PollLocation} /> */}
           <Stack.Screen name="Measure Info" component={MeasureInfo} />
         </Stack.Navigator>
       </NativeBaseProvider>
