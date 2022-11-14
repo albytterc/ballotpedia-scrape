@@ -5,7 +5,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faBuildingColumns } from "@fortawesome/free-solid-svg-icons/faBuildingColumns";
 
-const RacesBox = ({ text, navigation, data }) => {
+const RacesBox = ({ text, navigation, data, userAddress, electionId }) => {
   return (
     <Link
       style={{ width: "45%", aspectRatio: 1 }}
@@ -24,6 +24,8 @@ const RacesBox = ({ text, navigation, data }) => {
       onPress={() =>
         navigation.navigate("Candidates", {
           data: data,
+          userAddress: userAddress,
+          electionId: electionId,
         })
       }
       mt="8"

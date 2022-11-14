@@ -31,6 +31,7 @@ export default function EventBox({ event, navigation, vars }) {
         navigation.navigate("Ballot Items", {
           userAddress: vars.userAddress,
           navigation: { navigation },
+          electionId: event.id
         })
       }
       mt="8"

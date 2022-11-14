@@ -9,7 +9,7 @@ import { faDemocrat } from "@fortawesome/free-solid-svg-icons/faDemocrat";
 import { faFireFlameSimple } from "@fortawesome/free-solid-svg-icons/faFireFlameSimple";
 import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons/faEarthAmericas";
 
-const CandidateBox = ({ navigation, candidateData }) => {
+const CandidateBox = ({ navigation, candidateData, userAddress, electionId }) => {
   let partyColor = "black";
   let logo = <></>;
   if (candidateData.party) {
@@ -45,7 +45,7 @@ const CandidateBox = ({ navigation, candidateData }) => {
       flexDirection={"row"}
       marginBottom={"10px"}
       onPress={() =>
-        navigation.navigate("Candidate Profile", {
+        navigation.navigate("Candidate Info", {
           candidate_name: candidateData.name,
         })
       }

@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { Link, Heading, Box, Text } from "native-base";
 
-const MeasuresBox = ({ text, navigation, measuresData }) => {
+const MeasuresBox = ({ text, navigation, measuresData, userAddress, electionId }) => {
   console.log(measuresData);
   return (
     <Link
@@ -22,6 +22,8 @@ const MeasuresBox = ({ text, navigation, measuresData }) => {
       onPress={() =>
         navigation.navigate("Measure Info", {
           data: measuresData,
+          userAddress: userAddress,
+          electionId: electionId,
         })
       }
       mt="8"
@@ -40,7 +42,9 @@ const MeasuresBox = ({ text, navigation, measuresData }) => {
           display={"flex"}
           justifyContent={"center"}
         >
-          {measuresData.ballotTitle}
+          {/* I AM MODIFYING THIS TO WORK WITH THE TEST DATA ON THE API!!!!!!!!!! */}
+          {/* {measuresData.ballotTitle} */}
+          {measuresData.referendumTitle}
         </Heading>
       </Box>
     </Link>
