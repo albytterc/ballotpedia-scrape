@@ -22,16 +22,24 @@ import NativeBaseIcon from "./components/NativeBaseIcon";
 import Home from "./src/pages/Home/Home";
 import ZipCode from "./src/pages/ZipCode/ZipCode";
 import Events from "./src/pages/Events/Events";
-import Races from "./src/pages/Races/Races";
-import Candidates from "./src/pages/Candidates/Candidates";
+// import BallotItems from "./src/pages/BallotItems/BallotItems";
+import BallotItemsDrawer from "./components/drawers/BallotItemsDrawer";
+// import Races from "./src/pages/Races/Races";
+import RacesDrawer from "./components/drawers/RacesDrawer";
+// import Measures from "./src/pages/Measures/Measures";
+import MeasuresDrawer from "./components/drawers/MeasuresDrawer";
+// import Candidates from "./src/pages/Candidates/Candidates";
+import CandidatesDrawer from "./components/drawers/CandidatesDrawer";
 import LearnMore from "./src/pages/LearnMore/LearnMore";
 import CandidateProfile from "./src/pages/CandidateProfile/CandidateProfile";
 import CandidateVotingRecord from "./src/pages/CandidateVotingRecord/CandidateVotingRecord";
 import PollLocation from "./src/pages/PollLocation/PollLocation";
-import Measures from "./src/pages/Measures/Measures";
-import BallotItems from "./src/pages/BallotItems/BallotItems";
-import MeasureInfo from "./src/pages/MeasureInfo/MeasureInfo";
+// import MeasureInfo from "./src/pages/MeasureInfo/MeasureInfo";
+import MeasureInfoDrawer from "./components/drawers/MeasureInfoDrawer";
 import CandidateTabsNavigator from "./components/CandidateTabsNavigator";
+import CandidateInfoDrawer from "./components/drawers/CandidateInfoDrawer";
+
+
 
 // Define the config
 const config = {
@@ -56,16 +64,30 @@ export default function App() {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Address" component={ZipCode} />
           <Stack.Screen name="Events" component={Events} />
-          <Stack.Screen name="Races" component={Races} />
-          <Stack.Screen name="Ballot Items" component={BallotItems} />
-          <Stack.Screen name="Candidates" component={Candidates} />
-          <Stack.Screen name="Measures" component={Measures} />
+          <Stack.Screen name="Ballot Items" component={BallotItemsDrawer} options={{
+            headerShown: false
+          }}/>
+          <Stack.Screen name="Races" component={RacesDrawer} options={{
+            headerShown: false
+          }}/>
+          <Stack.Screen name="Measures" component={MeasuresDrawer} options={{
+            headerShown: false
+          }}/>
+          
+          <Stack.Screen name="Candidates" component={CandidatesDrawer} options={{
+            headerShown: false
+          }}/> 
+          
           <Stack.Screen name="Learn More" component={LearnMore} />
-          <Stack.Screen name="Candidate Info" component ={CandidateTabsNavigator}/>
+          <Stack.Screen name="Candidate Info" component ={CandidateInfoDrawer} options={{
+            headerShown: false
+          }}/>
           {/* <Stack.Screen name="Candidate Profile" component={CandidateProfile} />
-          <Stack.Screen name="Candidate Voting Record" component={CandidateVotingRecord} />
-          <Stack.Screen name="Polling Location" component={PollLocation} /> */}
-          <Stack.Screen name="Measure Info" component={MeasureInfo} />
+          <Stack.Screen name="Candidate Voting Record" component={CandidateVotingRecord} />*/}
+          <Stack.Screen name="Polling Location" component={PollLocation} /> 
+          <Stack.Screen name="Measure Info" component={MeasureInfoDrawer} options={{
+            headerShown: false
+          }}/>
         </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>

@@ -6,7 +6,7 @@ import {
   VStack,
   Text,
   Pressable,
-  Link,
+  Link,  
   SectionList,
 } from "native-base";
 import CandidateBox from "../../../components/CandidateBox";
@@ -39,6 +39,8 @@ const Candidates = ({ route, navigation }) => {
                 key={i}
                 navigation={navigation}
                 candidateData={can}
+                userAddress={data.userAddress}
+                electionId={data.electionId}
               />
             ))}
           </Box>

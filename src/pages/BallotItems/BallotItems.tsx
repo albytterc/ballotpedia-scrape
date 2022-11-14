@@ -40,7 +40,7 @@ const BallotItems = ({ route, navigation }) => {
   // {type: 'General', ballotTitle: 'DeKalb County Commissioner', office: 'DeKalb County Commissioner (District 2)', level: Array(1), roles: Array(1), …}
   // 13
   // :
-  // {type: 'Referendum
+  // {type: 'Referendum'}
 
   if (data.contests != undefined) {
     try {
@@ -64,6 +64,8 @@ const BallotItems = ({ route, navigation }) => {
             } // ballot title is office in georgia
             navigation={navigation}
             data={data.contests[i]}
+            userAddress={userAddress}
+            electionId={electionId}
           />
         );
       } else if (data.contests[i].type === "Referendum") {
@@ -79,6 +81,8 @@ const BallotItems = ({ route, navigation }) => {
             
             navigation={navigation}
             measuresData={data.contests[i]}
+            userAddress={userAddress}
+            electionId={electionId}
           />
         );
       }
@@ -103,6 +107,8 @@ const BallotItems = ({ route, navigation }) => {
               navigateTo={"Races"}
               colorHex={"#562349"}
               listItems={RacesList}
+              userAddress={userAddress}
+              electionId={electionId}
             />
             <BallotItemBox
               title={"Measures"}
@@ -111,6 +117,8 @@ const BallotItems = ({ route, navigation }) => {
               navigateTo={"Measures"}
               colorHex={"#8B4000"}
               listItems={MeasuresList}
+              userAddress={userAddress}
+              electionId={electionId}
             />
           </Box>
         </>

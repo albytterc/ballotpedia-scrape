@@ -10,6 +10,8 @@ const BallotItemBox = ({
   navigateTo,
   colorHex,
   listItems,
+  userAddress,
+  electionId,
 }) => {
   return (
     <Link
@@ -27,7 +29,7 @@ const BallotItemBox = ({
       margin={"auto"}
       marginBottom={"3"}
       onPress={() =>
-        navigation.navigate(navigateTo, { data: data, listItems: listItems })
+        navigation.navigate(navigateTo, { data: data, listItems: listItems, userAddress: userAddress, electionId: electionId})
       }
       mt="8"
     >

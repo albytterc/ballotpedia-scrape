@@ -10,7 +10,9 @@ const Tab = createBottomTabNavigator();
 const CandidateTabsNavigator = ({route, navigation}) => {
     let params = route.params
     return(
-        <Tab.Navigator initialRouteName="Candidate Profile">
+        <Tab.Navigator initialRouteName="Candidate Profile" screenOptions={{
+          headerShown: false
+        }}>
             <Tab.Screen name="Candidate Profile" initialParams={params} component={CandidateProfile} 
             options={{
                 tabBarLabel: 'Profile',
