@@ -1,18 +1,16 @@
 import express, { NextFunction, Request, Response } from "express";
-import config from "config";
 import helmet from "helmet";
 import compression from 'compression';
 import morgan from 'morgan';
 
 import routes from "./routes";
 
-const api = process.env.API_URL;
 const app = express();
 
 
 app.use(compression())
 app.use(helmet());
-app.use(morgan('dev'));
+    app.use(morgan('dev'));
 app.use(express.json());
 
 routes(app)
