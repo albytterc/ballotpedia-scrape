@@ -1,8 +1,5 @@
 import * as cheerio from "cheerio";
-import * as CSSSelect from 'css-select';
 import axios, {AxiosResponse} from "axios";
-import express, {NextFunction} from "express";
-import url from "node:url";
 
 const baseURL = "https://ballotpedia.org/index.php?search=";
 
@@ -11,7 +8,7 @@ interface ProfileJSON {
 }
 
 export default async function parseHTML(query: string) {
-    let jsonData: ProfileJSON = {};
+    const jsonData: ProfileJSON = {};
     const searchURL = new URL(baseURL + query).href;
 
     await axios
@@ -57,7 +54,7 @@ function getSummary($: cheerio.CheerioAPI) {
     for (let i = 0; i < children.length; i++) {
         if (!$(children[i]).is("p") && bio.trim()) break;
 
-        let hasStyleChild = $(children[i]).children().is("style");
+        const hasStyleChild = $(children[i]).children().is("style");
         if ($(children[i]).is("p") && !hasStyleChild) {
             // console.log("i: " + i + " " + $(children[i]).text())
             bio += $(children[i]).text();
@@ -68,7 +65,7 @@ function getSummary($: cheerio.CheerioAPI) {
 }
 
 function getBio($: cheerio.CheerioAPI) {
-    let bio = $("#Biography")?.parent().nextUntil("h2").text();
+    const bio = $("#Biography")?.parent().nextUntil("h2").text();
     return removeCitation(bio.trim());
 }
 
@@ -87,7 +84,7 @@ function getContactInfo($: cheerio.CheerioAPI) {
 }
 
 function removeCitation(text: string) {
-    return text.replace(/\[\d*\]/gi, "");
+    return text.replace(/\[\d*]/gi, "");
 }
 
 function parseSearchResults(query: string, response: AxiosResponse) {
@@ -107,7 +104,7 @@ function parseSearchResults(query: string, response: AxiosResponse) {
     if (!firstResultLink) {
         throw new Error("No results found for " + query);
     }
-    let sourceURL = getListEntryURL(firstResultLink);
+    const sourceURL = getListEntryURL(firstResultLink);
 
     return axios.get(sourceURL);
 }

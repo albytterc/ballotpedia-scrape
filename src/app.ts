@@ -1,4 +1,4 @@
-import express, { NextFunction, Request, Response } from "express";
+import express, {Request, Response, NextFunction} from "express";
 import helmet from "helmet";
 import compression from 'compression';
 import morgan from 'morgan';
