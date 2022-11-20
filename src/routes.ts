@@ -1,10 +1,10 @@
-import { profile } from "console";
 import { Express, Request, Response, NextFunction } from "express";
 import parseHTML from "./ballotpedia-scrape";
+import routeCache from './routeCache';
 
 export default function routes(app: Express) {
 
-  app.get("/api/:query", async (req: Request, res: Response, next: NextFunction) => {
+  app.get("/api/:query", routeCache(300), async (req: Request, res: Response, next: NextFunction) => {
       try {
         const profileJson = await parseHTML(req.params.query);
         return res.status(200).json(profileJson)
