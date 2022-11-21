@@ -93,7 +93,7 @@ const CandidateProfile = ({ route, navigation }) => {
             {candidate_name}
           </Heading>
           {imgItem}
-          <Button bg={"black"} width={"50%"} marginLeft={"25%"}
+          {/* <Button bg={"black"} width={"50%"} marginLeft={"25%"}
             onPress={() => navigation.navigate("Candidate Voting Record",{candidateName: name_voting_record})}>
             Voting Record
           </Button>
@@ -111,7 +111,7 @@ const CandidateProfile = ({ route, navigation }) => {
               VOTE
             </Heading>
             <Icon color={"white"} name={"arrow-right-bold"} size={45}></Icon>
-          </Button>
+          </Button> */}
         </Box>
       }
       sections={[]}

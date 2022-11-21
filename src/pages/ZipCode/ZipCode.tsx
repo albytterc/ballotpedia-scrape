@@ -71,6 +71,7 @@ const ZipCode = ({ navigation }) => {
       // setData({...formData, address: address_string})
       // console.log(formData.address)
 
+      setLoading(false);
       //I'M USING NO STATE VAR BUT THE STRING ITSELF FOR NOW
       navigation.navigate("Events", {
         userAddress: address_string,

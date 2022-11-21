@@ -49,7 +49,7 @@ const BallotItems = ({ route, navigation }) => {
         JSON.stringify(data.pollingLocations[0].address)
       );
     } catch (e) {
-      alert("Failed to save the data to the storage");
+      // alert("Failed to save the data to the storage");
     }
 
     for (var i = 0; i < data.contests.length; i++) {
