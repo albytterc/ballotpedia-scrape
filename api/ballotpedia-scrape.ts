@@ -9,6 +9,7 @@ interface ProfileJSON {
 
 export default async function parseHTML(query: string) {
     const jsonData: ProfileJSON = {};
+    query = query.replace(/\w*\. /, ''); // remove abbreviations in names
     const searchURL = new URL(baseURL + query).href;
 
     await axios
@@ -65,7 +66,7 @@ function getSummary($: cheerio.CheerioAPI) {
 }
 
 function getBio($: cheerio.CheerioAPI) {
-    const bio = $("#Biography")?.parent().nextUntil("h2").text();
+    const bio = $("#Biography")?.parent().nextUntil("h2", "p").text();
     return removeCitation(bio.trim());
 }
 
