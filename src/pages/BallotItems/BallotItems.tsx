@@ -6,14 +6,14 @@ import config from "../../../config";
 import RacesBox from "../../../components/RacesBox";
 import MeasuresBox from "../../../components/MeasuresBox";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import historicalPollingLocation from "../../../assets/api-data/ga/athens-ga.json";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faRepublican } from "@fortawesome/free-solid-svg-icons/faRepublican";
 
 const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
 
-
 const BallotItems = ({ route, navigation }) => {
-  // const { data } = route.params;
-  // api call
   let userAddress = route.params.userAddress;
   const electionId = route.params.electionId;
 
@@ -35,18 +35,15 @@ const BallotItems = ({ route, navigation }) => {
       .catch((error) => alert(error))
       .finally(() => setLoading(false));
   }, []);
+  console.log(data);
   const RacesList = [];
   const MeasuresList = [];
-  // {type: 'General', ballotTitle: 'DeKalb County Commissioner', office: 'DeKalb County Commissioner (District 2)', level: Array(1), roles: Array(1), …}
-  // 13
-  // :
-  // {type: 'Referendum'}
 
   if (data.contests != undefined) {
     try {
       AsyncStorage.setItem(
         "poll_location_",
-        JSON.stringify(data.pollingLocations[0].address)
+        JSON.stringify(historicalPollingLocation.pollingLocations[0].address)
       );
     } catch (e) {
       alert("Failed to save the data to the storage");
@@ -75,10 +72,9 @@ const BallotItems = ({ route, navigation }) => {
             text={
               data.contests[i].ballotTitle
                 ? data.contests[i].ballotTitle
-                // : data.contests[i].office
-                : data.contests[i].referendumTitle
+                : // : data.contests[i].office
+                  data.contests[i].referendumTitle
             } // ballot title is office in georgia -- I AM MODIFYING THIS TO WORK WITH THE TEST DATA ON THE API!!!!!!!!!!
-            
             navigation={navigation}
             measuresData={data.contests[i]}
             userAddress={userAddress}

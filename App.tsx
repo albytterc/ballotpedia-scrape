@@ -38,9 +38,9 @@ import PollLocation from "./src/pages/PollLocation/PollLocation";
 import MeasureInfoDrawer from "./components/drawers/MeasureInfoDrawer";
 import CandidateTabsNavigator from "./components/CandidateTabsNavigator";
 import CandidateInfoDrawer from "./components/drawers/CandidateInfoDrawer";
-
-
-
+import { LogBox } from "react-native";
+LogBox.ignoreLogs(["Warning: ..."]); // Ignore log notification by message
+LogBox.ignoreAllLogs(); //Ignore all log notifications
 // Define the config
 const config = {
   useSystemColorMode: false,
@@ -64,30 +64,54 @@ export default function App() {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Address" component={ZipCode} />
           <Stack.Screen name="Events" component={Events} />
-          <Stack.Screen name="Ballot Items" component={BallotItemsDrawer} options={{
-            headerShown: false
-          }}/>
-          <Stack.Screen name="Races" component={RacesDrawer} options={{
-            headerShown: false
-          }}/>
-          <Stack.Screen name="Measures" component={MeasuresDrawer} options={{
-            headerShown: false
-          }}/>
-          
-          <Stack.Screen name="Candidates" component={CandidatesDrawer} options={{
-            headerShown: false
-          }}/> 
-          
+          <Stack.Screen
+            name="Ballot Items"
+            component={BallotItemsDrawer}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Races"
+            component={RacesDrawer}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Measures"
+            component={MeasuresDrawer}
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name="Candidates"
+            component={CandidatesDrawer}
+            options={{
+              headerShown: false,
+            }}
+          />
+
           <Stack.Screen name="Learn More" component={LearnMore} />
-          <Stack.Screen name="Candidate Info" component ={CandidateInfoDrawer} options={{
-            headerShown: false
-          }}/>
+          <Stack.Screen
+            name="Candidate Info"
+            component={CandidateInfoDrawer}
+            options={{
+              headerShown: false,
+            }}
+          />
           {/* <Stack.Screen name="Candidate Profile" component={CandidateProfile} />
           <Stack.Screen name="Candidate Voting Record" component={CandidateVotingRecord} />*/}
-          <Stack.Screen name="Polling Location" component={PollLocation} /> 
-          <Stack.Screen name="Measure Info" component={MeasureInfoDrawer} options={{
-            headerShown: false
-          }}/>
+          <Stack.Screen name="Polling Location" component={PollLocation} />
+          <Stack.Screen
+            name="Measure Info"
+            component={MeasureInfoDrawer}
+            options={{
+              headerShown: false,
+            }}
+          />
         </Stack.Navigator>
       </NativeBaseProvider>
     </NavigationContainer>

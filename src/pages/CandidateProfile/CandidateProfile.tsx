@@ -1,20 +1,28 @@
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import React, { useState, useEffect } from "react";
 
-import { Box, Heading, Image, Button, SectionList } from "native-base";
+import {
+  Box,
+  Link,
+  Text,
+  Heading,
+  Image,
+  Button,
+  SectionList,
+} from "native-base";
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { faRepublican } from "@fortawesome/free-solid-svg-icons/faRepublican";
+
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const CandidateProfile = ({ route, navigation }) => {
-  let candidate_name = route.params.candidate_name;
-  let candidate_name_split = candidate_name.split(" ");
+  let candidate = route.params.candidate;
+  let candidate_name_split = candidate.name.split(" ");
   let first = candidate_name_split[0].toLowerCase();
   let last =
     candidate_name_split[candidate_name_split.length - 1].toLowerCase();
-  // console.log(first);
-  // console.log(last);
 
   const BASE_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/";
-  //   let endpoint = "Joe" + "_" + "Biden";
   let img_url: any = "";
   let endpoint =
     first[0].toUpperCase() +
@@ -22,9 +30,6 @@ const CandidateProfile = ({ route, navigation }) => {
     "_" +
     last[0].toUpperCase() +
     last.substring(1);
-  // console.log(endpoint);
-  //   string[0].toUpperCase() + string.substring(1)
-  // name passed to voting record page
   let name_voting_record =
     first[0].toUpperCase() +
     first.substring(1) +
@@ -46,11 +51,10 @@ const CandidateProfile = ({ route, navigation }) => {
     // console.log(data);
   }, []);
   const imgItem = [];
-  // console.log(data);
   if (data.originalimage != undefined) {
     imgItem.push(
       <Box
-        key={candidate_name + "candidate"}
+        key={candidate.name + "candidate"}
         display={"flex"}
         alignItems={"center"}
       >
@@ -75,43 +79,118 @@ const CandidateProfile = ({ route, navigation }) => {
         </Heading>
       </Box>
     );
-    // img_url = data.originalimage.source;
-    // console.log(img_url);
+  }
+
+  const contacts = [];
+  console.log(candidate.candidateUrl);
+  if (candidate.candidateUrl) {
+    console.log("we have contacts");
+    contacts.push(
+      <Box marginX={5}>
+        <Link href={candidate.candidateUrl}>
+          <Icon
+            style={{ padding: "0%" }}
+            color={"black"}
+            name={"web"}
+            size={50}
+          />
+          <Text ml={5} lineHeight={50}>
+            {" "}
+            {candidate.candidateUrl}
+          </Text>
+        </Link>
+      </Box>
+    );
+  }
+  if (candidate.email) {
+    console.log("we have email");
+    console.log(candidate.email);
+    contacts.push(
+      <Box marginX={5}>
+        <Link>
+          <Icon
+            style={{ padding: "0%" }}
+            color={"#c71610"}
+            name={"gmail"}
+            size={50}
+          />
+          <Text ml={5} lineHeight={50}>
+            {" "}
+            {candidate.email}
+          </Text>
+        </Link>
+      </Box>
+    );
+  }
+
+  const socialChannels = [];
+  if (candidate.channels != undefined) {
+    let color = "black";
+    let iconType = "link";
+    candidate.channels.forEach((element) => {
+      if (element.type.toLowerCase() === "youtube") {
+        color = "#FF0000";
+        iconType = "youtube";
+      } else if (element.type.toLowerCase() === "twitter") {
+        color = "#00acee";
+        iconType = "twitter";
+      } else if (element.type.toLowerCase() === "facebook") {
+        color = "#3b5998";
+        iconType = "facebook";
+      } else if (element.type.toLowerCase() === "email") {
+        color = "black";
+        iconType = "email";
+      }
+
+      socialChannels.push(
+        <Box width={"50px"}>
+          <Link href={element.id}>
+            <Icon
+              style={{ padding: "0%" }}
+              color={color}
+              name={iconType}
+              size={50}
+            />
+          </Link>
+        </Box>
+      );
+    });
+
+    // if (candidate.channels.type == "Youtube")
   }
 
   return (
     <SectionList
-      background={"#F69E7B"}
+      background={"white"}
       ListFooterComponent={
-        <Box key={candidate_name}>
+        <Box key={candidate.name}>
           <Heading
             size={"2xl"}
             textAlign={"center"}
             marginTop={"1rem"}
             marginBottom={"1rem"}
           >
-            {candidate_name}
+            {candidate.name}
           </Heading>
           {imgItem}
-          <Button bg={"black"} width={"50%"} marginLeft={"25%"}
-            onPress={() => navigation.navigate("Candidate Voting Record",{candidateName: name_voting_record})}>
-            Voting Record
-          </Button>
-          <Button
-            // display={"flex"}
-            width={"80%"}
-            alignSelf={"center"}
-            marginTop={"50px"}
-            borderRadius={"50px"}
-            borderWidth={".3px"}
-            bg={"black"}
-            onPress={() => navigation.navigate("Polling Location")}
+
+          <Heading ml={".5rem"} marginTop={"1rem"}>
+            Contact me
+          </Heading>
+          <Box bg="dark.800" justifyContent={"space-around"}>
+            {contacts}
+          </Box>
+          <Heading ml={".5rem"} marginTop={"1rem"}>
+            Social Media
+          </Heading>
+          <Box
+            bg="dark.800"
+            display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"space-around"}
           >
-            <Heading size={"sm"} color={"white"}>
-              VOTE
-            </Heading>
-            <Icon color={"white"} name={"arrow-right-bold"} size={45}></Icon>
-          </Button>
+            {socialChannels}
+          </Box>
         </Box>
       }
       sections={[]}
