@@ -1,16 +1,16 @@
-import express, {Request, Response, NextFunction} from "express";
+import express, {Request, Response, NextFunction, Express} from "express";
 import helmet from "helmet";
 import compression from 'compression';
 import morgan from 'morgan';
 
 import routes from "./routes";
 
-const app = express();
+const app: Express = express();
 
 
 app.use(compression())
 app.use(helmet());
-    app.use(morgan('dev'));
+app.use(morgan('dev'));
 app.use(express.json());
 
 routes(app)

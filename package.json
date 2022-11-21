@@ -18,6 +18,8 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/api/index.js",
     "dev": "ts-node-dev --respawn --transpile-only --debug --trace-sync-io -- api/index.ts",
     "lint": "eslint . --ext .ts"
   },
