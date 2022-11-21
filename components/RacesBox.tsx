@@ -11,10 +11,9 @@ const RacesBox = ({ text, navigation, data, userAddress, electionId }) => {
       style={{ width: "45%", aspectRatio: 1 }}
       height="100%"
       p="4"
-      bg={"#562349"}
+      bg={"#6749A1"}
       shadow={2}
       borderRadius={30}
-      // borderWidth="1px"
       borderColor={"white"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -31,13 +30,13 @@ const RacesBox = ({ text, navigation, data, userAddress, electionId }) => {
       mt="8"
     >
       <Icon
-        name={"information"}
+        name={"information-outline"}
         size={25}
-        color={"grey"}
+        color={"white"}
         style={{
           position: "absolute",
-          right: "5%",
-          top: "5%",
+          right: "8%",
+          top: "8%",
         }}
         onPress={() => navigation.navigate("Learn More", { title: text })}
       ></Icon>
@@ -56,11 +55,11 @@ const RacesBox = ({ text, navigation, data, userAddress, electionId }) => {
         </Box>
       </Box>
       <FontAwesomeIcon
-        size={30}
+        size={20}
         style={{
           position: "absolute",
-          left: "8%",
-          top: "5%",
+          left: "10%",
+          top: "10%",
         }}
         color={"#FFFFFF"}
         icon={faBuildingColumns}

@@ -16,11 +16,10 @@ export default function EventBox({ event, navigation, vars }) {
     <Link
       width={"95%"}
       height={"150px"}
-      bg="#383E56"
+      bg="#545454"
       p="4"
       shadow={2}
       borderRadius={20}
-      borderWidth="2px"
       alignItems={"center"}
       display={"flex"}
       flexDirection={"row"}
@@ -31,7 +30,7 @@ export default function EventBox({ event, navigation, vars }) {
         navigation.navigate("Ballot Items", {
           userAddress: vars.userAddress,
           navigation: { navigation },
-          electionId: event.id
+          electionId: event.id,
         })
       }
       mt="8"

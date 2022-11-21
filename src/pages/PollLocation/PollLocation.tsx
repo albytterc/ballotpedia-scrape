@@ -19,7 +19,10 @@ const PollLocation = ({ route, navigation }) => {
 
   const styles = StyleSheet.create({
     map: {
-      width: Dimensions.get("window").width * 0.8,
+      borderRadius: "30px",
+      borderColor: "green",
+      borderWidth: "1px",
+      width: Dimensions.get("window").width * 0.98,
       height: Dimensions.get("window").height / 2,
     },
   });
@@ -38,8 +41,6 @@ const PollLocation = ({ route, navigation }) => {
   };
 
   const getGeoCode = async () => {
-    // readData();
-
     const searchAddress =
       input.line1 + ", " + input.city + ", " + input.state + " " + input.zip;
     Geocoder.init(config.MAPS_API_KEY); // use a valid API key

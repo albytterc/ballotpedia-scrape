@@ -68,21 +68,24 @@ export default function App() {
             name="Ballot Items"
             component={BallotItemsDrawer}
             options={{
-              headerShown: false,
+              headerShown: true,
+              // title: "",
             }}
           />
           <Stack.Screen
             name="Races"
             component={RacesDrawer}
             options={{
-              headerShown: false,
+              headerShown: true,
+              // title: "",
             }}
           />
           <Stack.Screen
             name="Measures"
             component={MeasuresDrawer}
             options={{
-              headerShown: false,
+              headerShown: true,
+              // title: "",
             }}
           />
 
@@ -90,7 +93,8 @@ export default function App() {
             name="Candidates"
             component={CandidatesDrawer}
             options={{
-              headerShown: false,
+              headerShown: true,
+              // title: "",
             }}
           />
 
@@ -99,7 +103,8 @@ export default function App() {
             name="Candidate Info"
             component={CandidateInfoDrawer}
             options={{
-              headerShown: false,
+              headerShown: true,
+              // title: "",
             }}
           />
           {/* <Stack.Screen name="Candidate Profile" component={CandidateProfile} />
@@ -109,7 +114,8 @@ export default function App() {
             name="Measure Info"
             component={MeasureInfoDrawer}
             options={{
-              headerShown: false,
+              headerShown: true,
+              // title: "",
             }}
           />
         </Stack.Navigator>

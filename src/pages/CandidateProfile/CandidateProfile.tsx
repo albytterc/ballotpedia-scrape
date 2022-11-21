@@ -73,6 +73,7 @@ const CandidateProfile = ({ route, navigation }) => {
           marginLeft="1.5rem"
           marginRight="1.5rem"
           marginTop="2rem"
+          fontWeight={1}
           textAlign={"center"}
         >
           {data.extract}

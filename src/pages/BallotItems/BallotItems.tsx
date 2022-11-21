@@ -101,7 +101,7 @@ const BallotItems = ({ route, navigation }) => {
               navigation={navigation}
               data={data}
               navigateTo={"Races"}
-              colorHex={"#562349"}
+              colorHex={"#6749A1"}
               listItems={RacesList}
               userAddress={userAddress}
               electionId={electionId}
@@ -111,7 +111,7 @@ const BallotItems = ({ route, navigation }) => {
               navigation={navigation}
               data={data}
               navigateTo={"Measures"}
-              colorHex={"#8B4000"}
+              colorHex={"#56941e"}
               listItems={MeasuresList}
               userAddress={userAddress}
               electionId={electionId}

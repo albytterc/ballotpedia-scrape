@@ -2,13 +2,19 @@ import React from "react";
 import { View } from "react-native";
 import { Link, Heading, Box, Text } from "native-base";
 
-const MeasuresBox = ({ text, navigation, measuresData, userAddress, electionId }) => {
+const MeasuresBox = ({
+  text,
+  navigation,
+  measuresData,
+  userAddress,
+  electionId,
+}) => {
   console.log(measuresData);
   return (
     <Link
       style={{ width: "45%", aspectRatio: 1 }}
       height="100px"
-      bg={"#8B4000"}
+      bg={"#56941e"}
       p="4"
       shadow={2}
       borderRadius={50}

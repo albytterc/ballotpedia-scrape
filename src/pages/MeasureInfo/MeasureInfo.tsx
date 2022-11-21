@@ -9,7 +9,7 @@ const MeasureInfo = ({ route, navigation }) => {
   const { data } = route.params;
   return (
     <SectionList
-      background={"#90EE90"}
+      background={"white"}
       ListFooterComponent={
         <Box key={"TODO"}>
           <Heading
