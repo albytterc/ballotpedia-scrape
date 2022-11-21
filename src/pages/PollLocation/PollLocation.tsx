@@ -32,7 +32,7 @@ const PollLocation = ({ route, navigation }) => {
         setInput(JSON.parse(value)); 
       }
     } catch (e) {
-      alert("Failed to fetch the input from storage");
+      // alert("Failed to fetch the input from storage");
     }
   };
 
