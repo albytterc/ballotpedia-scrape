@@ -1,7 +1,7 @@
 {
   "name": "ballotpedia-scraper",
   "version": "1.0.0",
-  "main": "src/app.ts",
+  "main": "api/index.ts",
   "license": "MIT",
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
@@ -18,7 +18,7 @@
     "typescript": "^4.8.4"
   },
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only --debug --trace-sync-io -- src/app.ts",
+    "dev": "ts-node-dev --respawn --transpile-only --debug --trace-sync-io -- api/index.ts",
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {

@@ -32,3 +32,5 @@ app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
 app.listen(3000, () => {
     console.log("Application listening on http://localhost:3000");
 });
+
+export default app;
