@@ -4,4 +4,6 @@ test.http
 profiling
 config
 package-lock.json
+dist
+.eslintrc.cjs
 
