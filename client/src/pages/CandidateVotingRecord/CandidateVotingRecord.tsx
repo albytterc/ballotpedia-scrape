@@ -12,8 +12,7 @@ import {
 import {WebView} from 'react-native-webview';
 
 const CandidateVotingRecord= ({ route, navigation }) => {
-  const candidate_name = route.params.candidateName;
-  console.log(candidate_name);
+  const candidate_name = route.params.candidate_name;
   const heading = "View " + candidate_name + "'s voting record on Vote Smart";
   const instruction = "1. Search for the candidate " + candidate_name + "\n2. Choose the category 'VOTES'\n3. Scroll down to see " + candidate_name + "'s previous voting record";
 
