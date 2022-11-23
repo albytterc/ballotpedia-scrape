@@ -43,7 +43,7 @@ const MeasureInfo = ({ route, navigation }) => {
             </Box>
           </Link>
 
-          <Button
+          {/* <Button
             display={"flex"}
             width={"80%"}
             alignSelf={"center"}
@@ -62,7 +62,7 @@ const MeasureInfo = ({ route, navigation }) => {
             <Heading alignSelf={"flex-start"} size={"xs"} color={"white"}>
               I'M READY TO VOTE
             </Heading>
-          </Button>
+          </Button> */}
         </Box>
       }
       sections={[]}
