@@ -1,4 +1,10 @@
-import { StyleSheet, View, Dimensions, Platform } from "react-native";
+import {
+  StyleSheet,
+  Linking,
+  Dimensions,
+  Platform,
+  Button,
+} from "react-native";
 import React, { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -10,6 +16,12 @@ import config from "../../../config";
 const PollLocation = () => {
   const [input, setInput] = useState("");
   const [PollGeoCode, setPollGeoCode] = useState({});
+
+  const openGps = () => {
+    var scheme = Platform.OS === "ios" ? "maps:0,0?q=" : "geo:0,0?q=";
+    var url = scheme + `${PollGeoCode.lat!},${PollGeoCode.lng!}`;
+    Linking.openURL(url);
+  };
 
   const styles = StyleSheet.create({
     map: {
@@ -26,31 +38,28 @@ const PollLocation = () => {
       const value = await AsyncStorage.getItem("poll_location_");
 
       if (value != null) {
-        console.log(JSON.parse(value));
         setInput(JSON.parse(value));
       }
     } catch (e) {
-      // alert("Failed to fetch the input from storage");
+      alert("Failed to fetch the input from storage");
     }
   };
 
-  const getGeoCode = async () => {
+  useEffect(() => {
+    readData();
+  }, []);
+
+  useEffect(() => {
     const searchAddress =
       input.line1 + ", " + input.city + ", " + input.state + " " + input.zip;
     Geocoder.init(config.MAPS_API_KEY);
     Geocoder.from(searchAddress)
       .then((json) => {
         var location = json.results[0].geometry.location;
-        console.log(location);
         setPollGeoCode(location);
       })
       .catch((error) => console.warn(error));
-  };
-
-  useEffect(() => {
-    readData();
-    getGeoCode();
-  }, []);
+  }, [input]);
 
   return (
     <SectionList
@@ -72,12 +81,19 @@ const PollLocation = () => {
           </Heading>
 
           <Icon color={"green"} name={"map-marker-outline"} size={50}></Icon>
-          <Text fontSize={20} fontWeight={600}>
-            {input.locationName}
-          </Text>
-          <Text fontSize={20}> {input.line1 + ","}</Text>
-          <Text fontSize={20}> {input.city + ","}</Text>
-          <Text fontSize={20}> {input.state + " " + input.zip}</Text>
+          <Text fontSize={20}> Open in Maps</Text>
+          <Button
+            title={
+              input.line1 +
+              ", " +
+              input.city +
+              ", " +
+              input.state +
+              " " +
+              input.zip
+            }
+            onPress={openGps}
+          ></Button>
 
           {Platform.OS === "web" ? (
             <></>
@@ -116,7 +132,7 @@ const PollLocation = () => {
             marginTop={"1rem"}
             marginBottom={"1rem"}
           >
-            Register Here{" "}
+            Register Here
           </Heading>
           <Link href="https://registertovote.sos.ga.gov/">
             <Icon color={"black"} name={"file-document-edit"} size={50}></Icon>
