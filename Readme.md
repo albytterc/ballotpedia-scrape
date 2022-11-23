@@ -55,9 +55,9 @@ Step 1) make new file called config.ts
 
 step 2) add this to your file:
 
+```
 export default {
     API_KEY : "your Google Civic API key",
     MAPS_API_KEY: 'your Google Maps API key'
 }
-
- 
+```
