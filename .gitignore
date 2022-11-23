@@ -1,1 +1,4 @@
 .idea
+.expo
+node_modules
+client/config.ts
