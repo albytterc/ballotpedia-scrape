@@ -119,7 +119,6 @@ const ZipCode = ({ navigation }) => {
           </HStack>
           {loading ? <Spinner size="sm" /> : <></>}
           <Button w="100%" bg={"black"} onPress={useEffect}>
-            {" "}
             Use my current location
           </Button>
         </VStack>
