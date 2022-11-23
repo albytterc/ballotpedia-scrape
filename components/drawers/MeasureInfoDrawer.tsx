@@ -9,7 +9,7 @@ import {
 
 const Drawer = createDrawerNavigator();
 
-const MeasureInfoDrawer = ({ route, navigation }) => {
+const MeasureInfoDrawer = ({ route }) => {
   let params = route.params;
   return (
     <Drawer.Navigator

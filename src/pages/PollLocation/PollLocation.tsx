@@ -3,17 +3,11 @@ import React, { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { Heading, Box, Text, Link, SectionList } from "native-base";
-import { library, icon } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faMugSaucer } from "@fortawesome/free-solid-svg-icons/faMugSaucer";
 import MapView, { Marker } from "react-native-maps";
 import Geocoder from "react-native-geocoding";
 import config from "../../../config";
 
-let value: JSON | null = "undefined";
-
-const PollLocation = ({ route, navigation }) => {
-  // console.log("PARAMS!!", route.params)
+const PollLocation = () => {
   const [input, setInput] = useState("");
   const [PollGeoCode, setPollGeoCode] = useState({});
 
@@ -43,7 +37,7 @@ const PollLocation = ({ route, navigation }) => {
   const getGeoCode = async () => {
     const searchAddress =
       input.line1 + ", " + input.city + ", " + input.state + " " + input.zip;
-    Geocoder.init(config.MAPS_API_KEY); // use a valid API key
+    Geocoder.init(config.MAPS_API_KEY);
     Geocoder.from(searchAddress)
       .then((json) => {
         var location = json.results[0].geometry.location;
@@ -56,16 +50,6 @@ const PollLocation = ({ route, navigation }) => {
   useEffect(() => {
     readData();
     getGeoCode();
-    // const intRegion = {
-    //   latitude: PollGeoCode.lat,
-    //   longitude: PollGeoCode.lng,
-    //   latitudeDelta: 0.01,
-    //   longitudeDelta: 0.01,
-    // };
-    // const PollingLocMarkerRegion = {
-    //   latitude: PollGeoCode.lat,
-    //   longitude: PollGeoCode.lng,
-    // };
   }, []);
 
   return (
@@ -85,18 +69,15 @@ const PollLocation = ({ route, navigation }) => {
             marginBottom={"1rem"}
           >
             Vote Here
-            {/* <FaBeer />? */}
           </Heading>
 
           <Icon color={"green"} name={"map-marker-outline"} size={50}></Icon>
-          {""}
           <Text fontSize={20} fontWeight={600}>
             {input.locationName}
           </Text>
           <Text fontSize={20}> {input.line1 + ","}</Text>
           <Text fontSize={20}> {input.city + ","}</Text>
           <Text fontSize={20}> {input.state + " " + input.zip}</Text>
-          {""}
           <MapView
             style={styles.map}
             initialRegion={{
@@ -124,12 +105,7 @@ const PollLocation = ({ route, navigation }) => {
             Register Here{" "}
           </Heading>
           <Link href="https://registertovote.sos.ga.gov/">
-            <Icon
-              // onPress={"https://registertovote.sos.ga.gov/"}
-              color={"black"}
-              name={"file-document-edit"}
-              size={50}
-            ></Icon>
+            <Icon color={"black"} name={"file-document-edit"} size={50}></Icon>
           </Link>
         </Box>
       }

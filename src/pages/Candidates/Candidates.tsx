@@ -1,20 +1,11 @@
 import { View } from "react-native";
 import React from "react";
-import {
-  Box,
-  Heading,
-  VStack,
-  Text,
-  Pressable,
-  Link,  
-  SectionList,
-} from "native-base";
+import { Box, Heading, Text, SectionList } from "native-base";
 import CandidateBox from "../../../components/CandidateBox";
 
 const Candidates = ({ route, navigation }) => {
   const { data } = route.params;
-  
-  
+
   return data.candidates ? (
     <SectionList
       background={"#F1F1F1"}

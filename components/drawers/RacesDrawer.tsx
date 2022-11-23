@@ -1,8 +1,5 @@
 import "react-native-gesture-handler";
-import BallotItems from "../../src/pages/BallotItems/BallotItems";
 import Races from "../../src/pages/Races/Races";
-import Measures from "../../src/pages/Measures/Measures";
-import ZipCode from "../../src/pages/ZipCode/ZipCode";
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -12,7 +9,7 @@ import {
 
 const Drawer = createDrawerNavigator();
 
-const RacesDrawer = ({ route, navigation }) => {
+const RacesDrawer = ({ route }) => {
   let params = route.params;
   return (
     <Drawer.Navigator
@@ -21,7 +18,6 @@ const RacesDrawer = ({ route, navigation }) => {
         return (
           <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />
-            {/* <DrawerItem label="Address" onPress={() => props.navigation.navigate("Address")} /> */}
             <DrawerItem
               label="Events"
               onPress={() => props.navigation.navigate("Events", params)}

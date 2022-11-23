@@ -1,4 +1,3 @@
-import { View, Text, DrawerLayoutAndroid } from "react-native";
 import { SectionList, Box } from "native-base";
 import React, { useState, useEffect } from "react";
 import BallotItemBox from "../../../components/BallotItemBox";
@@ -7,8 +6,6 @@ import RacesBox from "../../../components/RacesBox";
 import MeasuresBox from "../../../components/MeasuresBox";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import historicalPollingLocation from "../../../assets/api-data/ga/athens-ga.json";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faRepublican } from "@fortawesome/free-solid-svg-icons/faRepublican";
 
 const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
@@ -58,7 +55,7 @@ const BallotItems = ({ route, navigation }) => {
               data.contests[i].ballotTitle
                 ? data.contests[i].ballotTitle
                 : data.contests[i].office
-            } // ballot title is office in georgia
+            }
             navigation={navigation}
             data={data.contests[i]}
             userAddress={userAddress}
@@ -72,9 +69,8 @@ const BallotItems = ({ route, navigation }) => {
             text={
               data.contests[i].ballotTitle
                 ? data.contests[i].ballotTitle
-                : // : data.contests[i].office
-                  data.contests[i].referendumTitle
-            } // ballot title is office in georgia -- I AM MODIFYING THIS TO WORK WITH THE TEST DATA ON THE API!!!!!!!!!!
+                : data.contests[i].referendumTitle
+            }
             navigation={navigation}
             measuresData={data.contests[i]}
             userAddress={userAddress}

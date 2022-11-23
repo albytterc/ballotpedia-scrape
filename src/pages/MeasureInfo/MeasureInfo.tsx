@@ -1,4 +1,3 @@
-import { View } from "react-native";
 import React from "react";
 import { SectionList, Box, Heading, Button, Text, Link } from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";

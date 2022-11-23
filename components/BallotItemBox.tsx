@@ -1,9 +1,6 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { Link, VStack, Heading, Box } from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
 const BallotItemBox = ({
   title,
   navigation,
@@ -23,9 +20,6 @@ const BallotItemBox = ({
       shadow={2}
       borderRadius={20}
       alignItems={"center"}
-      // display={"flex"}
-      // flexDirection={"row"}
-      // justifyContent="space-around"
       margin={"auto"}
       marginBottom={"3"}
       onPress={() =>

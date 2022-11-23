@@ -1,5 +1,4 @@
 import React from "react";
-import { View } from "react-native";
 import { Link, Heading, Box, Text } from "native-base";
 
 const MeasuresBox = ({
@@ -18,7 +17,6 @@ const MeasuresBox = ({
       p="4"
       shadow={2}
       borderRadius={50}
-      // borderWidth="1px"
       borderColor={"black"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -34,12 +32,7 @@ const MeasuresBox = ({
       }
       mt="8"
     >
-      <Box
-      // display={"flex"}
-      // justifyContent={"center"}
-      // alignItems={"center"}
-      // textAlign={"center"}
-      >
+      <Box>
         <Heading
           size={"sm"}
           color="#FFFFFF"
@@ -48,8 +41,6 @@ const MeasuresBox = ({
           display={"flex"}
           justifyContent={"center"}
         >
-          {/* I AM MODIFYING THIS TO WORK WITH THE TEST DATA ON THE API!!!!!!!!!! */}
-          {/* {measuresData.ballotTitle} */}
           {measuresData.referendumTitle}
         </Heading>
       </Box>

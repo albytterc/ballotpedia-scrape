@@ -9,7 +9,7 @@ import {
 
 const Drawer = createDrawerNavigator();
 
-const CandidatesDrawer = ({ route, navigation }) => {
+const CandidatesDrawer = ({ route }) => {
   let params = route.params;
   return (
     <Drawer.Navigator
@@ -18,7 +18,6 @@ const CandidatesDrawer = ({ route, navigation }) => {
         return (
           <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />
-            {/* <DrawerItem label="Address" onPress={() => props.navigation.navigate("Address")} /> */}
             <DrawerItem
               label="Events"
               onPress={() => props.navigation.navigate("Events", params)}

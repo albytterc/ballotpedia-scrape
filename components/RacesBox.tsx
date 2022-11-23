@@ -1,5 +1,4 @@
-import { View } from "react-native";
-import { Box, Heading, VStack, Text, Pressable, Link } from "native-base";
+import { Box, Text, Link } from "native-base";
 import React from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";

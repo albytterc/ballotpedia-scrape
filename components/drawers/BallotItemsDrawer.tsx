@@ -1,7 +1,5 @@
 import "react-native-gesture-handler";
 import BallotItems from "../../src/pages/BallotItems/BallotItems";
-import ZipCode from "../../src/pages/ZipCode/ZipCode";
-import Events from "../../src/pages/Events/Events";
 import {
   createDrawerNavigator,
   DrawerContentScrollView,

@@ -1,21 +1,10 @@
-import { View } from "react-native";
 import React, { useState, useEffect } from "react";
 
-import {
-  Box,
-  Link,
-  Text,
-  Heading,
-  Image,
-  Button,
-  SectionList,
-} from "native-base";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faRepublican } from "@fortawesome/free-solid-svg-icons/faRepublican";
+import { Box, Link, Text, Heading, Image, SectionList } from "native-base";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
-const CandidateProfile = ({ route, navigation }) => {
+const CandidateProfile = ({ route }) => {
   let candidate = route.params.candidate;
   let candidate_name_split = candidate.name.split(" ");
   let first = candidate_name_split[0].toLowerCase();
@@ -23,7 +12,6 @@ const CandidateProfile = ({ route, navigation }) => {
     candidate_name_split[candidate_name_split.length - 1].toLowerCase();
 
   const BASE_URL = "https://en.wikipedia.org/api/rest_v1/page/summary/";
-  let img_url: any = "";
   let endpoint =
     first[0].toUpperCase() +
     first.substring(1) +
@@ -48,7 +36,6 @@ const CandidateProfile = ({ route, navigation }) => {
       .then((json) => setData(json))
       .catch((error) => alert(error))
       .finally(() => setLoading(false));
-    // console.log(data);
   }, []);
   const imgItem = [];
   if (data.originalimage != undefined) {
@@ -156,8 +143,6 @@ const CandidateProfile = ({ route, navigation }) => {
         </Box>
       );
     });
-
-    // if (candidate.channels.type == "Youtube")
   }
 
   return (
