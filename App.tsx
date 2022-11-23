@@ -7,7 +7,7 @@ import {
   NativeBaseProvider,
   extendTheme,
 } from "native-base";
-import { LogBox } from 'react-native';
+import { LogBox } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./src/pages/Home/Home";
@@ -21,7 +21,6 @@ import LearnMore from "./src/pages/LearnMore/LearnMore";
 import PollLocation from "./src/pages/PollLocation/PollLocation";
 import MeasureInfoDrawer from "./components/drawers/MeasureInfoDrawer";
 import CandidateInfoDrawer from "./components/drawers/CandidateInfoDrawer";
-import { LogBox } from "react-native";
 LogBox.ignoreLogs(["Warning: ..."]); // Ignore log notification by message
 LogBox.ignoreAllLogs(); //Ignore all log notifications
 // Define the config
@@ -39,7 +38,7 @@ declare module "native-base" {
 const Stack = createNativeStackNavigator();
 
 // LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
-LogBox.ignoreAllLogs(); 
+LogBox.ignoreAllLogs();
 
 export default function App() {
   return (

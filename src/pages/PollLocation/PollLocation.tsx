@@ -1,4 +1,4 @@
-import { StyleSheet, View, Dimensions, Platform} from "react-native";
+import { StyleSheet, View, Dimensions, Platform } from "react-native";
 import React, { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -79,31 +79,37 @@ const PollLocation = () => {
           <Text fontSize={20}> {input.city + ","}</Text>
           <Text fontSize={20}> {input.state + " " + input.zip}</Text>
 
-          {Platform.OS === 'web' ? <></> : 
-          <MapView style={styles.map} initialRegion={{
-            latitude: PollGeoCode.lat,
-            longitude: PollGeoCode.lng,
-            latitudeDelta: 0.01,
-            longitudeDelta: 0.01,
-          }}>
-            <Marker coordinate={{
-              latitude: PollGeoCode.lat,
-              longitude: PollGeoCode.lng,
-              latitudeDelta: 0.01,
-              longitudeDelta: 0.01,
-            }}
-          >
-            <Marker
-              coordinate={{
+          {Platform.OS === "web" ? (
+            <></>
+          ) : (
+            <MapView
+              style={styles.map}
+              initialRegion={{
                 latitude: PollGeoCode.lat,
                 longitude: PollGeoCode.lng,
                 latitudeDelta: 0.01,
                 longitudeDelta: 0.01,
               }}
-            />
-          </MapView>
-          }
-          
+            >
+              <Marker
+                coordinate={{
+                  latitude: PollGeoCode.lat,
+                  longitude: PollGeoCode.lng,
+                  latitudeDelta: 0.01,
+                  longitudeDelta: 0.01,
+                }}
+              />
+              <Marker
+                coordinate={{
+                  latitude: PollGeoCode.lat,
+                  longitude: PollGeoCode.lng,
+                  latitudeDelta: 0.01,
+                  longitudeDelta: 0.01,
+                }}
+              />
+            </MapView>
+          )}
+
           <Heading
             size={"xl"}
             textAlign={"center"}
