@@ -159,7 +159,6 @@ const CandidateProfile = ({ route }) => {
             {candidate.name}
           </Heading>
           {imgItem}
-
           <Heading ml={".5rem"} marginTop={"1rem"}>
             Contact me
           </Heading>

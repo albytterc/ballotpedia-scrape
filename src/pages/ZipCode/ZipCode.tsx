@@ -62,6 +62,13 @@ const ZipCode = ({ navigation }) => {
       );
 
       let address_string = `${address_loc[0].streetNumber} ${address_loc[0].street}, ${address_loc[0]["city"]}, ${address_loc[0]["region"]} ${address_loc[0]["postalCode"]}`;
+
+      //THIS DOESN'T WORK EITHER -- FIGURE OUT WHY!!!!!
+      // setData({...formData, address: address_string})
+      // console.log(formData.address)
+
+      setLoading(false);
+      //I'M USING NO STATE VAR BUT THE STRING ITSELF FOR NOW
       navigation.navigate("Events", {
         userAddress: address_string,
       });

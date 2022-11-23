@@ -1,4 +1,4 @@
-import { StyleSheet, View, Dimensions } from "react-native";
+import { StyleSheet, View, Dimensions, Platform} from "react-native";
 import React, { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -30,7 +30,7 @@ const PollLocation = () => {
         setInput(JSON.parse(value));
       }
     } catch (e) {
-      alert("Failed to fetch the input from storage");
+      // alert("Failed to fetch the input from storage");
     }
   };
 
@@ -78,9 +78,15 @@ const PollLocation = () => {
           <Text fontSize={20}> {input.line1 + ","}</Text>
           <Text fontSize={20}> {input.city + ","}</Text>
           <Text fontSize={20}> {input.state + " " + input.zip}</Text>
-          <MapView
-            style={styles.map}
-            initialRegion={{
+
+          {Platform.OS === 'web' ? <></> : 
+          <MapView style={styles.map} initialRegion={{
+            latitude: PollGeoCode.lat,
+            longitude: PollGeoCode.lng,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01,
+          }}>
+            <Marker coordinate={{
               latitude: PollGeoCode.lat,
               longitude: PollGeoCode.lng,
               latitudeDelta: 0.01,
@@ -96,6 +102,8 @@ const PollLocation = () => {
               }}
             />
           </MapView>
+          }
+          
           <Heading
             size={"xl"}
             textAlign={"center"}

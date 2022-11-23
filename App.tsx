@@ -7,6 +7,7 @@ import {
   NativeBaseProvider,
   extendTheme,
 } from "native-base";
+import { LogBox } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./src/pages/Home/Home";
@@ -36,6 +37,9 @@ declare module "native-base" {
 }
 
 const Stack = createNativeStackNavigator();
+
+// LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs(); 
 
 export default function App() {
   return (
