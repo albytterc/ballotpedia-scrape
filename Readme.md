@@ -53,7 +53,7 @@ A config file is required to run the app
 
 Step 1) make new file called config.ts
 
-step 2) add this to your file:
+Step 2) add this to your file:
 
 ```
 export default {
