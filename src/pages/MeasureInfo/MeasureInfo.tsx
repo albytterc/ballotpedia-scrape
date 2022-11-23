@@ -1,4 +1,3 @@
-import { View } from "react-native";
 import React from "react";
 import { SectionList, Box, Heading, Button, Text, Link } from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -9,7 +8,7 @@ const MeasureInfo = ({ route, navigation }) => {
   const { data } = route.params;
   return (
     <SectionList
-      background={"#90EE90"}
+      background={"white"}
       ListFooterComponent={
         <Box key={"TODO"}>
           <Heading

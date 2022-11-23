@@ -29,7 +29,6 @@ const ZipCode = ({ navigation }) => {
       setErrors({ ...errors, name: "Please enter an address" });
       return false;
     } else if (re.test(formData.address)) {
-      // if ('name' in errors ) { delete errors.name } THIS DOES NOT REMOVE THE ERROR MESSAGE FROM THE FORM
       return true;
     } else {
       setErrors({ ...errors, name: "Please enter a proper address" });
@@ -60,10 +59,7 @@ const ZipCode = ({ navigation }) => {
           longitude,
         },
         { useGoogleMaps: false }
-      ); //DOESN'T WORK WITH WEB COZ WEB USES GOOGLE MAPS AND NEEDS API KEY
-      //THIS FUNCTION DOESN'T WORK -- FIGURE OUT WHY!!!!!
-      // setLocation({ ...location, location: address_loc[0]});
-      // console.log(location.location)
+      );
 
       let address_string = `${address_loc[0].streetNumber} ${address_loc[0].street}, ${address_loc[0]["city"]}, ${address_loc[0]["region"]} ${address_loc[0]["postalCode"]}`;
 
@@ -120,7 +116,6 @@ const ZipCode = ({ navigation }) => {
           </HStack>
           {loading ? <Spinner size="sm" /> : <></>}
           <Button w="100%" bg={"black"} onPress={useEffect}>
-            {" "}
             Use my current location
           </Button>
         </VStack>

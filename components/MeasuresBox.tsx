@@ -1,18 +1,22 @@
 import React from "react";
-import { View } from "react-native";
 import { Link, Heading, Box, Text } from "native-base";
 
-const MeasuresBox = ({ text, navigation, measuresData, userAddress, electionId }) => {
+const MeasuresBox = ({
+  text,
+  navigation,
+  measuresData,
+  userAddress,
+  electionId,
+}) => {
   console.log(measuresData);
   return (
     <Link
       style={{ width: "45%", aspectRatio: 1 }}
       height="100px"
-      bg={"#8B4000"}
+      bg={"#56941e"}
       p="4"
       shadow={2}
       borderRadius={50}
-      // borderWidth="1px"
       borderColor={"black"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -28,12 +32,7 @@ const MeasuresBox = ({ text, navigation, measuresData, userAddress, electionId }
       }
       mt="8"
     >
-      <Box
-      // display={"flex"}
-      // justifyContent={"center"}
-      // alignItems={"center"}
-      // textAlign={"center"}
-      >
+      <Box>
         <Heading
           size={"sm"}
           color="#FFFFFF"
@@ -42,8 +41,6 @@ const MeasuresBox = ({ text, navigation, measuresData, userAddress, electionId }
           display={"flex"}
           justifyContent={"center"}
         >
-          {/* I AM MODIFYING THIS TO WORK WITH THE TEST DATA ON THE API!!!!!!!!!! */}
-          {/* {measuresData.ballotTitle} */}
           {measuresData.referendumTitle}
         </Heading>
       </Box>

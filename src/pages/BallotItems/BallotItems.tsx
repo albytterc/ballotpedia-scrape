@@ -1,4 +1,3 @@
-import { View, Text, DrawerLayoutAndroid } from "react-native";
 import { SectionList, Box } from "native-base";
 import React, { useState, useEffect } from "react";
 import BallotItemBox from "../../../components/BallotItemBox";
@@ -6,14 +5,12 @@ import config from "../../../config";
 import RacesBox from "../../../components/RacesBox";
 import MeasuresBox from "../../../components/MeasuresBox";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import historicalPollingLocation from "../../../assets/api-data/ga/athens-ga.json";
 
 const BASE_URL = "https://www.googleapis.com/civicinfo/v2";
 const endpoint = "/voterinfo";
 
-
 const BallotItems = ({ route, navigation }) => {
-  // const { data } = route.params;
-  // api call
   let userAddress = route.params.userAddress;
   const electionId = route.params.electionId;
 
@@ -35,18 +32,15 @@ const BallotItems = ({ route, navigation }) => {
       .catch((error) => alert(error))
       .finally(() => setLoading(false));
   }, []);
+  console.log(data);
   const RacesList = [];
   const MeasuresList = [];
-  // {type: 'General', ballotTitle: 'DeKalb County Commissioner', office: 'DeKalb County Commissioner (District 2)', level: Array(1), roles: Array(1), …}
-  // 13
-  // :
-  // {type: 'Referendum'}
 
   if (data.contests != undefined) {
     try {
       AsyncStorage.setItem(
         "poll_location_",
-        JSON.stringify(data.pollingLocations[0].address)
+        JSON.stringify(historicalPollingLocation.pollingLocations[0].address)
       );
     } catch (e) {
       // alert("Failed to save the data to the storage");
@@ -61,7 +55,7 @@ const BallotItems = ({ route, navigation }) => {
               data.contests[i].ballotTitle
                 ? data.contests[i].ballotTitle
                 : data.contests[i].office
-            } // ballot title is office in georgia
+            }
             navigation={navigation}
             data={data.contests[i]}
             userAddress={userAddress}
@@ -75,10 +69,8 @@ const BallotItems = ({ route, navigation }) => {
             text={
               data.contests[i].ballotTitle
                 ? data.contests[i].ballotTitle
-                // : data.contests[i].office
                 : data.contests[i].referendumTitle
-            } // ballot title is office in georgia -- I AM MODIFYING THIS TO WORK WITH THE TEST DATA ON THE API!!!!!!!!!!
-            
+            }
             navigation={navigation}
             measuresData={data.contests[i]}
             userAddress={userAddress}
@@ -105,7 +97,7 @@ const BallotItems = ({ route, navigation }) => {
               navigation={navigation}
               data={data}
               navigateTo={"Races"}
-              colorHex={"#562349"}
+              colorHex={"#6749A1"}
               listItems={RacesList}
               userAddress={userAddress}
               electionId={electionId}
@@ -115,7 +107,7 @@ const BallotItems = ({ route, navigation }) => {
               navigation={navigation}
               data={data}
               navigateTo={"Measures"}
-              colorHex={"#8B4000"}
+              colorHex={"#56941e"}
               listItems={MeasuresList}
               userAddress={userAddress}
               electionId={electionId}

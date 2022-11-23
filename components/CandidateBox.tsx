@@ -1,15 +1,17 @@
-import { View } from "react-native";
 import React from "react";
 import { Box, Heading, Link, Text } from "native-base";
-import { border } from "native-base/lib/typescript/theme/styled-system";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faRepublican } from "@fortawesome/free-solid-svg-icons/faRepublican";
 import { faDemocrat } from "@fortawesome/free-solid-svg-icons/faDemocrat";
 import { faFireFlameSimple } from "@fortawesome/free-solid-svg-icons/faFireFlameSimple";
 import { faEarthAmericas } from "@fortawesome/free-solid-svg-icons/faEarthAmericas";
 
-const CandidateBox = ({ navigation, candidateData, userAddress, electionId }) => {
+const CandidateBox = ({
+  navigation,
+  candidateData,
+  userAddress,
+  electionId,
+}) => {
   let partyColor = "black";
   let logo = <></>;
   if (candidateData.party) {
@@ -37,7 +39,6 @@ const CandidateBox = ({ navigation, candidateData, userAddress, electionId }) =>
       p="4"
       shadow={2}
       borderRadius={50}
-      // borderWidth="1px"
       borderColor={"black"}
       alignItems={"center"}
       justifyContent={"center"}
@@ -46,7 +47,7 @@ const CandidateBox = ({ navigation, candidateData, userAddress, electionId }) =>
       marginBottom={"10px"}
       onPress={() =>
         navigation.navigate("Candidate Info", {
-          candidate_name: candidateData.name,
+          candidate: candidateData,
         })
       }
       mt="8"
@@ -68,7 +69,6 @@ const CandidateBox = ({ navigation, candidateData, userAddress, electionId }) =>
           {candidateData.name}
         </Heading>
         {logo}
-        {/* <FontAwesomeIcon icon={faMugSaucer} /> */}
         <Text
           color="#FFFFFF"
           fontWeight={"400"}
