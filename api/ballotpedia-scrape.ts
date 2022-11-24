@@ -9,7 +9,7 @@ interface ProfileJSON {
 
 export default async function parseHTML(query: string) {
     const jsonData: ProfileJSON = {};
-    query = cleanQuery(query)
+    query = cleanQuery(query); // makes sure query is recognizable to ballotpedia
     const searchURL = new URL(baseURL + query).href;
 
     await axios
