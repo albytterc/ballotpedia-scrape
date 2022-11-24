@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import axios, {AxiosResponse} from "axios";
+import axios, {AxiosResponse, AxiosError} from "axios";
 
 const baseURL = "https://ballotpedia.org/index.php?search=";
 
@@ -9,12 +9,12 @@ interface ProfileJSON {
 
 export default async function parseHTML(query: string) {
     const jsonData: ProfileJSON = {};
-    query = query.replace(/\w*\. /, ''); // remove abbreviations in names
+    query = cleanQuery(query)
     const searchURL = new URL(baseURL + query).href;
 
     await axios
     .get(searchURL)
-    .then((resp) => {
+    .then((resp: AxiosResponse) => {
         // check here if the url redirected to an actual article
         // handle search results page
         const responseURL = new URL(resp.request.res.responseUrl).href;
@@ -23,7 +23,7 @@ export default async function parseHTML(query: string) {
         }
         return resp;
     })
-    .then(async (resp) => {
+    .then(async (resp: AxiosResponse) => {
         let $ = cheerio.load(resp.data);
 
         // check if disambiguation page
@@ -43,8 +43,12 @@ export default async function parseHTML(query: string) {
         jsonData["picture"] = profilePic;
         jsonData["contactInfo"] = contactInfo;
     })
-    .catch((error) => {
-        throw new Error(error)
+    .catch((error: AxiosError | Error) => {
+        if (axios.isAxiosError(error)) {
+            throw error;
+        } else {
+            throw new Error("Non-axios error")
+        }
     });
     return jsonData;
 }
@@ -119,6 +123,17 @@ function getListEntryURL(_url: string) {
     }
 
     return sourceURL;
+}
+
+function cleanQuery(query: string) {
+    query = query.replace(/(\w*\.)+ /, ''); // remove abbreviations in names
+
+    // remove quotes
+    query = query.replace("\"", "");
+    query = query.replace("\'", "");
+
+    return query;
+
 }
 
 // let html = getHTML("stacey abrams");
