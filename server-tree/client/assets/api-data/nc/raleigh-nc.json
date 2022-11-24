@@ -1,0 +1,1249 @@
+{
+  "election": {
+    "id": "8000",
+    "name": "US 2022 Midterm Election",
+    "electionDay": "2022-11-08",
+    "ocdDivisionId": "ocd-division/country:us"
+  },
+  "normalizedInput": {
+    "line1": "601 West North Street",
+    "city": "Raleigh",
+    "state": "NC",
+    "zip": "27603"
+  },
+  "pollingLocations": [
+    {
+      "address": {
+        "locationName": "EDENTON STREET UNITED METHODIST CHURCH",
+        "line1": "301 West Jones Street",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27603"
+      },
+      "notes": "GOING S ON N DAWSON ST. FROM CAPITAL BLVD. BUILDING IS ON THE RIGHT. TURN RIGHT INTO PARKING LOT.",
+      "pollingHours": "Tue, Nov 8: 6:30 am - 7:30 pm",
+      "latitude": 35.7823001,
+      "longitude": -78.6437302,
+      "startDate": "2022-11-08",
+      "endDate": "2022-11-08",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "earlyVoteSites": [
+    {
+      "address": {
+        "locationName": "TA - NCSU TALLEY STUDENT CENTER",
+        "line1": "2411 Dunn Avenue",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27607"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7836479,
+      "longitude": -78.6698348,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "CH - JOHN CHAVIS MEMORIAL PARK COMMUNITY CENTER",
+        "line1": "505 Martin Luther King Junior Boulevard",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27601"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7691813,
+      "longitude": -78.6297222,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "SOUTHEAST RALEIGH YMCA",
+        "line1": "1436 Rock Quarry Road",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27610"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7601609,
+      "longitude": -78.6165768,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "OP - OPTIMIST PARK COMMUNITY CENTER",
+        "line1": "5900 Whittier Drive",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27609"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.8621608,
+      "longitude": -78.6444837,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "WAKE COUNTY BOARD OF ELECTIONS OFFICE",
+        "line1": "1200 North New Hope Road",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27610"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7958278,
+      "longitude": -78.5612973,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "GREEN ROAD COMMUNITY CENTER",
+        "line1": "4201 Green Road",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27604"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.8411416,
+      "longitude": -78.5908352,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "AV - AVERY STREET RECREATION CENTER ANNEX",
+        "line1": "125 Avery Street",
+        "city": "Garner",
+        "state": "NC",
+        "zip": "27529"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7121214,
+      "longitude": -78.6110565,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "CA - HERBERT C. YOUNG COMMUNITY CENTER",
+        "line1": "101 Wilkinson Avenue",
+        "city": "Cary",
+        "state": "NC",
+        "zip": "27513"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7906668,
+      "longitude": -78.7804686,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "LL - LAKE LYNN COMMUNITY CENTER",
+        "line1": "7921 Ray Road",
+        "city": "Raleigh",
+        "state": "NC",
+        "zip": "27613"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.8875666,
+      "longitude": -78.6990209,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "CS - CARY SENIOR CENTER",
+        "line1": "120 Maury Odell Place",
+        "city": "Cary",
+        "state": "NC",
+        "zip": "27513"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7851814,
+      "longitude": -78.8261268,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "JB - JOHN M. BROWN COMMUNITY CENTER",
+        "line1": "53 Hunter Street",
+        "city": "Apex",
+        "state": "NC",
+        "zip": "27502"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7336115,
+      "longitude": -78.8465921,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "WD - WENDELL COMMUNITY CENTER",
+        "line1": "601 West 3rd Street",
+        "city": "Wendell",
+        "state": "NC",
+        "zip": "27591"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.7823826,
+      "longitude": -78.3814767,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "HT - HILLTOP NEEDMORE TOWN PARK AND PRESERVE",
+        "line1": "4621 Shady Greens Drive",
+        "city": "Fuquay-Varina",
+        "state": "NC",
+        "zip": "27526"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.6322588,
+      "longitude": -78.7355775,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "HS - HOLLY SPRINGS - HUNT COMMUNITY CENTER",
+        "line1": "301 Stinson Avenue",
+        "city": "Holly Springs",
+        "state": "NC",
+        "zip": "27540"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.6465994,
+      "longitude": -78.8293522,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "address": {
+        "locationName": "NR - NORTHERN REGIONAL CENTER",
+        "line1": "350 East Holding Avenue",
+        "city": "Wake Forest",
+        "state": "NC",
+        "zip": "27587"
+      },
+      "pollingHours": "Mon, Oct 24: 8:00 am - 7:30 pm\nTue, Oct 25: 8:00 am - 7:30 pm\nWed, Oct 26: 8:00 am - 7:30 pm\nThu, Oct 27: 8:00 am - 7:30 pm\nFri, Oct 28: 8:00 am - 7:30 pm\nSat, Oct 29: 8 am - 3 pm\nSun, Oct 30: 1 pm - 6 pm\nMon, Oct 31: 8:00 am - 7:30 pm\nTue, Nov 1: 8:00 am - 7:30 pm\nWed, Nov 2: 8:00 am - 7:30 pm\nThu, Nov 3: 8:00 am - 7:30 pm\nFri, Nov 4: 8:00 am - 7:30 pm\nSat, Nov 5: 8 am - 3 pm",
+      "latitude": 35.9700668,
+      "longitude": -78.5109746,
+      "startDate": "2022-10-20",
+      "endDate": "2022-11-05",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "contests": [
+    {
+      "type": "General",
+      "ballotTitle": "US SENATE",
+      "office": "US SENATE",
+      "district": {
+        "name": "US SENATE",
+        "scope": "statewide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "2",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Ted Budd",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Cheri Beasley",
+          "party": "DEMOCRATIC"
+        },
+        {
+          "name": "Shannon W. Bray",
+          "party": "LIBERTARIAN"
+        },
+        {
+          "name": "Matthew Hoh",
+          "party": "GREEN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "US HOUSE OF REPRESENTATIVES DISTRICT 02",
+      "office": "US HOUSE OF REPRESENTATIVES DISTRICT 02",
+      "level": [
+        "country"
+      ],
+      "district": {
+        "name": "US HOUSE OF REPRESENTATIVES DISTRICT 02",
+        "scope": "congressional",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "3",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Christine E. Villaverde",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Deborah K. Ross",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC STATE SENATE DISTRICT 15",
+      "office": "NC STATE SENATE DISTRICT 15",
+      "level": [
+        "administrativeArea1"
+      ],
+      "district": {
+        "name": "NC STATE SENATE DISTRICT 15",
+        "scope": "stateUpper",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "14",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Emanuela Prister",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Jay J. Chaudhuri",
+          "party": "DEMOCRATIC"
+        },
+        {
+          "name": "Sammie Brooks",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC HOUSE OF REPRESENTATIVES DISTRICT 038",
+      "office": "NC HOUSE OF REPRESENTATIVES DISTRICT 038",
+      "level": [
+        "administrativeArea1"
+      ],
+      "district": {
+        "name": "NC HOUSE OF REPRESENTATIVES DISTRICT 038",
+        "scope": "stateLower",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "15",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Abe Jones",
+          "party": "DEMOCRATIC"
+        },
+        {
+          "name": "Christopher Mizelle",
+          "party": "LIBERTARIAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 07",
+      "office": "WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 07",
+      "level": [
+        "administrativeArea2"
+      ],
+      "district": {
+        "name": "WAKE WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 07",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "18",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Vickie Adamson",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 02",
+      "office": "WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 02",
+      "level": [
+        "administrativeArea2"
+      ],
+      "district": {
+        "name": "WAKE WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 02",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "18",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Mark McMains",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Matt Calabria",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 01",
+      "office": "WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 01",
+      "level": [
+        "administrativeArea2"
+      ],
+      "district": {
+        "name": "WAKE WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 01",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "18",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Chanel N. Harris",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Donald Mial",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 03",
+      "office": "WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 03",
+      "level": [
+        "administrativeArea2"
+      ],
+      "district": {
+        "name": "WAKE WAKE COUNTY BOARD OF COMMISSIONERS DISTRICT 03",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "18",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Irina Comer",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Cheryl F. Stallings",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "WAKE COUNTY CLERK OF SUPERIOR COURT",
+      "office": "WAKE COUNTY CLERK OF SUPERIOR COURT",
+      "level": [
+        "administrativeArea2"
+      ],
+      "district": {
+        "name": "WAKE WAKE COUNTY CLERK OF SUPERIOR COURT",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "21",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Blair Williams",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "WAKE COUNTY SHERIFF",
+      "office": "WAKE COUNTY SHERIFF",
+      "level": [
+        "administrativeArea2"
+      ],
+      "district": {
+        "name": "WAKE WAKE COUNTY SHERIFF",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "22",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Donnie Harrison",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Willie Rowe",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC SUPREME COURT ASSOCIATE JUSTICE SEAT 03",
+      "office": "NC SUPREME COURT ASSOCIATE JUSTICE SEAT 03",
+      "district": {
+        "name": "NC SUPREME COURT ASSOCIATE JUSTICE SEAT 03",
+        "scope": "statewide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "25",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Richard Dietz",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Lucy Inman",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC SUPREME COURT ASSOCIATE JUSTICE SEAT 05",
+      "office": "NC SUPREME COURT ASSOCIATE JUSTICE SEAT 05",
+      "district": {
+        "name": "NC SUPREME COURT ASSOCIATE JUSTICE SEAT 05",
+        "scope": "statewide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "25",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Trey Allen",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Sam J. Ervin IV",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC COURT OF APPEALS JUDGE SEAT 10",
+      "office": "NC COURT OF APPEALS JUDGE SEAT 10",
+      "district": {
+        "name": "NC COURT OF APPEALS JUDGE SEAT 10",
+        "scope": "statewide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "26",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "John M. Tyson",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Gale Murray Adams",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC COURT OF APPEALS JUDGE SEAT 08",
+      "office": "NC COURT OF APPEALS JUDGE SEAT 08",
+      "district": {
+        "name": "NC COURT OF APPEALS JUDGE SEAT 08",
+        "scope": "statewide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "26",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Julee Tate Flood",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Carolyn Jennings Thompson",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC COURT OF APPEALS JUDGE SEAT 11",
+      "office": "NC COURT OF APPEALS JUDGE SEAT 11",
+      "district": {
+        "name": "NC COURT OF APPEALS JUDGE SEAT 11",
+        "scope": "statewide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "26",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Michael J. Stading",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Darren Jackson",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC COURT OF APPEALS JUDGE SEAT 09",
+      "office": "NC COURT OF APPEALS JUDGE SEAT 09",
+      "district": {
+        "name": "NC COURT OF APPEALS JUDGE SEAT 09",
+        "scope": "statewide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "26",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Donna Stroud",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Brad A. Salmon",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC SUPERIOR COURT JUDGE DISTRICT 10A SEAT 01",
+      "office": "NC SUPERIOR COURT JUDGE DISTRICT 10A SEAT 01",
+      "district": {
+        "name": "NC SUPERIOR COURT JUDGE DISTRICT 10A SEAT 01",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "27",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Paul C. Ridgeway",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 02",
+      "office": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 02",
+      "district": {
+        "name": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 02",
+        "scope": "judicial",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "28",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "J. Brian Ratledge",
+          "party": "REPUBLICAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 03",
+      "office": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 03",
+      "district": {
+        "name": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 03",
+        "scope": "judicial",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "28",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Ned W. Mangum",
+          "party": "REPUBLICAN"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 01",
+      "office": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 01",
+      "district": {
+        "name": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 01",
+        "scope": "judicial",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "28",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Margaret Eagles",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 04 (UNEXPIRED)",
+      "office": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 04 (UNEXPIRED)",
+      "district": {
+        "name": "NC DISTRICT COURT JUDGE DISTRICT 10D SEAT 04 (UNEXPIRED)",
+        "scope": "judicial",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "28",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Rhonda Graham Young",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "DISTRICT ATTORNEY DISTRICT 10",
+      "office": "DISTRICT ATTORNEY DISTRICT 10",
+      "district": {
+        "name": "DISTRICT ATTORNEY DISTRICT 10",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "29",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Jeff Dobson",
+          "party": "REPUBLICAN"
+        },
+        {
+          "name": "Nancy (Lorrin) Freeman",
+          "party": "DEMOCRATIC"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "WAKE COUNTY BOARD OF EDUCATION DISTRICT 06",
+      "office": "WAKE COUNTY BOARD OF EDUCATION DISTRICT 06",
+      "district": {
+        "name": "WAKE WAKE COUNTY BOARD OF EDUCATION DISTRICT 06",
+        "scope": "schoolBoard",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "33",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Sam Hershey"
+        },
+        {
+          "name": "Chad Stall"
+        },
+        {
+          "name": "Dajma Livingston"
+        },
+        {
+          "name": "Patrice Nealon"
+        },
+        {
+          "name": "Mary-Lewis Freeman"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "WAKE SOIL AND WATER CONSERVATION DISTRICT SUPERVISOR",
+      "office": "WAKE SOIL AND WATER CONSERVATION DISTRICT SUPERVISOR",
+      "level": [
+        "administrativeArea2"
+      ],
+      "district": {
+        "name": "WAKE WAKE SOIL AND WATER CONSERVATION DISTRICT SUPERVISOR",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "numberElected": "2",
+      "ballotPlacement": "34",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Beth Pugh Farrell"
+        },
+        {
+          "name": "Alex Baldwin"
+        },
+        {
+          "name": "Stephen E. Xavier"
+        },
+        {
+          "name": "Jenna Wadsworth"
+        },
+        {
+          "name": "Brian K. Lewis"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "CITY OF RALEIGH MAYOR",
+      "office": "CITY OF RALEIGH MAYOR",
+      "district": {
+        "name": "WAKE CITY OF RALEIGH MAYOR",
+        "scope": "citywide",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "36",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Mary-Ann Baldwin"
+        },
+        {
+          "name": "DaQuanta Copeland"
+        },
+        {
+          "name": "Terrance (Truth) Ruth"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "CITY OF RALEIGH CITY COUNCIL AT-LARGE",
+      "office": "CITY OF RALEIGH CITY COUNCIL AT-LARGE",
+      "district": {
+        "name": "WAKE CITY OF RALEIGH CITY COUNCIL AT-LARGE",
+        "scope": "citywide",
+        "id": "0"
+      },
+      "numberElected": "2",
+      "ballotPlacement": "42",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "James Bledsoe"
+        },
+        {
+          "name": "Joshua Bradley"
+        },
+        {
+          "name": "Portia W. Rochelle"
+        },
+        {
+          "name": "Jonathan Melton"
+        },
+        {
+          "name": "Ms. Stormie Denise Forte"
+        },
+        {
+          "name": "Anne S. Franklin"
+        },
+        {
+          "name": "John Odom"
+        }
+      ]
+    },
+    {
+      "type": "General",
+      "ballotTitle": "CITY OF RALEIGH CITY COUNCIL DISTRICT D",
+      "office": "CITY OF RALEIGH CITY COUNCIL DISTRICT D",
+      "level": [
+        "locality"
+      ],
+      "district": {
+        "name": "WAKE CITY OF RALEIGH CITY COUNCIL DISTRICT D",
+        "scope": "ward",
+        "id": "0"
+      },
+      "numberElected": "1",
+      "ballotPlacement": "43",
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ],
+      "candidates": [
+        {
+          "name": "Jennifer Truman"
+        },
+        {
+          "name": "Jane Harrison"
+        },
+        {
+          "name": "Todd Kennedy"
+        },
+        {
+          "name": "Rob Baumgart"
+        }
+      ]
+    },
+    {
+      "type": "Referendum",
+      "ballotTitle": "WAKE COUNTY COMMUNITY COLLEGE BONDS REFERENDUM",
+      "district": {
+        "name": "WAKE WAKE COUNTY COMMUNITY COLLEGE BONDS REFERENDUM",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "ballotPlacement": "99",
+      "referendumTitle": "WAKE COUNTY COMMUNITY COLLEGE BONDS REFERENDUM",
+      "referendumText": "Shall the order adopted on July 11 2022 authorizing COMMUNITY COLLEGE BONDS of the County of Wake North Carolina in an amount not to exceed $353200000 plus interest for the purpose of providing funds to construct renovate expand improve and equip community college facilities for Wake Technical Community College and providing that additional taxes shall be levied in an amount sufficient to pay the principal of and interest on the bonds be approved?",
+      "referendumBallotResponses": [
+        "Yes",
+        "No"
+      ],
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "type": "Referendum",
+      "ballotTitle": "CITY OF RALEIGH PARKS AND RECREATIONAL FACILITIES BONDS",
+      "district": {
+        "name": "WAKE CITY OF RALEIGH PARKS AND RECREATIONAL FACILITIES BONDS",
+        "scope": "citywide",
+        "id": "0"
+      },
+      "ballotPlacement": "99",
+      "referendumTitle": "CITY OF RALEIGH PARKS AND RECREATIONAL FACILITIES BONDS",
+      "referendumText": "Shall the order adopted on July 5 2022 authorizing not exceeding $275000000 PARKS AND RECREATIONAL FACILITIES BONDS of the City of Raleigh North Carolina plus interest for the purpose of providing funds together with any other available funds for improving and expanding the existing park greenway and recreational facilities of said City and acquiring and constructing new park greenway and recreational facilities of said City inside and outside its corporate limits including without limitation the acquisition of land and rights of way and the construction and furnishing of supporting facilities and providing that additional taxes will be levied in an amount sufficient to pay the principal of and interest on the bonds be approved?",
+      "referendumBallotResponses": [
+        "Yes",
+        "No"
+      ],
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    },
+    {
+      "type": "Referendum",
+      "ballotTitle": "WAKE COUNTY SCHOOL BONDS REFERENDUM",
+      "district": {
+        "name": "WAKE WAKE COUNTY SCHOOL BONDS REFERENDUM",
+        "scope": "countywide",
+        "id": "0"
+      },
+      "ballotPlacement": "99",
+      "referendumTitle": "WAKE COUNTY SCHOOL BONDS REFERENDUM",
+      "referendumText": "Shall the order adopted on July 11 2022 authorizing SCHOOL BONDS of the County of Wake North Carolina in an amount not to exceed $530700000 plus interest for the purpose of providing funds to construct renovate expand improve and equip school buildings and other school facilities and providing that additional taxes shall be levied in an amount sufficient to pay the principal of and interest on the bonds be approved?",
+      "referendumBallotResponses": [
+        "Yes",
+        "No"
+      ],
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "state": [
+    {
+      "name": "North Carolina",
+      "electionAdministrationBody": {
+        "electionInfoUrl": "https://www.ncsbe.gov/about-elections",
+        "electionRegistrationUrl": "https://www.ncsbe.gov/about-elections",
+        "electionRegistrationConfirmationUrl": "https://vt.ncsbe.gov/RegLkup/",
+        "absenteeVotingInfoUrl": "https://www.ncsbe.gov/voting/vote-mail",
+        "votingLocationFinderUrl": "https://www.ncsbe.gov/voting",
+        "ballotInfoUrl": "https://vt.ncsbe.gov/RegLkup/",
+        "electionRulesUrl": "http://www.ncsbe.gov"
+      },
+      "local_jurisdiction": {
+        "name": "WAKE COUNTY BOARD OF ELECTIONS",
+        "electionAdministrationBody": {
+          "electionInfoUrl": "https://www.ncsbe.gov/about-elections",
+          "electionRegistrationUrl": "https://www.ncsbe.gov/about-elections",
+          "electionRegistrationConfirmationUrl": "https://vt.ncsbe.gov/RegLkup/",
+          "absenteeVotingInfoUrl": "https://www.ncsbe.gov/voting/vote-mail",
+          "votingLocationFinderUrl": "https://www.ncsbe.gov/voting",
+          "ballotInfoUrl": "https://vt.ncsbe.gov/RegLkup/",
+          "electionRulesUrl": "http://www.ncsbe.gov"
+        },
+        "sources": [
+          {
+            "name": "Voting Information Project",
+            "official": true
+          }
+        ]
+      },
+      "sources": [
+        {
+          "name": "Voting Information Project",
+          "official": true
+        }
+      ]
+    }
+  ],
+  "kind": "civicinfo#voterInfoResponse"
+}
