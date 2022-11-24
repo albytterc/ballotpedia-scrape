@@ -9,7 +9,7 @@ interface ProfileJSON {
 
 export default async function parseHTML(query: string) {
     const jsonData: ProfileJSON = {};
-    query = query.replace(/\w*\. /, ''); // remove abbreviations in names
+    query = cleanQuery(query)
     const searchURL = new URL(baseURL + query).href;
 
     await axios
@@ -123,6 +123,17 @@ function getListEntryURL(_url: string) {
     }
 
     return sourceURL;
+}
+
+function cleanQuery(query: string) {
+    query = query.replace(/(\w*\.)+ /, ''); // remove abbreviations in names
+
+    // remove quotes
+    query = query.replace("\"", "");
+    query = query.replace("\'", "");
+
+    return query;
+
 }
 
 // let html = getHTML("stacey abrams");
