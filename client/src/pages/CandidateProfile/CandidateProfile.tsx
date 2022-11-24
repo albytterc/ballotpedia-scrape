@@ -5,14 +5,15 @@ import {Box, Heading, Image, Button, ScrollView, SectionList, FlatList} from "na
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 interface ProfileData {
-  summary: string;
-  bio: string;
-  picture: string;
-  contactInfo: string[];
+    summary: string;
+    bio: string;
+    picture: string;
+    contactInfo: string[];
 }
 
 const CandidateProfile = ({route, navigation}) => {
-    let candidate_name = route.params.candidate_name;
+    console.log(route);
+    let candidate_name = route.params.candidate.name;
     let candidate_name_split = candidate_name.split(" ");
     let first = candidate_name_split[0].toLowerCase();
     let last = candidate_name_split[candidate_name_split.length - 1].toLowerCase();
@@ -54,20 +55,21 @@ const CandidateProfile = ({route, navigation}) => {
                 display={"flex"}
                 alignItems={"center"}
             >
-                {item.picture ? (
-                    <Image
-                        // borderRadius={"100px"}
-                        // borderColor={"black"}
-                        // borderWidth={"2px"}
-                        source={{
-                            uri: item.picture
-                        }}
-                        alt={`Image of ${candidate_name}`}
-                        size="xl"
-                        resizeMode={"contain"}
-                    />
+                {!isLoading && !item.picture ? (<Icon name={"account"} size={90}/>)
+                    : (
+                        <Image
+                            // borderRadius={"100px"}
+                            // borderColor={"black"}
+                            // borderWidth={"2px"}
+                            source={{
+                                uri: item.picture
+                            }}
+                            alt={`Image of ${candidate_name}`}
+                            size="xl"
+                            resizeMode={"contain"}
+                        />
 
-                ) : (<Icon name={"account"} size={90}/>)}
+                    )}
                 <Heading
                     size={"md"}
                     marginLeft="1.5rem"
