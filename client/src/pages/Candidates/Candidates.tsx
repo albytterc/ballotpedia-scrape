@@ -30,8 +30,8 @@ const Candidates = ({ route, navigation }) => {
                 key={i}
                 navigation={navigation}
                 candidateData={can}
-                userAddress={data.userAddress}
-                electionId={data.electionId}
+                userAddress={route.params.userAddress}
+                electionId={route.params.electionId}
               />
             ))}
           </Box>

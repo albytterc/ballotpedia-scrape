@@ -1,5 +1,6 @@
 import {View, Text, ActivityIndicator} from "react-native";
 import React, {useState, useEffect, Dispatch} from "react";
+import {statenames} from "../../InfoData/statenames";
 
 import {Box, Heading, Image, Button, ScrollView, SectionList, FlatList} from "native-base";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -12,7 +13,12 @@ interface ProfileData {
 }
 
 const CandidateProfile = ({route, navigation}) => {
-    console.log(route);
+    const getStateFullname = (address: string) => {
+        const parts = address.split(" ");
+        const stateAbbrev = parts[parts.length - 2].toUpperCase();
+        return statenames[stateAbbrev];
+    }
+    const stateName = getStateFullname(route.params.userAddress);
     let candidate_name = route.params.candidate.name;
     let candidate_name_split = candidate_name.split(" ");
     let first = candidate_name_split[0].toLowerCase();
@@ -24,12 +30,10 @@ const CandidateProfile = ({route, navigation}) => {
         last[0].toUpperCase() +
         last.substring(1);
 
-    const BASE_URL = "https://ballotpedia-api.cyclic.app/api/";
-    const regex = /\b\w\b /;
-    candidate_name = candidate_name.replace(regex, "");
+    const BASE_URL = "https://ballotpedia-api.cyclic.app`/api/candidate/";
 
     const [isLoading, setLoading] = useState(true);
-    const [data, setData] = useState({
+    const [profileData, setProfileData] = useState({
         summary: "",
         bio: "",
         picture: "",
@@ -37,9 +41,9 @@ const CandidateProfile = ({route, navigation}) => {
     });
 
     const fetchData = () => {
-        fetch(BASE_URL + candidate_name)
+        fetch(BASE_URL + candidate_name + "?state=" + stateName)
         .then((response) => response.json())
-        .then((json) => setData(json))
+        .then((json) => setProfileData(json))
         .catch((error) => console.error(error))
         .finally(() => setLoading(false));
     }
@@ -77,7 +81,7 @@ const CandidateProfile = ({route, navigation}) => {
                     marginTop="2rem"
                     textAlign={"left"}
                 >
-                    {item.summary}
+                    {item.summary || !isLoading && `No information found for ${candidate_name}.`}
                 </Heading>
             </Box>
         )
@@ -98,7 +102,7 @@ const CandidateProfile = ({route, navigation}) => {
                         {candidate_name}
                     </Heading>
                     {isLoading && <ActivityIndicator size="large"/>}
-                    {data && renderItem(data)}
+                    {profileData && renderItem(profileData)}
                     {/*<Button bg={"black"} width={"50%"} marginLeft={"25%"}*/}
                     {/*  onPress={() => navigation.navigate("Candidate Voting Record",{candidateName: name_voting_record})}>*/}
                     {/*  Voting Record*/}

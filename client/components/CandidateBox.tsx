@@ -48,6 +48,7 @@ const CandidateBox = ({
       onPress={() =>
         navigation.navigate("Candidate Info", {
           candidate: candidateData,
+          userAddress: userAddress
         })
       }
       mt="8"

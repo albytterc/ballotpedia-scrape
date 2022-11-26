@@ -1,5 +1,5 @@
 import * as cheerio from "cheerio";
-import axios, {AxiosResponse, AxiosError} from "axios";
+import axios, {AxiosError, AxiosResponse} from "axios";
 
 const baseURL = "https://ballotpedia.org/index.php?search=";
 
@@ -7,9 +7,17 @@ interface ProfileJSON {
     [key: string]: any;
 }
 
-export default async function parseHTML(query: string) {
+interface QueryParams {
+    [key: string]: any;
+}
+
+// Only need to clean the string for candidate names
+export default async function parseHTML(query: string, params: QueryParams, performClean: boolean) {
     const jsonData: ProfileJSON = {};
-    query = cleanQuery(query)
+    if (performClean) {
+        query = cleanQuery(query)
+    }
+
     const searchURL = new URL(baseURL + query).href;
 
     await axios
@@ -26,31 +34,72 @@ export default async function parseHTML(query: string) {
     .then(async (resp: AxiosResponse) => {
         let $ = cheerio.load(resp.data);
 
-        // check if disambiguation page
-        if ($(".mw-parser-output table#disambig").length || $('.mw-parser-output table.dmbox-disambig').length) {
-            const firstEntryLink = $(".mw-parser-output > ul li a").attr("href");
-            if (!firstEntryLink) {
+        // check if not right page
+        console.log(query);
+        if (!$('head > title').text().toLowerCase().includes(query.toLowerCase())) {
+            const match = $('.mw-parser-output a').filter((i, elem) => {
+                const queryPattern = new RegExp(`${query.split(" ").join(".*")}`, 'i');
+                return !!$(elem).text().match(queryPattern);
+            }).first();
+
+            let matchLink;
+            if (match) {
+                matchLink = match.attr('href');
+            }
+
+            if (!matchLink) {
                 throw new Error("No link found for entry");
             }
-            const linkFixed = getListEntryURL(firstEntryLink);
+            const getFixedLink = getListEntryURL(matchLink);
+            const articleResp = await axios.get(getFixedLink);
+            $ = cheerio.load(articleResp.data);
+        }
+
+        // check if disambiguation page
+        // use candidate's state to determine which it is
+        if ($(".mw-parser-output table#disambig").length || $('.mw-parser-output table.dmbox-disambig').length) {
+            const candidateList = $('.mw-parser-output > ul li a');
+            const stateMatch = candidateList.filter((i, elem) => {
+                return $(elem).text().toLowerCase().includes(params.state.toLowerCase());
+            });
+
+            let entryHref;
+            const firstEntryLink = $(".mw-parser-output > ul li a").attr("href");
+            if (stateMatch.length) {
+                entryHref = stateMatch.attr('href');
+            } else {
+                entryHref = firstEntryLink;
+            }
+
+            if (!entryHref) {
+                throw new Error("No link found for entry");
+            }
+            const linkFixed = getListEntryURL(entryHref);
             const articleResp = await axios.get(linkFixed);
             $ = cheerio.load(articleResp.data);
         }
 
-        const [summary, bio, profilePic, contactInfo] = await Promise.all([getSummary($), getBio($), getProfilePic($), getContactInfo($)])
+        const [bp_name, summary, bio, profilePic, contactInfo] = await Promise.all([getBallotpediaName($), getSummary($), getBio($), getProfilePic($), getContactInfo($)]);
+        jsonData["name"] = query;
+        jsonData["ballotpedia_name"] = bp_name;
         jsonData["summary"] = summary;
         jsonData["bio"] = bio;
         jsonData["picture"] = profilePic;
         jsonData["contactInfo"] = contactInfo;
     })
     .catch((error: AxiosError | Error) => {
-        if (axios.isAxiosError(error)) {
-            throw error;
-        } else {
-            throw new Error("Non-axios error")
-        }
+        throw error;
+        // if (axios.isAxiosError(error)) {
+        //     throw error;
+        // } else {
+        //     throw new Error("Non-axios error")
+        // }
     });
     return jsonData;
+}
+
+function getBallotpediaName($: cheerio.CheerioAPI) {
+    return $('#firstHeading').text();
 }
 
 function getSummary($: cheerio.CheerioAPI) {
@@ -65,13 +114,13 @@ function getSummary($: cheerio.CheerioAPI) {
             bio += $(children[i]).text();
         }
     }
-    return removeCitation(bio.trim());
+    return cleanBio(bio);
     // console.log("SUMMARY: " + bio)
 }
 
 function getBio($: cheerio.CheerioAPI) {
     const bio = $("#Biography")?.parent().nextUntil("h2", "p").text();
-    return removeCitation(bio.trim());
+    return cleanBio(bio);
 }
 
 function getProfilePic($: cheerio.CheerioAPI) {
@@ -88,15 +137,18 @@ function getContactInfo($: cheerio.CheerioAPI) {
     // return contactHeader;
 }
 
-function removeCitation(text: string) {
-    return text.replace(/\[\d*]/gi, "");
+function cleanBio(text: string) {
+    text = text.replace(/\[\d*]/gi, ""); // removes citations, e.g. [1]
+    const singleNewline = /(?<!\n)\n(?!\n)/g; // matches single newlines to replace them with two newlines
+    text = text.replace(singleNewline, "\n\n")
+    return text.replace(/[^\S\r\n]\1+/g, " ").trim(); // matches extra spaces excluding newlines
 }
 
 function parseSearchResults(query: string, response: AxiosResponse) {
     const $ = cheerio.load(response.data);
 
     // check if no results were found
-    if ($(".searchdidyoumean").length || $(".mw-search-nonefound").length) {
+    if ($(".mw-search-nonefound").length) {
         throw new Error("No results found for " + query);
     }
 
@@ -126,11 +178,16 @@ function getListEntryURL(_url: string) {
 }
 
 function cleanQuery(query: string) {
-    query = query.replace(/(\w*\.)+ /, ''); // remove abbreviations in names
+    query = query.replace(/(\w*\.)+ /g, ''); // remove abbreviations in names
+    query = query.replace(/\b\w\b /, ""); // removes single letters
 
     // remove quotes
-    query = query.replace("\"", "");
-    query = query.replace("\'", "");
+    query = query.replace(/"/g, "");
+    query = query.replace(/'/g, "");
+
+    const parts = query.split(" ");
+    if (parts.length > 1)
+        return parts[0] + " " + parts[parts.length - 1]; // returns first name and last name
 
     return query;
 
