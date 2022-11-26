@@ -35,7 +35,6 @@ export default async function parseHTML(query: string, params: QueryParams, perf
         let $ = cheerio.load(resp.data);
 
         // check if not right page
-        console.log(query);
         if (!$('head > title').text().toLowerCase().includes(query.toLowerCase())) {
             const match = $('.mw-parser-output a').filter((i, elem) => {
                 const queryPattern = new RegExp(`${query.split(" ").join(".*")}`, 'i');
