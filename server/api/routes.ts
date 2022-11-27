@@ -2,6 +2,8 @@ import {Express, Request, Response, NextFunction} from "express";
 import parseHTML from "./ballotpedia-scrape";
 import routeCache from './routeCache';
 
+import findCandidateID from "./vote-smart-scrape";
+
 export default function routes(app: Express) {
     app.get("/", (req: Request, res: Response) => {
         res.send("VoteVault " + (new Date).toLocaleString());
@@ -16,6 +18,17 @@ export default function routes(app: Express) {
         }
 
     });
+
+    app.get("/api/:candidate", routeCache(300), async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const nameJson = await findCandidateID(req.params.candidate);
+            return res.status(200).json(nameJson)
+        } catch (error) {
+            next(error);
+        }
+
+    });
+    
 
     // app.get("/error", async (req: Request, res: Response) => {
     //   try {
