@@ -30,7 +30,7 @@ const CandidateProfile = ({route, navigation}) => {
         last[0].toUpperCase() +
         last.substring(1);
 
-    const BASE_URL = "https://ballotpedia-api.cyclic.app`/api/candidate/";
+    const BASE_URL = "https://ballotpedia-api.cyclic.app/api/candidate/";
 
     const [isLoading, setLoading] = useState(true);
     const [profileData, setProfileData] = useState({
