@@ -19,7 +19,7 @@ export default function routes(app: Express) {
 
     });
 
-    app.get("/api/:candidate", routeCache(300), async (req: Request, res: Response, next: NextFunction) => {
+    app.get("/votesmart-api/:candidate", routeCache(300), async (req: Request, res: Response, next: NextFunction) => {
         try {
             const nameJson = await findCandidateID(req.params.candidate);
             return res.status(200).json(nameJson)
