@@ -35,6 +35,7 @@ export default async function parseHTML(query: string, params: QueryParams, perf
         let $ = cheerio.load(resp.data);
 
         // check if not right page
+        // then check if page contains a link to the candidate's article
         if (!$('head > title').text().toLowerCase().includes(query.toLowerCase())) {
             const match = $('.mw-parser-output a').filter((i, elem) => {
                 const queryPattern = new RegExp(`${query.split(" ").join(".*")}`, 'i');
@@ -108,7 +109,8 @@ function getSummary($: cheerio.CheerioAPI) {
         if (!$(children[i]).is("p") && bio.trim()) break;
 
         const hasStyleChild = $(children[i]).children().is("style");
-        if ($(children[i]).is("p") && !hasStyleChild) {
+        const hasImageDirectChild = $(children[i]).children().first().is('a.image');
+        if ($(children[i]).is("p") && !hasStyleChild && !hasImageDirectChild) {
             // console.log("i: " + i + " " + $(children[i]).text())
             bio += $(children[i]).text();
         }
