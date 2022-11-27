@@ -1,46 +1,50 @@
-import { View } from "react-native";
-import React from "react";
+import {ActivityIndicator, ScrollView, View} from "react-native";
+import React, {useEffect, useState} from "react";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import { Heading, Text } from "native-base";
+import {Heading, Text} from "native-base";
 import InfoData from "../../InfoData/InfoData";
 
-const LearnMore = ({ route, navigation }) => {
-  const props = route.params;
-  console.log(props.title);
-  let key = "empty";
-  console.log(
-    props.title.toLowerCase().includes("us house of representatives")
-  );
-  if (props.title.toLowerCase().includes("us senate")) {
-    key = "US SENATE";
-  } else if (
-    props.title.toLowerCase().includes("us house of representatives")
-  ) {
-    key = "US House of Representatives";
-  } else if (props.title.toLowerCase().includes("state senate")) {
-    key = "STATE SENATE";
-  } else if (props.title.toLowerCase().includes("county sheriff")) {
-    key = "X County Sheriff";
-  }
+const LearnMore = ({raceTitle, route}) => {
+    const title = raceTitle || route.params.title;
+    const BASE_URL = "https://ballotpedia-api.cyclic.app/api/info/";
+    const [apiData, setApiData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-  return (
-    <View>
-      <Heading
-        size={"lg"}
-        textAlign="center"
-        marginTop={"1rem"}
-        marginBottom={"1rem"}
-      >
-        What is the
-      </Heading>
-      <Heading size={"md"} textAlign="center" marginBottom={"1rem"}>
-        {props.title}?
-      </Heading>
-      <Text marginLeft={"2rem"} marginRight={"2rem"}>
-        {InfoData[key]}
-      </Text>
-    </View>
-  );
+    const fetchData = () => {
+        fetch(BASE_URL + title)
+        .then((res) => res.json())
+        .then((json) => setApiData(json.summary))
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, [])
+
+    return (
+        <ScrollView>
+            <Heading
+                size={"lg"}
+                textAlign="center"
+                marginTop={"1rem"}
+                marginBottom={"1rem"}
+            >
+                What is the
+            </Heading>
+            <Heading size={"md"} textAlign="center" marginBottom={"1rem"}>
+                {title}?
+            </Heading>
+            {loading ? <ActivityIndicator size={"large"}/> :
+                (
+                    <Text color={!apiData ? "#ff0000" : "black"} fontSize="24px"
+                          paddingBottom={"1rem"} marginX={"0.25rem"}>
+                        {apiData || "Oops! Couldn't find any info for " + title}
+                    </Text>
+                )
+            }
+        </ScrollView>
+    );
 };
 
 export default LearnMore;
