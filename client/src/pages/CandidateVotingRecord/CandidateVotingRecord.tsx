@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   Box,
   Heading,
@@ -17,7 +17,31 @@ const CandidateVotingRecord= ({ route, navigation }) => {
   const heading = "View " + candidate_name + "'s voting record on Vote Smart";
   const instruction = "1. Search for the candidate " + candidate_name + "\n2. Choose the category 'VOTES'\n3. Scroll down to see " + candidate_name + "'s previous voting record";
 
-  const url = "https://justfacts.votesmart.org/";
+
+  const BASE_URL = "https://ballotpedia-api.cyclic.app`/votesmart-api/";
+
+  const [isLoading, setLoading] = useState(true);
+  const [candidateID, setCandidateID] = useState({
+    id: ""
+  });
+
+  const fetchData = () => {
+        fetch(BASE_URL + candidate_name)
+        .then((response) => response.json())
+        .then((json) => setCandidateID(json))
+        .catch((error) => console.error(error))
+        .finally(() => setLoading(false));
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+  const url = "https://justfacts.votesmart.org/candidate/key-votes/" + candidateID.id + "/" + "";
+
+
+
+
 
   return (
     <Box>
