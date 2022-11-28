@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import axios, {AxiosError, AxiosResponse} from "axios";
+import * as fastFuzzy from 'fast-fuzzy';
 
 const baseURL = "https://ballotpedia.org/index.php?search=";
 
@@ -35,8 +36,17 @@ export default async function parseHTML(query: string, params: QueryParams, perf
         let $ = cheerio.load(resp.data);
 
         // check if not right page
-        console.log(query);
-        if (!$('head > title').text().toLowerCase().includes(query.toLowerCase())) {
+        // then check if page contains a link to the candidate's article
+        const title = $('head > title').text();
+        let matchScore;
+        try {
+            matchScore = fastFuzzy.fuzzy(query, title);
+        } catch (e) {
+            console.error(e);
+        }
+
+        // if not a match then proceed with link checking
+        if (matchScore && matchScore < 0.5) {
             const match = $('.mw-parser-output a').filter((i, elem) => {
                 const queryPattern = new RegExp(`${query.split(" ").join(".*")}`, 'i');
                 return !!$(elem).text().match(queryPattern);
@@ -109,7 +119,8 @@ function getSummary($: cheerio.CheerioAPI) {
         if (!$(children[i]).is("p") && bio.trim()) break;
 
         const hasStyleChild = $(children[i]).children().is("style");
-        if ($(children[i]).is("p") && !hasStyleChild) {
+        const hasImageDirectChild = $(children[i]).children().first().is('a.image');
+        if ($(children[i]).is("p") && !hasStyleChild && !hasImageDirectChild) {
             // console.log("i: " + i + " " + $(children[i]).text())
             bio += $(children[i]).text();
         }
@@ -193,4 +204,3 @@ function cleanQuery(query: string) {
 
 }
 
-// let html = getHTML("stacey abrams");
