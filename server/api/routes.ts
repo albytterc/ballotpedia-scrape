@@ -7,9 +7,9 @@ export default function routes(app: Express) {
         res.send("VoteVault " + (new Date).toLocaleString());
     });
 
-    app.get("/api/:query", routeCache(300), async (req: Request, res: Response, next: NextFunction) => {
+    app.get("/api/candidate/:query", routeCache(10000000), async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const profileJson = await parseHTML(req.params.query);
+            const profileJson = await parseHTML(req.params.query, req.query, true);
             return res.status(200).json(profileJson)
         } catch (error) {
             next(error);
@@ -17,6 +17,15 @@ export default function routes(app: Express) {
 
     });
 
+    app.get("/api/info/:query", routeCache(10000000), async (req: Request, res: Response, next: NextFunction) => {
+        try {
+            const articleJson = await parseHTML(req.params.query, req.query, false);
+            return res.status(200).json(articleJson)
+        } catch (error) {
+            next(error);
+        }
+
+    });
     // app.get("/error", async (req: Request, res: Response) => {
     //   try {
     //     await throwsError();

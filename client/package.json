@@ -61,5 +61,6 @@
   },
   "homepage": "https://github.com/GeekyAnts/nativebase-templates#readme",
   "author": "Aditya Jamuar",
-  "private": true
+  "private": true,
+  "proxy": "http://localhost:3000"
 }
