@@ -47,7 +47,7 @@ const ZipCode = ({ navigation }) => {
         return;
       }
 
-      let apiKey = config.MAPS_API_KEY;
+      let apiKey = config.API_KEY;
       Location.setGoogleApiKey(apiKey); //<== THIS IS DEFINITELY NEEDED FOR WEB
 
       setLoading(true);
