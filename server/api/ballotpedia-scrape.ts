@@ -1,5 +1,6 @@
 import * as cheerio from "cheerio";
 import axios, {AxiosError, AxiosResponse} from "axios";
+import * as fastFuzzy from 'fast-fuzzy';
 
 const baseURL = "https://ballotpedia.org/index.php?search=";
 
@@ -36,7 +37,16 @@ export default async function parseHTML(query: string, params: QueryParams, perf
 
         // check if not right page
         // then check if page contains a link to the candidate's article
-        if (!$('head > title').text().toLowerCase().includes(query.toLowerCase())) {
+        const title = $('head > title').text();
+        let matchScore;
+        try {
+            matchScore = fastFuzzy.fuzzy(query, title);
+        } catch (e) {
+            console.error(e);
+        }
+
+        // if not a match then proceed with link checking
+        if (matchScore && matchScore < 0.5) {
             const match = $('.mw-parser-output a').filter((i, elem) => {
                 const queryPattern = new RegExp(`${query.split(" ").join(".*")}`, 'i');
                 return !!$(elem).text().match(queryPattern);
@@ -194,4 +204,3 @@ function cleanQuery(query: string) {
 
 }
 
-// let html = getHTML("stacey abrams");
