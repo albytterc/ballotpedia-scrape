@@ -50,7 +50,7 @@ const BallotItems = ({ route, navigation }) => {
         );
         
       } else {
-        console.log(data.pollingLocations[0].address)
+        // console.log(data.pollingLocations[0].address)
         // const pollingLocation0 = data.pollingLocations[0].address
         // console.log(typeof(data.pollingLocations[0].address))
 
@@ -63,7 +63,7 @@ const BallotItems = ({ route, navigation }) => {
         
     } catch (e) {
       console.log(e.message)
-      alert("Failed to save the data to the storage");
+      // alert("Failed to save the data to the storage");
     } 
   // }, []); 
 
