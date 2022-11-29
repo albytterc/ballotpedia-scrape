@@ -1,4 +1,4 @@
-import { SectionList, Box } from "native-base";
+import { Text, SectionList, Box } from "native-base";
 import React, { useState, useEffect } from "react";
 import BallotItemBox from "../../../components/BallotItemBox";
 import config from "../../../config";
@@ -32,19 +32,40 @@ const BallotItems = ({ route, navigation }) => {
       .catch((error) => alert(error))
       .finally(() => setLoading(false));
   }, []);
-  console.log(data);
+  // console.log(data);
   const RacesList = [];
   const MeasuresList = [];
 
-  if (data.contests != undefined) {
+  if (electionId == 8002){
+    data.contests = config.contests
+  }
+  
+  if (data.contests != undefined && data.normalizedInput != undefined) {
+    // useEffect(() => {
     try {
-      AsyncStorage.setItem(
-        "poll_location_",
-        JSON.stringify(historicalPollingLocation.pollingLocations[0].address)
-      );
+      if (electionId == 2000) {
+        AsyncStorage.setItem(
+          "poll_location_",
+          JSON.stringify(historicalPollingLocation.pollingLocations[0].address)
+        );
+        
+      } else {
+        console.log(data.pollingLocations[0].address)
+        // const pollingLocation0 = data.pollingLocations[0].address
+        // console.log(typeof(data.pollingLocations[0].address))
+
+          AsyncStorage.setItem(
+            "poll_location_",
+            JSON.stringify(data.pollingLocations[0].address)
+          );
+        
+      }   
+        
     } catch (e) {
-      // alert("Failed to save the data to the storage");
-    }
+      console.log(e.message)
+      alert("Failed to save the data to the storage");
+    } 
+  // }, []); 
 
     for (var i = 0; i < data.contests.length; i++) {
       if (data.contests[i].type === "General") {
@@ -92,6 +113,7 @@ const BallotItems = ({ route, navigation }) => {
             justifyContent={"center"}
             flexWrap={"wrap"}
           >
+            {RacesList.length != 0 ?
             <BallotItemBox
               title={"Races"}
               navigation={navigation}
@@ -101,17 +123,21 @@ const BallotItems = ({ route, navigation }) => {
               listItems={RacesList}
               userAddress={userAddress}
               electionId={electionId}
-            />
+            />: <></>
+          }
+            {MeasuresList.length != 0 ?
             <BallotItemBox
-              title={"Measures"}
-              navigation={navigation}
-              data={data}
-              navigateTo={"Measures"}
-              colorHex={"#56941e"}
-              listItems={MeasuresList}
-              userAddress={userAddress}
-              electionId={electionId}
-            />
+            title={"Measures"}
+            navigation={navigation}
+            data={data}
+            navigateTo={"Measures"}
+            colorHex={"#56941e"}
+            listItems={MeasuresList}
+            userAddress={userAddress}
+            electionId={electionId}
+          /> : <></>
+            }
+            
           </Box>
         </>
       }
@@ -121,3 +147,5 @@ const BallotItems = ({ route, navigation }) => {
 };
 
 export default BallotItems;
+
+

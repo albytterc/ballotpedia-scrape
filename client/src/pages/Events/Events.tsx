@@ -27,14 +27,30 @@ const Events = ({route, navigation}) => {
     if (!loading && events.elections == undefined) {
         console.log("no election found");
     } else if (!loading) {
-        listItems = events.elections.map((election) => (
-            <EventBox
-                key={election.id}
-                event={election}
-                navigation={navigation}
-                vars={routeVars}
-            />
-        ));
+       
+        listItems = events.elections.map(function(election){
+             // I am  removing Louisiana runoff election
+            if (election.id !== "8001") {
+                return (
+                    <EventBox
+                    key={election.id}
+                    event={election}
+                    navigation={navigation}
+                    vars={routeVars}
+                    /> )
+            } 
+        } 
+        // => (
+        //     // election.id !== "8001" ? 
+        //     <EventBox
+        //         key={election.id}
+        //         event={election}
+        //         navigation={navigation}
+        //         vars={routeVars}
+        //     /> 
+        //     // : return
+        // )
+        );
         sorted_listItems = listItems.sort((e1, e2) => {
             if (e1.props.event.electionDay > e2.props.event.electionDay) {
                 return 1;
