@@ -32,7 +32,7 @@ const BallotItems = ({ route, navigation }) => {
       .catch((error) => alert(error))
       .finally(() => setLoading(false));
   }, []);
-  // console.log(data);
+
   const RacesList = [];
   const MeasuresList = [];
 
@@ -41,7 +41,7 @@ const BallotItems = ({ route, navigation }) => {
   }
   
   if (data.contests != undefined && data.normalizedInput != undefined) {
-    // useEffect(() => {
+
     try {
       if (electionId == 2000) {
         AsyncStorage.setItem(
@@ -50,9 +50,7 @@ const BallotItems = ({ route, navigation }) => {
         );
         
       } else {
-        // console.log(data.pollingLocations[0].address)
-        // const pollingLocation0 = data.pollingLocations[0].address
-        // console.log(typeof(data.pollingLocations[0].address))
+
 
           AsyncStorage.setItem(
             "poll_location_",
@@ -65,7 +63,6 @@ const BallotItems = ({ route, navigation }) => {
       console.log(e.message)
       // alert("Failed to save the data to the storage");
     } 
-  // }, []); 
 
     for (var i = 0; i < data.contests.length; i++) {
       if (data.contests[i].type === "General") {
