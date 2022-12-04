@@ -38,7 +38,6 @@ export default function routes(app: Express) {
         } catch (error) {
             next(error);
         }
-
     });
 
 
