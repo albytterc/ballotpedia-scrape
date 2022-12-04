@@ -16,11 +16,10 @@ export default async function findCandidateID(candidate_name: String) {
     let jsonData: ProfileJSON = {};
     let service = new chrome.ServiceBuilder(chromedriver.path).build();
     let options = new chrome.Options();
+    options.headless = true;
     let driver = chrome.Driver.createSession(options, service);
 
-    driver.get(votesmart_url)
-    // .then(() => driver.getCurrentUrl())
-    // .then((res:any) => console.log(res))
+    await driver.get(votesmart_url)
     .then(() => driver.findElement(webdriver.By.id("ispysearch")))
     .then((res:any) => {
         res.sendKeys(candidate_name, webdriver.Key.ENTER)
@@ -29,16 +28,18 @@ export default async function findCandidateID(candidate_name: String) {
     .then(() =>  sleep(5000))
     .then(() => driver.findElements(webdriver.By.className("iSpy-dropdown-item")))
     // currently just use the first candidate after searching
-    .then((candidates : any) => candidates[0].getAttribute('id'))
+    .then(async (candidates : any) => (candidates[0].getAttribute('id')))
     .then(async (id:any) => {
-        jsonData["id"] = id;
-        // candidate_id = id;
-        console.log(jsonData["id"]);
+        let candidate_name_split = candidate_name.split(" ");
+        let first = candidate_name_split[0].toLowerCase();
+        let last = candidate_name_split[candidate_name_split.length - 1].toLowerCase();
+        let name_voting_record = first + "-" + last;
+        console.log(id);
+        jsonData["url"] = "https://justfacts.votesmart.org/candidate/key-votes/" + id + "/" + name_voting_record;
+        console.log(jsonData["url"]);
     })
-    .then(() =>  sleep(3000))
-    .then(() => driver.quit());
+    .then(() => driver.quit())
+    console.log(jsonData.url);
     return jsonData;
 }
 
-
-findCandidateID('Rafael Warnock');
