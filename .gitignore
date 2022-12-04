@@ -6,5 +6,4 @@ config
 package-lock.json
 dist
 .eslintrc.cjs
-
 .idea
