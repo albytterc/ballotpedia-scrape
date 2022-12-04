@@ -9,6 +9,7 @@ export default function routes(app: Express) {
         res.send("VoteVault " + (new Date).toLocaleString());
     });
 
+
     app.get("/api/candidate/:query", routeCache(10000000), async (req: Request, res: Response, next: NextFunction) => {
         try {
             const profileJson = await parseHTML(req.params.query, req.query, true);
@@ -27,8 +28,8 @@ export default function routes(app: Express) {
             next(error);
         }
     });
-    
-    
+
+
     app.get("/votesmart-api/:candidate", routeCache(10000000), async (req: Request, res: Response, next: NextFunction) => {
         try {
             const nameJson = await findCandidateID(req.params.candidate);
