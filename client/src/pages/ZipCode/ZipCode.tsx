@@ -15,7 +15,7 @@ import {
 } from "native-base";
 
 import * as Location from "expo-location";
-import config from "../../../config";
+import config from "../../../config"
 
 const ZipCode = ({ navigation }) => {
   const [formData, setData] = React.useState({});
@@ -47,7 +47,7 @@ const ZipCode = ({ navigation }) => {
         return;
       }
 
-      let apiKey = config.MAPS_API_KEY;
+      let apiKey = config.API_KEY;
       Location.setGoogleApiKey(apiKey); //<== THIS IS DEFINITELY NEEDED FOR WEB
 
       setLoading(true);

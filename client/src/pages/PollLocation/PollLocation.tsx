@@ -52,7 +52,7 @@ const PollLocation = () => {
   useEffect(() => {
     const searchAddress =
       input.line1 + ", " + input.city + ", " + input.state + " " + input.zip;
-    Geocoder.init(config.MAPS_API_KEY);
+    Geocoder.init(config.API_KEY);
     Geocoder.from(searchAddress)
       .then((json) => {
         var location = json.results[0].geometry.location;
